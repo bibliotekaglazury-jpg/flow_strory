@@ -1,0 +1,3846 @@
+[
+  {
+    "id": "rve_animated_list",
+    "slug": "animated-list",
+    "version": "1.0.0",
+    "name": "Animated List",
+    "description": "Animated List decorative animation with fixed content.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_animated_list.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "animated",
+      "list"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_animated_list.webp",
+    "available": true
+  },
+  {
+    "id": "rve_animated_text",
+    "slug": "animated-text",
+    "version": "1.0.0",
+    "name": "Animated Text",
+    "description": "Animated Text animation.",
+    "category": "Hooks",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_animated_text.webp",
+    "previewVideo": "/template-media/rve_animated_text.mp4",
+    "enabled": true,
+    "featured": true,
+    "tags": [
+      "animated",
+      "text"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Your studio"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_animated_text.webp",
+    "available": true
+  },
+  {
+    "id": "rve_area_chart",
+    "slug": "area-chart",
+    "version": "1.0.0",
+    "name": "Area Chart",
+    "description": "Area Chart animation with illustrative fixed data.",
+    "category": "Data / Metrics",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_area_chart.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "area",
+      "chart"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Performance Metrics"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_area_chart.webp",
+    "available": false
+  },
+  {
+    "id": "rve_blinds_transition",
+    "slug": "blinds-transition",
+    "version": "1.0.0",
+    "name": "Blinds Transition",
+    "description": "Blinds Transition animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_blinds_transition.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "blinds",
+      "transition"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Scene B"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Behind the blinds"
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "Scene A"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_blinds_transition.webp",
+    "available": true
+  },
+  {
+    "id": "rve_bokeh_circles",
+    "slug": "bokeh-circles",
+    "version": "1.0.0",
+    "name": "Bokeh Circles",
+    "description": "Bokeh Circles decorative animation with fixed content.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_bokeh_circles.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "bokeh",
+      "circles"
+    ],
+    "supportedAspectRatios": [
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_bokeh_circles.webp",
+    "available": true
+  },
+  {
+    "id": "rve_bounce_text",
+    "slug": "bounce-text",
+    "version": "1.0.0",
+    "name": "Bounce Text",
+    "description": "Bounce Text animation.",
+    "category": "Hooks",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_bounce_text.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": true,
+    "tags": [
+      "bounce",
+      "text"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Start Building"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Theres never been a better time"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_bounce_text.webp",
+    "available": true
+  },
+  {
+    "id": "rve_bubble_pop_text",
+    "slug": "bubble-pop-text",
+    "version": "1.0.0",
+    "name": "Bubble Pop Text",
+    "description": "Bubble Pop Text animation.",
+    "category": "Hooks",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_bubble_pop_text.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "bubble",
+      "pop",
+      "text"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "HELLO"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_bubble_pop_text.webp",
+    "available": true
+  },
+  {
+    "id": "rve_camera_shake",
+    "slug": "camera-shake",
+    "version": "1.0.0",
+    "name": "Camera Shake",
+    "description": "Camera Shake animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_camera_shake.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "camera",
+      "shake"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "IMPACT"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Camera shake with decaying amplitude"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_camera_shake.webp",
+    "available": true
+  },
+  {
+    "id": "rve_card_flip",
+    "slug": "card-flip",
+    "version": "1.0.0",
+    "name": "Card Flip",
+    "description": "Card Flip animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_card_flip.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "card",
+      "flip"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Your studio \ud83d\udc4b"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Back"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_card_flip.webp",
+    "available": true
+  },
+  {
+    "id": "rve_chapter_title",
+    "slug": "chapter-title",
+    "version": "1.0.0",
+    "name": "Chapter Title",
+    "description": "Chapter Title animation.",
+    "category": "Hooks",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_chapter_title.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "chapter",
+      "title"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Chapter"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "The Beginning"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_chapter_title.webp",
+    "available": true
+  },
+  {
+    "id": "rve_chart_animation",
+    "slug": "chart-animation",
+    "version": "1.0.0",
+    "name": "Chart Animation",
+    "description": "Chart Animation animation with illustrative fixed data.",
+    "category": "Data / Metrics",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_chart_animation.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "chart",
+      "animation"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Monthly Performance"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Data visualization for 2023"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_chart_animation.webp",
+    "available": false
+  },
+  {
+    "id": "rve_cinematic_title_intro",
+    "slug": "cinematic-title-intro",
+    "version": "1.0.0",
+    "name": "Cinematic Title Intro",
+    "description": "Cinematic Title Intro animation.",
+    "category": "Hooks",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_cinematic_title_intro.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "cinematic",
+      "title",
+      "intro"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Your Story Begins"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "A Cinematic Experience"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_cinematic_title_intro.webp",
+    "available": true
+  },
+  {
+    "id": "rve_circular_progress",
+    "slug": "circular-progress",
+    "version": "1.0.0",
+    "name": "Circular Progress",
+    "description": "Circular Progress decorative animation with fixed content.",
+    "category": "Data / Metrics",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_circular_progress.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "circular",
+      "progress"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_circular_progress.webp",
+    "available": false
+  },
+  {
+    "id": "rve_clock_wipe",
+    "slug": "clock-wipe",
+    "version": "1.0.0",
+    "name": "Clock Wipe",
+    "description": "Clock Wipe animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_clock_wipe.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "clock",
+      "wipe"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Scene B"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Revealed by clock wipe"
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "Scene A"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_clock_wipe.webp",
+    "available": true
+  },
+  {
+    "id": "rve_comparison_chart",
+    "slug": "comparison-chart",
+    "version": "1.0.0",
+    "name": "Comparison Chart",
+    "description": "Comparison Chart animation with illustrative fixed data.",
+    "category": "Data / Metrics",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_comparison_chart.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "comparison",
+      "chart"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Performance Comparison"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Before"
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "After"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_comparison_chart.webp",
+    "available": false
+  },
+  {
+    "id": "rve_countdown_intro",
+    "slug": "countdown-intro",
+    "version": "1.0.0",
+    "name": "Countdown Intro",
+    "description": "Countdown Intro animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_countdown_intro.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "countdown",
+      "intro"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "GO!"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_countdown_intro.webp",
+    "available": true
+  },
+  {
+    "id": "rve_countdown_timer",
+    "slug": "countdown-timer",
+    "version": "1.0.0",
+    "name": "Countdown Timer",
+    "description": "Countdown Timer decorative animation with fixed content.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_countdown_timer.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "countdown",
+      "timer"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_countdown_timer.webp",
+    "available": true
+  },
+  {
+    "id": "rve_credits_roll",
+    "slug": "credits-roll",
+    "version": "1.0.0",
+    "name": "Credits Roll",
+    "description": "Credits Roll decorative animation with fixed content.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_credits_roll.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "credits",
+      "roll"
+    ],
+    "supportedAspectRatios": [
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_credits_roll.webp",
+    "available": true
+  },
+  {
+    "id": "rve_cross_dissolve",
+    "slug": "cross-dissolve",
+    "version": "1.0.0",
+    "name": "Cross Dissolve",
+    "description": "Cross Dissolve animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_cross_dissolve.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "cross",
+      "dissolve"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Scene A"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Dissolving away..."
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "Scene B"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_cross_dissolve.webp",
+    "available": true
+  },
+  {
+    "id": "rve_donut_chart",
+    "slug": "donut-chart",
+    "version": "1.0.0",
+    "name": "Donut Chart",
+    "description": "Donut Chart animation with illustrative fixed data.",
+    "category": "Data / Metrics",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_donut_chart.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "donut",
+      "chart"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Completion Rate"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Completion Rate"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_donut_chart.webp",
+    "available": false
+  },
+  {
+    "id": "rve_end_card",
+    "slug": "end-card",
+    "version": "1.0.0",
+    "name": "End Card",
+    "description": "End Card animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_end_card.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "end",
+      "card"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Thanks for Watching"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Subscribe for More"
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "STUDIO CREATIVE"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_end_card.webp",
+    "available": true
+  },
+  {
+    "id": "rve_fade_through_black",
+    "slug": "fade-through-black",
+    "version": "1.0.0",
+    "name": "Fade Through Black",
+    "description": "Fade Through Black animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_fade_through_black.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "fade",
+      "through",
+      "black"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Scene 1"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Fading out..."
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "Scene 2"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_fade_through_black.webp",
+    "available": true
+  },
+  {
+    "id": "rve_film_burn",
+    "slug": "film-burn",
+    "version": "1.0.0",
+    "name": "Film Burn",
+    "description": "Film Burn animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_film_burn.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "film",
+      "burn"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Film Burn Effect"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Light leak overlay"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_film_burn.webp",
+    "available": true
+  },
+  {
+    "id": "rve_floating_bubble_text",
+    "slug": "floating-bubble-text",
+    "version": "1.0.0",
+    "name": "Floating Bubble Text",
+    "description": "Floating Bubble Text animation.",
+    "category": "Hooks",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_floating_bubble_text.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "floating",
+      "bubble",
+      "text"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Floating"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_floating_bubble_text.webp",
+    "available": true
+  },
+  {
+    "id": "rve_gallery_grid",
+    "slug": "gallery-grid",
+    "version": "1.0.0",
+    "name": "Gallery Grid",
+    "description": "Gallery Grid abstract layout demo. Uploads are not supported.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_gallery_grid.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "gallery",
+      "grid"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_gallery_grid.webp",
+    "available": false
+  },
+  {
+    "id": "rve_geometric_patterns",
+    "slug": "geometric-patterns",
+    "version": "1.0.0",
+    "name": "Geometric Patterns",
+    "description": "Geometric Patterns decorative animation with fixed content.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_geometric_patterns.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "geometric",
+      "patterns"
+    ],
+    "supportedAspectRatios": [
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_geometric_patterns.webp",
+    "available": true
+  },
+  {
+    "id": "rve_glitch_text",
+    "slug": "glitch-text",
+    "version": "1.0.0",
+    "name": "Glitch Text",
+    "description": "Glitch Text animation.",
+    "category": "Hooks",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_glitch_text.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "glitch",
+      "text"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 24,
+          "default": "GLITCH"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_glitch_text.webp",
+    "available": true
+  },
+  {
+    "id": "rve_gradient_shift",
+    "slug": "gradient-shift",
+    "version": "1.0.0",
+    "name": "Gradient Shift",
+    "description": "Gradient Shift decorative animation with fixed content.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_gradient_shift.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "gradient",
+      "shift"
+    ],
+    "supportedAspectRatios": [
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_gradient_shift.webp",
+    "available": true
+  },
+  {
+    "id": "rve_grid_pulse",
+    "slug": "grid-pulse",
+    "version": "1.0.0",
+    "name": "Grid Pulse",
+    "description": "Grid Pulse decorative animation with fixed content.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_grid_pulse.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "grid",
+      "pulse"
+    ],
+    "supportedAspectRatios": [
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_grid_pulse.webp",
+    "available": true
+  },
+  {
+    "id": "rve_image_carousel",
+    "slug": "image-carousel",
+    "version": "1.0.0",
+    "name": "Image Carousel",
+    "description": "Image Carousel abstract layout demo. Uploads are not supported.",
+    "category": "Product",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_image_carousel.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "image",
+      "carousel"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "product-showcase"
+    ],
+    "thumbnailUrl": "/template-media/rve_image_carousel.webp",
+    "available": false
+  },
+  {
+    "id": "rve_image_comparison_slider",
+    "slug": "image-comparison-slider",
+    "version": "1.0.0",
+    "name": "Image Comparison Slider",
+    "description": "Image Comparison Slider abstract layout demo. Uploads are not supported.",
+    "category": "Before / After",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_image_comparison_slider.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "image",
+      "comparison",
+      "slider"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "After"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Before"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_image_comparison_slider.webp",
+    "available": false
+  },
+  {
+    "id": "rve_image_zoom_reveal",
+    "slug": "image-zoom-reveal",
+    "version": "1.0.0",
+    "name": "Image Zoom Reveal",
+    "description": "Image Zoom Reveal abstract layout demo. Uploads are not supported.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_image_zoom_reveal.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "image",
+      "zoom",
+      "reveal"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Featured Image"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_image_zoom_reveal.webp",
+    "available": false
+  },
+  {
+    "id": "rve_iris_transition",
+    "slug": "iris-transition",
+    "version": "1.0.0",
+    "name": "Iris Transition",
+    "description": "Iris Transition animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_iris_transition.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "iris",
+      "transition"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Scene B"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Iris opening..."
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "Scene A"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_iris_transition.webp",
+    "available": true
+  },
+  {
+    "id": "rve_ken_burns",
+    "slug": "ken-burns",
+    "version": "1.0.0",
+    "name": "Ken Burns",
+    "description": "Ken Burns animation.",
+    "category": "Product",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_ken_burns.webp",
+    "previewVideo": "/template-media/rve_ken_burns.mp4",
+    "enabled": true,
+    "featured": true,
+    "tags": [
+      "ken",
+      "burns"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "productImage": {
+          "type": "string",
+          "format": "asset-id",
+          "mediaType": "image",
+          "title": "Product image"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "product-showcase"
+    ],
+    "thumbnailUrl": "/template-media/rve_ken_burns.webp",
+    "available": true
+  },
+  {
+    "id": "rve_letterbox_reveal",
+    "slug": "letterbox-reveal",
+    "version": "1.0.0",
+    "name": "Letterbox Reveal",
+    "description": "Letterbox Reveal animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_letterbox_reveal.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "letterbox",
+      "reveal"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "CINEMATIC"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "A letterbox reveal"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_letterbox_reveal.webp",
+    "available": true
+  },
+  {
+    "id": "rve_line_chart",
+    "slug": "line-chart",
+    "version": "1.0.0",
+    "name": "Line Chart",
+    "description": "Line Chart animation with illustrative fixed data.",
+    "category": "Data / Metrics",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_line_chart.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "line",
+      "chart"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Revenue Growth"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_line_chart.webp",
+    "available": false
+  },
+  {
+    "id": "rve_liquid_wave",
+    "slug": "liquid-wave",
+    "version": "1.0.0",
+    "name": "Liquid Wave",
+    "description": "Liquid Wave decorative animation with fixed content.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_liquid_wave.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "liquid",
+      "wave"
+    ],
+    "supportedAspectRatios": [
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_liquid_wave.webp",
+    "available": true
+  },
+  {
+    "id": "rve_logo_blur_reveal",
+    "slug": "logo-blur-reveal",
+    "version": "1.0.0",
+    "name": "Logo Blur Reveal",
+    "description": "Logo Blur Reveal animation.",
+    "category": "Branding",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_logo_blur_reveal.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "logo",
+      "blur",
+      "reveal"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "LOGO"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Company Name"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "branding"
+    ],
+    "thumbnailUrl": "/template-media/rve_logo_blur_reveal.webp",
+    "available": true
+  },
+  {
+    "id": "rve_logo_bounce_drop",
+    "slug": "logo-bounce-drop",
+    "version": "1.0.0",
+    "name": "Logo Bounce Drop",
+    "description": "Logo Bounce Drop animation.",
+    "category": "Branding",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_logo_bounce_drop.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "logo",
+      "bounce",
+      "drop"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "LOGO"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Company Name"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "branding"
+    ],
+    "thumbnailUrl": "/template-media/rve_logo_bounce_drop.webp",
+    "available": true
+  },
+  {
+    "id": "rve_logo_fade_reveal",
+    "slug": "logo-fade-reveal",
+    "version": "1.0.0",
+    "name": "Logo Fade Reveal",
+    "description": "Logo Fade Reveal animation.",
+    "category": "Branding",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_logo_fade_reveal.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "logo",
+      "fade",
+      "reveal"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "LOGO"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Company Name"
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "Your tagline here"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "branding"
+    ],
+    "thumbnailUrl": "/template-media/rve_logo_fade_reveal.webp",
+    "available": true
+  },
+  {
+    "id": "rve_logo_glitch_reveal",
+    "slug": "logo-glitch-reveal",
+    "version": "1.0.0",
+    "name": "Logo Glitch Reveal",
+    "description": "Logo Glitch Reveal animation.",
+    "category": "Branding",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_logo_glitch_reveal.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "logo",
+      "glitch",
+      "reveal"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 6,
+          "default": "LOGO"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 40,
+          "default": "Company Name"
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 120,
+          "default": "Your tagline here"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "branding"
+    ],
+    "thumbnailUrl": "/template-media/rve_logo_glitch_reveal.webp",
+    "available": true
+  },
+  {
+    "id": "rve_logo_scale_rotate",
+    "slug": "logo-scale-rotate",
+    "version": "1.0.0",
+    "name": "Logo Scale Rotate",
+    "description": "Logo Scale Rotate animation.",
+    "category": "Branding",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_logo_scale_rotate.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "logo",
+      "scale",
+      "rotate"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "LOGO"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Company Name"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "branding"
+    ],
+    "thumbnailUrl": "/template-media/rve_logo_scale_rotate.webp",
+    "available": true
+  },
+  {
+    "id": "rve_logo_spin_reveal",
+    "slug": "logo-spin-reveal",
+    "version": "1.0.0",
+    "name": "Logo Spin Reveal",
+    "description": "Logo Spin Reveal animation.",
+    "category": "Branding",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_logo_spin_reveal.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "logo",
+      "spin",
+      "reveal"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "LOGO"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Company Name"
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "Your tagline here"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "branding"
+    ],
+    "thumbnailUrl": "/template-media/rve_logo_spin_reveal.webp",
+    "available": true
+  },
+  {
+    "id": "rve_logo_split_reveal",
+    "slug": "logo-split-reveal",
+    "version": "1.0.0",
+    "name": "Logo Split Reveal",
+    "description": "Logo Split Reveal animation.",
+    "category": "Branding",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_logo_split_reveal.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "logo",
+      "split",
+      "reveal"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "LO"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "GO"
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "Company Name"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "branding"
+    ],
+    "thumbnailUrl": "/template-media/rve_logo_split_reveal.webp",
+    "available": true
+  },
+  {
+    "id": "rve_logo_stroke_draw",
+    "slug": "logo-stroke-draw",
+    "version": "1.0.0",
+    "name": "Logo Stroke Draw",
+    "description": "Logo Stroke Draw animation.",
+    "category": "Branding",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_logo_stroke_draw.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "logo",
+      "stroke",
+      "draw"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Company Name"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "branding"
+    ],
+    "thumbnailUrl": "/template-media/rve_logo_stroke_draw.webp",
+    "available": true
+  },
+  {
+    "id": "rve_logo_typewriter",
+    "slug": "logo-typewriter",
+    "version": "1.0.0",
+    "name": "Logo Typewriter",
+    "description": "Logo Typewriter animation.",
+    "category": "Branding",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_logo_typewriter.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "logo",
+      "typewriter"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "YOUR BRAND"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "branding"
+    ],
+    "thumbnailUrl": "/template-media/rve_logo_typewriter.webp",
+    "available": true
+  },
+  {
+    "id": "rve_lower_third",
+    "slug": "lower-third",
+    "version": "1.0.0",
+    "name": "Lower Third",
+    "description": "Lower Third animation.",
+    "category": "Explainers",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_lower_third.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "lower",
+      "third"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "John Smith"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Senior Producer"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_lower_third.webp",
+    "available": true
+  },
+  {
+    "id": "rve_masonry_gallery",
+    "slug": "masonry-gallery",
+    "version": "1.0.0",
+    "name": "Masonry Gallery",
+    "description": "Masonry Gallery abstract layout demo. Uploads are not supported.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_masonry_gallery.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "masonry",
+      "gallery"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_masonry_gallery.webp",
+    "available": false
+  },
+  {
+    "id": "rve_matrix_rain",
+    "slug": "matrix-rain",
+    "version": "1.0.0",
+    "name": "Matrix Rain",
+    "description": "Matrix Rain decorative animation with fixed content.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_matrix_rain.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "matrix",
+      "rain"
+    ],
+    "supportedAspectRatios": [
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_matrix_rain.webp",
+    "available": true
+  },
+  {
+    "id": "rve_morph_transition",
+    "slug": "morph-transition",
+    "version": "1.0.0",
+    "name": "Morph Transition",
+    "description": "Morph Transition animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_morph_transition.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "morph",
+      "transition"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Scene A"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Morphing away..."
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "Scene B"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_morph_transition.webp",
+    "available": true
+  },
+  {
+    "id": "rve_noise_grain",
+    "slug": "noise-grain",
+    "version": "1.0.0",
+    "name": "Noise Grain",
+    "description": "Noise Grain animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_noise_grain.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "noise",
+      "grain"
+    ],
+    "supportedAspectRatios": [
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Film Grain Overlay"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Subtle noise texture effect"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_noise_grain.webp",
+    "available": true
+  },
+  {
+    "id": "rve_notification_pop",
+    "slug": "notification-pop",
+    "version": "1.0.0",
+    "name": "Notification Pop",
+    "description": "Notification Pop animation.",
+    "category": "Social Ads",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_notification_pop.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "notification",
+      "pop"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Notifications"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "paid-ads"
+    ],
+    "thumbnailUrl": "/template-media/rve_notification_pop.webp",
+    "available": true
+  },
+  {
+    "id": "rve_parallax_pan",
+    "slug": "parallax-pan",
+    "version": "1.0.0",
+    "name": "Parallax Pan",
+    "description": "Parallax Pan animation.",
+    "category": "Product",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_parallax_pan.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": true,
+    "tags": [
+      "parallax",
+      "pan"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "productImage": {
+          "type": "string",
+          "format": "asset-id",
+          "mediaType": "image",
+          "title": "Product image"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "product-showcase"
+    ],
+    "thumbnailUrl": "/template-media/rve_parallax_pan.webp",
+    "available": true
+  },
+  {
+    "id": "rve_particle_explosion",
+    "slug": "particle-explosion",
+    "version": "1.0.0",
+    "name": "Particle Explosion",
+    "description": "Particle Explosion decorative animation with fixed content.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_particle_explosion.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "particle",
+      "explosion"
+    ],
+    "supportedAspectRatios": [
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_particle_explosion.webp",
+    "available": true
+  },
+  {
+    "id": "rve_photo_stack",
+    "slug": "photo-stack",
+    "version": "1.0.0",
+    "name": "Photo Stack",
+    "description": "Photo Stack abstract layout demo. Uploads are not supported.",
+    "category": "Product",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_photo_stack.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "photo",
+      "stack"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "product-showcase"
+    ],
+    "thumbnailUrl": "/template-media/rve_photo_stack.webp",
+    "available": false
+  },
+  {
+    "id": "rve_picture_in_picture",
+    "slug": "picture-in-picture",
+    "version": "1.0.0",
+    "name": "Picture In Picture",
+    "description": "Picture In Picture abstract layout demo. Uploads are not supported.",
+    "category": "Product",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_picture_in_picture.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "picture",
+      "in"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Main Content"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Speaker"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "product-showcase"
+    ],
+    "thumbnailUrl": "/template-media/rve_picture_in_picture.webp",
+    "available": false
+  },
+  {
+    "id": "rve_pie_chart",
+    "slug": "pie-chart",
+    "version": "1.0.0",
+    "name": "Pie Chart",
+    "description": "Pie Chart animation with illustrative fixed data.",
+    "category": "Data / Metrics",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_pie_chart.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "pie",
+      "chart"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Market Share"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_pie_chart.webp",
+    "available": false
+  },
+  {
+    "id": "rve_pixel_transition",
+    "slug": "pixel-transition",
+    "version": "1.0.0",
+    "name": "Pixel Transition",
+    "description": "Pixel Transition decorative animation with fixed content.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_pixel_transition.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "pixel",
+      "transition"
+    ],
+    "supportedAspectRatios": [
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_pixel_transition.webp",
+    "available": true
+  },
+  {
+    "id": "rve_polaroid_frame",
+    "slug": "polaroid-frame",
+    "version": "1.0.0",
+    "name": "Polaroid Frame",
+    "description": "Polaroid Frame abstract layout demo. Uploads are not supported.",
+    "category": "Product",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_polaroid_frame.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "polaroid",
+      "frame"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Summer 2024"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "product-showcase"
+    ],
+    "thumbnailUrl": "/template-media/rve_polaroid_frame.webp",
+    "available": false
+  },
+  {
+    "id": "rve_popping_text",
+    "slug": "popping-text",
+    "version": "1.0.0",
+    "name": "Popping Text",
+    "description": "Popping Text animation.",
+    "category": "Hooks",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_popping_text.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "popping",
+      "text"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "BINGO!"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_popping_text.webp",
+    "available": true
+  },
+  {
+    "id": "rve_progress_bars",
+    "slug": "progress-bars",
+    "version": "1.0.0",
+    "name": "Progress Bars",
+    "description": "Progress Bars animation with illustrative fixed data.",
+    "category": "Data / Metrics",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_progress_bars.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "progress",
+      "bars"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Skills Overview"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_progress_bars.webp",
+    "available": false
+  },
+  {
+    "id": "rve_progress_steps",
+    "slug": "progress-steps",
+    "version": "1.0.0",
+    "name": "Progress Steps",
+    "description": "Progress Steps animation with illustrative fixed data.",
+    "category": "Data / Metrics",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_progress_steps.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "progress",
+      "steps"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Project Timeline"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_progress_steps.webp",
+    "available": false
+  },
+  {
+    "id": "rve_pulsing_text",
+    "slug": "pulsing-text",
+    "version": "1.0.0",
+    "name": "Pulsing Text",
+    "description": "Pulsing Text animation.",
+    "category": "Hooks",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_pulsing_text.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "pulsing",
+      "text"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Pulse"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_pulsing_text.webp",
+    "available": true
+  },
+  {
+    "id": "rve_push_transition",
+    "slug": "push-transition",
+    "version": "1.0.0",
+    "name": "Push Transition",
+    "description": "Push Transition animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_push_transition.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "push",
+      "transition"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Scene A"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Being pushed out..."
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "Scene B"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_push_transition.webp",
+    "available": true
+  },
+  {
+    "id": "rve_quote_card",
+    "slug": "quote-card",
+    "version": "1.0.0",
+    "name": "Quote Card",
+    "description": "Quote Card animation.",
+    "category": "Testimonials",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_quote_card.webp",
+    "previewVideo": "/template-media/rve_quote_card.mp4",
+    "enabled": true,
+    "featured": true,
+    "tags": [
+      "quote",
+      "card"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "testimonial": {
+          "type": "string",
+          "title": "Testimonial",
+          "maxLength": 240,
+          "default": "A small change can make your everyday routine feel new."
+        },
+        "author": {
+          "type": "string",
+          "title": "Author",
+          "maxLength": 80,
+          "default": "\u2014 Your customer"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_quote_card.webp",
+    "available": true
+  },
+  {
+    "id": "rve_rotating_carousel",
+    "slug": "rotating-carousel",
+    "version": "1.0.0",
+    "name": "Rotating Carousel",
+    "description": "Rotating Carousel abstract layout demo. Uploads are not supported.",
+    "category": "Product",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_rotating_carousel.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "rotating",
+      "carousel"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Our Features"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "product-showcase"
+    ],
+    "thumbnailUrl": "/template-media/rve_rotating_carousel.webp",
+    "available": false
+  },
+  {
+    "id": "rve_slide_text",
+    "slug": "slide-text",
+    "version": "1.0.0",
+    "name": "Slide Text",
+    "description": "Slide Text animation.",
+    "category": "Hooks",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_slide_text.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "slide",
+      "text"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Sliding Text!"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_slide_text.webp",
+    "available": true
+  },
+  {
+    "id": "rve_slide_wipe",
+    "slug": "slide-wipe",
+    "version": "1.0.0",
+    "name": "Slide Wipe",
+    "description": "Slide Wipe animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_slide_wipe.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "slide",
+      "wipe"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "New Scene"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Revealed underneath"
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "Old Scene"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_slide_wipe.webp",
+    "available": true
+  },
+  {
+    "id": "rve_sound_wave",
+    "slug": "sound-wave",
+    "version": "1.0.0",
+    "name": "Sound Wave",
+    "description": "Sound Wave decorative animation with fixed content.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_sound_wave.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "sound",
+      "wave"
+    ],
+    "supportedAspectRatios": [
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_sound_wave.webp",
+    "available": true
+  },
+  {
+    "id": "rve_split_screen",
+    "slug": "split-screen",
+    "version": "1.0.0",
+    "name": "Split Screen",
+    "description": "Split Screen abstract layout demo. Uploads are not supported.",
+    "category": "Product",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_split_screen.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "split",
+      "screen"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Panel A"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Left side content slides in from the left edge"
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "Panel B"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "product-showcase"
+    ],
+    "thumbnailUrl": "/template-media/rve_split_screen.webp",
+    "available": false
+  },
+  {
+    "id": "rve_spotlight_reveal",
+    "slug": "spotlight-reveal",
+    "version": "1.0.0",
+    "name": "Spotlight Reveal",
+    "description": "Spotlight Reveal animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_spotlight_reveal.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "spotlight",
+      "reveal"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "REVEALED"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Spotlight reveal transition"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_spotlight_reveal.webp",
+    "available": true
+  },
+  {
+    "id": "rve_starfield",
+    "slug": "starfield",
+    "version": "1.0.0",
+    "name": "Starfield",
+    "description": "Starfield decorative animation with fixed content.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_starfield.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "starfield"
+    ],
+    "supportedAspectRatios": [
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_starfield.webp",
+    "available": true
+  },
+  {
+    "id": "rve_stat_counter",
+    "slug": "stat-counter",
+    "version": "1.0.0",
+    "name": "Stat Counter",
+    "description": "Stat Counter animation with illustrative fixed data.",
+    "category": "Data / Metrics",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_stat_counter.webp",
+    "previewVideo": null,
+    "enabled": false,
+    "featured": false,
+    "tags": [
+      "stat",
+      "counter"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Total Users"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "This Month"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_stat_counter.webp",
+    "available": false
+  },
+  {
+    "id": "rve_subscribe_reminder",
+    "slug": "subscribe-reminder",
+    "version": "1.0.0",
+    "name": "Subscribe Reminder",
+    "description": "Subscribe Reminder animation.",
+    "category": "Social Ads",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_subscribe_reminder.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "subscribe",
+      "reminder"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Your Video Content"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Subscribe"
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "@CreativeStudio"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "paid-ads"
+    ],
+    "thumbnailUrl": "/template-media/rve_subscribe_reminder.webp",
+    "available": true
+  },
+  {
+    "id": "rve_text_highlight",
+    "slug": "text-highlight",
+    "version": "1.0.0",
+    "name": "Text Highlight",
+    "description": "Text Highlight animation.",
+    "category": "Hooks",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_text_highlight.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": true,
+    "tags": [
+      "text",
+      "highlight"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Build amazing videos with code"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_text_highlight.webp",
+    "available": true
+  },
+  {
+    "id": "rve_title_split",
+    "slug": "title-split",
+    "version": "1.0.0",
+    "name": "Title Split",
+    "description": "Title Split animation.",
+    "category": "Hooks",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_title_split.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": true,
+    "tags": [
+      "title",
+      "split"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "CREATIVE"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "STUDIO"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_title_split.webp",
+    "available": true
+  },
+  {
+    "id": "rve_typewriter_subtitle",
+    "slug": "typewriter-subtitle",
+    "version": "1.0.0",
+    "name": "Typewriter Subtitle",
+    "description": "Typewriter Subtitle animation.",
+    "category": "Explainers",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_typewriter_subtitle.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "typewriter",
+      "subtitle"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "I like typing..."
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_typewriter_subtitle.webp",
+    "available": true
+  },
+  {
+    "id": "rve_vignette_pulse",
+    "slug": "vignette-pulse",
+    "version": "1.0.0",
+    "name": "Vignette Pulse",
+    "description": "Vignette Pulse animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_vignette_pulse.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "vignette",
+      "pulse"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Your Content Here"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Vignette pulses around the edges"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_vignette_pulse.webp",
+    "available": true
+  },
+  {
+    "id": "rve_whip_pan",
+    "slug": "whip-pan",
+    "version": "1.0.0",
+    "name": "Whip Pan",
+    "description": "Whip Pan animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_whip_pan.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "whip",
+      "pan"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Scene A"
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Blue content"
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "maxLength": 240,
+          "default": "Scene B"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_whip_pan.webp",
+    "available": true
+  },
+  {
+    "id": "rve_zoom_pulse",
+    "slug": "zoom-pulse",
+    "version": "1.0.0",
+    "name": "Zoom Pulse",
+    "description": "Zoom Pulse animation.",
+    "category": "Product",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_zoom_pulse.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": true,
+    "tags": [
+      "zoom",
+      "pulse"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "productImage": {
+          "type": "string",
+          "format": "asset-id",
+          "mediaType": "image",
+          "title": "Product image"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "product-showcase"
+    ],
+    "thumbnailUrl": "/template-media/rve_zoom_pulse.webp",
+    "available": true
+  },
+  {
+    "id": "rve_zoom_through",
+    "slug": "zoom-through",
+    "version": "1.0.0",
+    "name": "Zoom Through",
+    "description": "Zoom Through animation.",
+    "category": "Other",
+    "templateType": "remotion",
+    "thumbnail": "/template-media/rve_zoom_through.webp",
+    "previewVideo": null,
+    "enabled": true,
+    "featured": false,
+    "tags": [
+      "zoom",
+      "through"
+    ],
+    "supportedAspectRatios": [
+      "9:16",
+      "1:1",
+      "16:9"
+    ],
+    "supportedDurations": [
+      15,
+      20,
+      30
+    ],
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Headline",
+          "maxLength": 80,
+          "default": "Zooming In..."
+        },
+        "subheadline": {
+          "type": "string",
+          "title": "Subheadline",
+          "maxLength": 80,
+          "default": "Arriving..."
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "useCases": [
+      "organic-social"
+    ],
+    "thumbnailUrl": "/template-media/rve_zoom_through.webp",
+    "available": true
+  }
+]

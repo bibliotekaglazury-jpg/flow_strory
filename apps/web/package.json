@@ -1,0 +1,49 @@
+{
+  "name": "@ugc/web",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build --webpack",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "cd ../.. && apps/web/node_modules/.bin/eslint apps/web packages --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@assistant-ui/react": "0.15.18",
+    "@fontsource/instrument-serif": "5.3.0",
+    "@fontsource/inter": "5.3.0",
+    "@remotion/captions": "4.0.523",
+    "@remotion/layout-utils": "4.0.523",
+    "@remotion/player": "4.0.523",
+    "@supabase/auth-ui-react": "0.4.7",
+    "@supabase/auth-ui-shared": "0.1.8",
+    "@supabase/ssr": "0.12.7",
+    "@supabase/supabase-js": "2.116.0",
+    "@ugc/contracts": "workspace:*",
+    "@ugc/ui": "workspace:*",
+    "jszip": "3.10.1",
+    "lucide-react": "1.43.0",
+    "next": "16.3.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-share": "^5.3.0",
+    "remotion": "4.0.523"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.20.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.4",
+    "prettier": "3.6.2",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3",
+    "vitest": "5.0.0"
+  },
+  "type": "module"
+}

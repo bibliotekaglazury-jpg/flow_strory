@@ -1,0 +1,16 @@
+<svg width="300" height="180" viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="rotate(-4 150 90)">
+    <text x="30" y="70"
+      fill="currentColor"
+      font-family="Segoe Script, Brush Script MT, cursive"
+      font-size="56"
+      font-weight="400">Make</text>
+    <text x="72" y="124"
+      fill="currentColor"
+      font-family="Segoe Script, Brush Script MT, cursive"
+      font-size="56"
+      font-weight="400">it real!</text>
+    <path d="M104 148C148 142 196 145 252 135"
+      stroke="currentColor" stroke-width="4.8" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "skills": [
+    {
+      "id": "customer-research",
+      "title": "Customer research",
+      "use_when": "Use when interpreting supplied audience evidence, pains, triggers, objections, and customer language.",
+      "source": "https://github.com/coreyhaines31/marketingskills",
+      "commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+      "license": "MIT",
+      "path": "vendor/marketingskills/customer-research.md",
+      "sha256": "2c4353a9d79261e1678afb1915334fdb5693c6a9ab9ae4c3663cba33b12c7b16",
+      "enabled": true,
+      "review_decision": "approved",
+      "review_record": "docs/audits/claude-skill-review.md"
+    },
+    {
+      "id": "product-marketing",
+      "title": "Product marketing",
+      "use_when": "Use when organizing the supplied offer, audience, positioning, differentiators, and conversion objective.",
+      "source": "https://github.com/coreyhaines31/marketingskills",
+      "commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+      "license": "MIT",
+      "path": "vendor/marketingskills/product-marketing.md",
+      "sha256": "b1e1d3fa88b295c9730ad6c4cf6b1ea4e543c514a6f96b48d9a64030e2d15a11",
+      "enabled": true,
+      "review_decision": "approved",
+      "review_record": "docs/audits/claude-skill-review.md"
+    },
+    {
+      "id": "offers",
+      "title": "Offer framing",
+      "use_when": "Use when selecting an honest benefit and value frame from the existing offer without inventing terms.",
+      "source": "https://github.com/coreyhaines31/marketingskills",
+      "commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+      "license": "MIT",
+      "path": "vendor/marketingskills/offers.md",
+      "sha256": "7b31ad90184db447ee8cb7c49571dd6ed2a8c3174ebc8af4e2cfc5a2979977b1",
+      "enabled": true,
+      "review_decision": "approved",
+      "review_record": "docs/audits/claude-skill-review.md"
+    },
+    {
+      "id": "ad-creative",
+      "title": "Ad creative",
+      "use_when": "Use when developing distinct creative angles and reviewing clear, grounded hooks and supporting copy.",
+      "source": "https://github.com/coreyhaines31/marketingskills",
+      "commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+      "license": "MIT",
+      "path": "vendor/marketingskills/ad-creative.md",
+      "sha256": "5bc35ebeeb30f83fd9916bcd6de0a5500789ed38e76fa57e0250f0f14b728b22",
+      "enabled": true,
+      "review_decision": "approved",
+      "review_record": "docs/audits/claude-skill-review.md"
+    },
+    {
+      "id": "copywriting",
+      "title": "Copywriting",
+      "use_when": "Use when refining concise spoken copy, benefits, audience language, tone, and a clear call to action.",
+      "source": "https://github.com/coreyhaines31/marketingskills",
+      "commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+      "license": "MIT",
+      "path": "vendor/marketingskills/copywriting.md",
+      "sha256": "ca892af658369ce1d6e0700a6235fd8737559f7e8f78b9232b2d4b4d81be3fb0",
+      "enabled": true,
+      "review_decision": "approved",
+      "review_record": "docs/audits/claude-skill-review.md"
+    },
+    {
+      "id": "hook-method",
+      "title": "Research-first hooks",
+      "use_when": "Use when constructing varied hooks traceable to supplied offer facts, audience evidence, and proof.",
+      "source": "https://github.com/DV0x/creative-ad-agent",
+      "commit": "751b9e5146604dc65049bd0f62dcbdad6212f8a3",
+      "license": "MIT",
+      "path": "vendor/creative-ad-agent/hook-method.md",
+      "sha256": "bd61b2ae922f840801730c83be5dd1d3757a40dbeaaab44200db38b702fe924e",
+      "enabled": true,
+      "review_decision": "approved",
+      "review_record": "docs/audits/claude-skill-review.md"
+    }
+  ]
+}

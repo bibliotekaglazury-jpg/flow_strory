@@ -1,0 +1,20 @@
+[
+  {
+    "name": "desktop",
+    "autoPlay": true,
+    "muted": true,
+    "loop": true,
+    "playsInline": true,
+    "automaticStart": true,
+    "restartedAfterEnd": true
+  },
+  {
+    "name": "mobile",
+    "autoPlay": true,
+    "muted": true,
+    "loop": true,
+    "playsInline": true,
+    "automaticStart": true,
+    "restartedAfterEnd": true
+  }
+]

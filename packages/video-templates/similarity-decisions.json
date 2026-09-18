@@ -1,0 +1,125 @@
+{
+  "review": "Contact sheet and source motion reviewed; no identical source, thumbnail, or early+late frame pairs. Shared final artwork does not erase distinct animation behavior.",
+  "decisions": [
+    {
+      "a": "rve_blinds_transition",
+      "b": "rve_push_transition",
+      "aSourceSha256": "ab7a431d9c5c0515b072db25e8d065dddcdd7d9198469b8467892586b5e5aea5",
+      "bSourceSha256": "f0929de8b3f059e926b939eb607dbb84306934bdbb2a0e3bed735cdbda8807b3",
+      "decision": "retained-distinct-motion",
+      "reason": "Staggered perspective rotateX blinds versus a horizontal spring push; shared destination artwork is intentional.",
+      "evidence": [
+        "src/imported/blinds-transition.tsx",
+        "src/imported/push-transition.tsx"
+      ]
+    },
+    {
+      "a": "rve_blinds_transition",
+      "b": "rve_whip_pan",
+      "aSourceSha256": "ab7a431d9c5c0515b072db25e8d065dddcdd7d9198469b8467892586b5e5aea5",
+      "bSourceSha256": "5fe771bce2e4d9ecc7218271d750e07853d1b9bd7bf45d800381f1a67eb4e79a",
+      "decision": "retained-distinct-motion",
+      "reason": "Staggered rotateX blinds versus a rapid horizontal pan with scaleX motion stretch.",
+      "evidence": [
+        "src/imported/blinds-transition.tsx",
+        "src/imported/whip-pan.tsx"
+      ]
+    },
+    {
+      "a": "rve_credits_roll",
+      "b": "rve_subscribe_reminder",
+      "aSourceSha256": "180f2297bf0262625508ea524a28adbd1d04d01c07a5b728be4ae43796a4f8ac",
+      "bSourceSha256": "46fbbcdabeff19e73ad000b26ed225182776e89032a51145250264cebc631205",
+      "decision": "retained-distinct-motion",
+      "reason": "Sparse frame silhouettes differ in purpose and motion: vertically scrolling credits versus a bottom-corner subscribe/bell overlay.",
+      "evidence": [
+        "src/imported/credits-roll.tsx",
+        "src/imported/subscribe-reminder.tsx"
+      ]
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_logo_bounce_drop",
+      "aSourceSha256": "32c54386a39fc754f69691b70e6b4e83d0d05087ef4b0d54cca17bbab8909d74",
+      "bSourceSha256": "ef821aafe9018d59cfa5b601bb2081e7bab07922d457debf4e10010f943b759e",
+      "decision": "retained-distinct-motion",
+      "reason": "20px blur resolves over1.5seconds versus spring translateY drop with squash/stretch.",
+      "evidence": [
+        "src/imported/logo-blur-reveal.tsx",
+        "src/imported/logo-bounce-drop.tsx"
+      ]
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_logo_scale_rotate",
+      "aSourceSha256": "32c54386a39fc754f69691b70e6b4e83d0d05087ef4b0d54cca17bbab8909d74",
+      "bSourceSha256": "7169fd25c97b1626f8d719a4a06a93276ba3e6f49384db6ce2d789354eeb5cfa",
+      "decision": "retained-distinct-motion",
+      "reason": "Blur-to-sharp rounded square versus scale-plus360degree rotation on a circular mark.",
+      "evidence": [
+        "src/imported/logo-blur-reveal.tsx",
+        "src/imported/logo-scale-rotate.tsx"
+      ]
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_logo_scale_rotate",
+      "aSourceSha256": "ef821aafe9018d59cfa5b601bb2081e7bab07922d457debf4e10010f943b759e",
+      "bSourceSha256": "7169fd25c97b1626f8d719a4a06a93276ba3e6f49384db6ce2d789354eeb5cfa",
+      "decision": "retained-distinct-motion",
+      "reason": "Vertical drop with squash/stretch versus circular scale-and-rotate entrance.",
+      "evidence": [
+        "src/imported/logo-bounce-drop.tsx",
+        "src/imported/logo-scale-rotate.tsx"
+      ]
+    },
+    {
+      "a": "rve_logo_fade_reveal",
+      "b": "rve_logo_glitch_reveal",
+      "aSourceSha256": "7a4db88ca1d67f273018eea7d18d77efa2078c37e7eaa57d3e2bf2078fcd7c5a",
+      "bSourceSha256": "aebd1333d40a9caa596f4b6d491d10ee018de917f52951e79cc3314db9d7c4ec",
+      "decision": "retained-distinct-motion",
+      "reason": "Opacity/scale fade versus separated RGB channel offsets that settle into a clean mark.",
+      "evidence": [
+        "src/imported/logo-fade-reveal.tsx",
+        "src/imported/logo-glitch-reveal.tsx"
+      ]
+    },
+    {
+      "a": "rve_logo_fade_reveal",
+      "b": "rve_logo_spin_reveal",
+      "aSourceSha256": "7a4db88ca1d67f273018eea7d18d77efa2078c37e7eaa57d3e2bf2078fcd7c5a",
+      "bSourceSha256": "eb033353b284891cdc82cab64ca04eab0da97a306409fa09593bffb776418350",
+      "decision": "retained-distinct-motion",
+      "reason": "Rounded-square fade/scale versus circular3D rotateY reveal.",
+      "evidence": [
+        "src/imported/logo-fade-reveal.tsx",
+        "src/imported/logo-spin-reveal.tsx"
+      ]
+    },
+    {
+      "a": "rve_logo_glitch_reveal",
+      "b": "rve_logo_spin_reveal",
+      "aSourceSha256": "aebd1333d40a9caa596f4b6d491d10ee018de917f52951e79cc3314db9d7c4ec",
+      "bSourceSha256": "eb033353b284891cdc82cab64ca04eab0da97a306409fa09593bffb776418350",
+      "decision": "retained-distinct-motion",
+      "reason": "RGB-channel displacement versus3D rotateY entrance; different mark shapes.",
+      "evidence": [
+        "src/imported/logo-glitch-reveal.tsx",
+        "src/imported/logo-spin-reveal.tsx"
+      ]
+    },
+    {
+      "a": "rve_push_transition",
+      "b": "rve_whip_pan",
+      "aSourceSha256": "f0929de8b3f059e926b939eb607dbb84306934bdbb2a0e3bed735cdbda8807b3",
+      "bSourceSha256": "5fe771bce2e4d9ecc7218271d750e07853d1b9bd7bf45d800381f1a67eb4e79a",
+      "decision": "retained-distinct-motion",
+      "reason": "Spring horizontal push starts at0.8seconds; whip pan runs1.0\u20131.4seconds with nonuniform scaleX stretch.",
+      "evidence": [
+        "src/imported/push-transition.tsx",
+        "src/imported/whip-pan.tsx"
+      ]
+    }
+  ]
+}

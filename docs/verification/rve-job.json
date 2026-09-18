@@ -1,0 +1,53 @@
+{
+  "generationId": "509d9aaf-94ae-4c01-b91d-f84b029db4b3",
+  "jobId": "095049e2-c800-4cbf-9294-4b41da266571",
+  "templateId": "rve_animated_list",
+  "status": "completed",
+  "costClass": "render_only",
+  "normalizedInputs": {},
+  "definitionFingerprint": "08b2f4454b67f7dcf8927f5bb8e9072f8de9314ab7a825a82bd98d12e2cb8c97",
+  "duration": 15,
+  "aspectRatio": "9:16",
+  "creditsEstimated": 15,
+  "creditsCharged": 15,
+  "outputs": [
+    {
+      "assetId": "2cd4b0dd-15e3-40a2-813b-0468bec62894",
+      "role": "output_video",
+      "mimeType": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "durationSeconds": 15.0,
+      "sizeBytes": 206125,
+      "file": "rve-job.mp4",
+      "sha256": "80a6c4c883231e53d935f458fade77c61f668070a033069c6949d35fb04725a1"
+    },
+    {
+      "assetId": "a8efc799-6e03-4ff5-acb5-49ceca249c57",
+      "role": "thumbnail",
+      "mimeType": "image/webp",
+      "width": 720,
+      "height": 1280,
+      "durationSeconds": null,
+      "sizeBytes": 7476,
+      "file": "rve-job.webp",
+      "sha256": "42c978c193fd951f20a0cbb030c0d69acbf818d7ca7e469c599365b8f0a9f96c"
+    }
+  ],
+  "ledger": [
+    {
+      "kind": "generation_reserve",
+      "availableDelta": -15,
+      "reservedDelta": 15
+    },
+    {
+      "kind": "generation_charge",
+      "availableDelta": 0,
+      "reservedDelta": -15
+    }
+  ],
+  "historyVerified": true,
+  "jobState": "done",
+  "customTextVerified": false,
+  "note": "Real no-input Animated List pipeline render; custom input propagation is separately verified by importer gates."
+}

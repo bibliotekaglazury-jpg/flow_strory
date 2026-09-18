@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(PLAYWRIGHT_BASE_URL=http://127.0.0.1:3010 pnpm exec playwright test tests/auto-planning-loader.spec.ts)"
+    ]
+  }
+}

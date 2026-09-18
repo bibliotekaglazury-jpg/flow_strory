@@ -1,0 +1,29 @@
+[
+  {
+    "id": "physical-product", "language": "en", "format": "product_demo",
+    "brief": "Create a 15-second English ad for Luma Soap, a handmade lavender soap bar in a paper wrap. Audience: adults choosing small gifts. Objective: collection visits. Show the supplied original test product illustration. Do not research; these are all the offer facts.",
+    "offer": "Luma Soap", "audience": "Adults choosing small gifts", "objective": "Collection visits",
+    "facts": ["Handmade lavender soap bar", "Paper wrap"], "required_terms": ["soap"],
+    "forbidden_claims": ["clinically proven", "cures", "dermatologist approved", "50% off"],
+    "acceptable_mechanisms": ["gift-reveal", "sensory-discovery", "wrapping-transformation"],
+    "image": true
+  },
+  {
+    "id": "local-service", "language": "en", "format": "auto",
+    "brief": "Create a 15-second English concept for Still Room, a local massage service. Objective: appointment enquiries. The only known service fact is that it offers massage; ask one useful question if needed. Do not invent location, price, treatments, qualifications or medical outcomes.",
+    "offer": "Still Room massage", "audience": null, "objective": "Appointment enquiries",
+    "facts": ["Local massage service"], "required_terms": ["massage"],
+    "forbidden_claims": ["cures", "licensed therapist", "Warsaw", "guaranteed pain relief", "$49"],
+    "acceptable_mechanisms": ["pause-in-the-day", "arrival-and-exhale", "quiet-contrast"],
+    "image": false
+  },
+  {
+    "id": "online-course", "language": "en", "format": "problem_solution",
+    "brief": "Create a 15-second English lead ad for First Phrase, an online beginner Spanish course. It offers short recorded lessons and speaking exercises. Audience: adults hesitant to start speaking. Objective: signups for the course information list. Do not research. Do not invent fluency deadlines, accreditation, price or guarantees.",
+    "offer": "First Phrase Spanish course", "audience": "Adults hesitant to start speaking",
+    "objective": "Course information list signups", "facts": ["Short recorded lessons", "Speaking exercises"],
+    "required_terms": ["spanish"], "forbidden_claims": ["fluent in", "accredited", "guaranteed", "50% off"],
+    "acceptable_mechanisms": ["hesitation-to-first-word", "conversation-rehearsal", "small-step-reveal"],
+    "image": false
+  }
+]

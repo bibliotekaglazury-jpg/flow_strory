@@ -1,0 +1,125 @@
+.chat-mode {
+  margin: 16px 0 12px;
+}
+.video-chat {
+  color: var(--ink);
+  min-width: 0;
+}
+.chat-heading,
+.recipe-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.chat-heading {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.chat-messages {
+  max-height: 220px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 4px 0;
+}
+.chat-empty {
+  color: var(--muted);
+  margin: 4px 0 12px;
+}
+.chat-message {
+  padding: 8px 12px;
+  margin: 4px 0;
+  border-left: 2px solid var(--line);
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.chat-message[data-role="user"] {
+  background: #f6f8fa;
+}
+.chat-composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  border: 1px solid #0b1118;
+  border-radius: var(--radius-md);
+  padding: 14px;
+}
+.workspace .chat-composer textarea {
+  border: 0;
+  background: transparent;
+  min-height: 104px;
+  padding: 6px 8px;
+  flex: 1;
+  min-width: 0;
+  font-size: 18px;
+  line-height: 1.55;
+}
+.chat-composer button {
+  min-height: 44px;
+  flex-shrink: 0;
+}
+.chat-composer .chat-send {
+  min-width: 104px;
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.chat-composer .chat-send:disabled {
+  cursor: not-allowed;
+  background: #0b1118;
+  color: #fff;
+  opacity: 1;
+}
+.recipe-summary {
+  margin-top: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.recipe-summary p {
+  margin: 4px 0;
+}
+.recipe-summary span,
+.recipe-actions span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.recipe-summary summary {
+  cursor: pointer;
+  padding: 8px 0;
+}
+.recipe-summary dt {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.recipe-summary dd {
+  margin: 0 0 6px;
+}
+.recipe-apply {
+  border: 1px solid var(--ink);
+  border-radius: var(--radius-md);
+  background: var(--workspace);
+  padding: 10px 14px;
+  min-height: 44px;
+  white-space: nowrap;
+}
+.recipe-actions {
+  justify-content: flex-start;
+  padding-bottom: 8px;
+}
+@media (max-width: 600px) {
+  .recipe-actions {
+    flex-wrap: wrap;
+  }
+  .chat-messages {
+    max-height: 260px;
+  }
+  .workspace .chat-composer textarea {
+    font-size: 18px;
+  }
+}

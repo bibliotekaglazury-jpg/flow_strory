@@ -1,0 +1,34 @@
+FROM python:3.12-slim-bookworm
+
+# ffmpeg for media checks and transcription audio; the rest are the shared libraries the
+# Remotion headless Chrome shell needs on Debian to render Subtitle Studio and template exports.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ffmpeg ca-certificates \
+       libnss3 libdbus-1-3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 \
+       libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libasound2 libpango-1.0-0 \
+       libcairo2 libexpat1 libx11-6 libxext6 libxcb1 libstdc++6 fonts-liberation \
+    && rm -rf /var/lib/apt/lists/*
+
+# Node for the Remotion renderer subprocess (render_node_path defaults to "node").
+COPY --from=node:24-bookworm-slim /usr/local/bin/node /usr/local/bin/node
+COPY --from=node:24-bookworm-slim /usr/local/lib/node_modules /usr/local/lib/node_modules
+RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm
+
+# Renderer packages pinned by the root package.json, plus its Chrome shell, installed once
+# at build time so a render never downloads anything while a user waits.
+WORKDIR /workspace
+COPY package.json ./package.json
+RUN npm install --no-audit --no-fund --no-package-lock \
+    && node -e "require('@remotion/renderer').ensureBrowser().then(() => console.log('Chrome shell ready'))"
+COPY scripts/subtitles /workspace/scripts/subtitles
+
+WORKDIR /workspace/apps/api
+COPY apps/api/pyproject.toml ./
+COPY apps/api/app ./app
+RUN pip install --no-cache-dir .
+COPY apps/api/alembic ./alembic
+COPY apps/api/alembic.ini ./
+COPY packages/video-templates /workspace/packages/video-templates
+
+EXPOSE 8000
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]

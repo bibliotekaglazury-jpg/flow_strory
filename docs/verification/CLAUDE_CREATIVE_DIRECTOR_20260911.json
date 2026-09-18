@@ -1,0 +1,63 @@
+{
+  "status": "single_control_passed",
+  "plannedCalls": 10,
+  "maximumCents": 100.0,
+  "results": [
+    {
+      "case": "physical-product",
+      "turn": 1,
+      "injectedEvidence": false,
+      "outcome": "CHAT_INVALID_RESPONSE",
+      "latencySeconds": 89.456
+    },
+    {
+      "case": "physical-product",
+      "turn": 2,
+      "injectedEvidence": false,
+      "outcome": "CHAT_INVALID_RESPONSE",
+      "latencySeconds": 72.275
+    },
+    {
+      "case": "physical-product",
+      "turn": 3,
+      "injectedEvidence": false,
+      "outcome": "CHAT_INVALID_RESPONSE",
+      "latencySeconds": 90.307
+    },
+    {
+      "case": "physical-product-control-after-schema-fix",
+      "turn": 1,
+      "injectedEvidence": false,
+      "outcome": "PASS_AUTOMATED",
+      "checks": {
+        "schema": true,
+        "candidateQuality": true,
+        "language": true,
+        "requiredFacts": true,
+        "forbiddenClaims": true,
+        "newMechanism": true,
+        "duration": true
+      },
+      "mechanism": "reveal-unwrap",
+      "inputTokens": 9149,
+      "outputTokens": 4680,
+      "rounds": 2,
+      "estimatedCents": 6.5098
+    }
+  ],
+  "qualityValidated": false,
+  "manualReviewRequired": [
+    "context comprehension",
+    "factual grounding beyond fixture terms",
+    "target relevance",
+    "hook",
+    "visual action",
+    "15-second feasibility",
+    "spoken-language fidelity",
+    "distinct story mechanisms"
+  ],
+  "videoGenerationRun": false,
+  "spentCents": 43.88460000000001,
+  "reservedCents": 0,
+  "automatedChecksPassed": true
+}

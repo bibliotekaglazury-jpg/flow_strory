@@ -1,0 +1,2 @@
+# macOS Intel development wheel compatibility; production resolves its platform wheels.
+cryptography<46

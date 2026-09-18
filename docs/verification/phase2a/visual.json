@@ -1,0 +1,54 @@
+[
+  {
+    "name": "templates-desktop",
+    "route": "/templates",
+    "width": 1440,
+    "height": 1000,
+    "errors": [],
+    "overflow": false,
+    "importedThumbnails": 61,
+    "exampleVideo": null
+  },
+  {
+    "name": "templates-mobile",
+    "route": "/templates",
+    "width": 390,
+    "height": 844,
+    "errors": [],
+    "overflow": false,
+    "importedThumbnails": 61,
+    "exampleVideo": null
+  },
+  {
+    "name": "create-desktop",
+    "route": "/",
+    "width": 1222,
+    "height": 1287,
+    "errors": [],
+    "overflow": false,
+    "importedThumbnails": 0,
+    "exampleVideo": {
+      "width": 720,
+      "height": 1280,
+      "duration": 10.005,
+      "played": true,
+      "error": null
+    }
+  },
+  {
+    "name": "create-mobile",
+    "route": "/",
+    "width": 390,
+    "height": 844,
+    "errors": [],
+    "overflow": false,
+    "importedThumbnails": 0,
+    "exampleVideo": {
+      "width": 720,
+      "height": 1280,
+      "duration": 10.005,
+      "played": true,
+      "error": null
+    }
+  }
+]

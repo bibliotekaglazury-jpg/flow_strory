@@ -1,0 +1,141 @@
+:root {
+  --bg: #06131c;
+  --cyan-1: rgba(38, 148, 174, 0.56);
+  --cyan-2: rgba(20, 92, 115, 0.34);
+  --amber-1: rgba(205, 122, 58, 0.48);
+  --amber-2: rgba(120, 66, 36, 0.30);
+  --lime: rgba(216, 255, 47, 0.26);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 11, 17, 1) 0%,
+      rgba(5, 17, 25, 0.98) 38%,
+      rgba(5, 16, 24, 0.88) 100%
+    );
+  isolation: isolate;
+}
+
+/* Blue / teal ambient mass */
+.hero .glow-cyan {
+  position: absolute;
+  z-index: -5;
+  width: 720px;
+  height: 580px;
+  right: 7%;
+  top: -18%;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      ellipse at center,
+      var(--cyan-1) 0%,
+      var(--cyan-2) 30%,
+      rgba(13, 54, 69, 0.16) 48%,
+      transparent 72%
+    );
+  filter: blur(58px);
+  transform: rotate(-14deg) scale(1.18, 1);
+  opacity: 0.95;
+}
+
+/* Warm amber cinematic bloom */
+.hero .glow-amber {
+  position: absolute;
+  z-index: -4;
+  width: 620px;
+  height: 520px;
+  right: -4%;
+  top: 8%;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      ellipse at center,
+      var(--amber-1) 0%,
+      var(--amber-2) 28%,
+      rgba(89, 46, 24, 0.18) 48%,
+      transparent 72%
+    );
+  filter: blur(68px);
+  transform: rotate(12deg) scale(1.08, 1.12);
+  opacity: 0.9;
+  mix-blend-mode: screen;
+}
+
+/* Additional blue depth */
+.hero .glow-depth {
+  position: absolute;
+  z-index: -6;
+  width: 820px;
+  height: 680px;
+  left: 26%;
+  top: 10%;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(12, 72, 91, 0.26) 0%,
+      rgba(7, 43, 57, 0.18) 34%,
+      transparent 70%
+    );
+  filter: blur(86px);
+  transform: rotate(-8deg);
+}
+
+/* Small lime halo */
+.hero .glow-lime {
+  position: absolute;
+  z-index: -3;
+  width: 300px;
+  height: 240px;
+  right: 3%;
+  top: 13%;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at center,
+      var(--lime) 0%,
+      rgba(216, 255, 47, 0.10) 30%,
+      transparent 72%
+    );
+  filter: blur(46px);
+  opacity: 0.85;
+}
+
+/* Dark vignette */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(1, 7, 11, 0.70) 0%,
+      rgba(1, 7, 11, 0.18) 37%,
+      rgba(1, 7, 11, 0.04) 62%,
+      rgba(1, 7, 11, 0.34) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.18) 0%,
+      transparent 38%,
+      rgba(0, 0, 0, 0.18) 100%
+    );
+}
+
+/* Film grain */
+.hero .grain {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.055;
+  mix-blend-mode: soft-light;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}

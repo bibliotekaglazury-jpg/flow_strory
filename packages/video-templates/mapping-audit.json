@@ -1,0 +1,1095 @@
+[
+  {
+    "id": "rve_animated_list",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_animated_text",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 497,
+        "original": "Hello Remotion"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_area_chart",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 6167,
+        "original": "Performance Metrics"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_blinds_transition",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1287,
+        "original": "Scene B"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1401,
+        "original": "Behind the blinds"
+      },
+      {
+        "field": "body",
+        "sourceStart": 3295,
+        "original": "Scene A"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_bokeh_circles",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_bounce_text",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1883,
+        "original": "Start Building"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2256,
+        "original": "Theres never been a better time"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_bubble_pop_text",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 497,
+        "original": "HELLO"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_camera_shake",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1526,
+        "original": "IMPACT"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1969,
+        "original": "Camera shake with decaying amplitude"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_card_flip",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1500,
+        "original": "Remotion 👋"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2058,
+        "original": "Back"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_chapter_title",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1453,
+        "original": "Chapter"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2857,
+        "original": "The Beginning"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_chart_animation",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 5022,
+        "original": "Monthly Performance"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 5411,
+        "original": "Data visualization for 2023"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_cinematic_title_intro",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1678,
+        "original": "Your Story Begins"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2209,
+        "original": "A Cinematic Experience"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_circular_progress",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_clock_wipe",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1339,
+        "original": "Scene B"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1453,
+        "original": "Revealed by clock wipe"
+      },
+      {
+        "field": "body",
+        "sourceStart": 2812,
+        "original": "Scene A"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_comparison_chart",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 2457,
+        "original": "Performance Comparison"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 3872,
+        "original": "Before"
+      },
+      {
+        "field": "body",
+        "sourceStart": 5339,
+        "original": "After"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_countdown_intro",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 2902,
+        "original": "GO!"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_countdown_timer",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_credits_roll",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_cross_dissolve",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1402,
+        "original": "Scene A"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1516,
+        "original": "Dissolving away..."
+      },
+      {
+        "field": "body",
+        "sourceStart": 2274,
+        "original": "Scene B"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_donut_chart",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 2240,
+        "original": "Completion Rate"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 4197,
+        "original": "Completion Rate"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_end_card",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 2197,
+        "original": "Thanks for Watching"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2721,
+        "original": "Subscribe for More"
+      },
+      {
+        "field": "body",
+        "sourceStart": 3468,
+        "original": "STUDIO CREATIVE"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_fade_through_black",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1889,
+        "original": "Scene 1"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2003,
+        "original": "Fading out..."
+      },
+      {
+        "field": "body",
+        "sourceStart": 2756,
+        "original": "Scene 2"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_film_burn",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1447,
+        "original": "Film Burn Effect"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1570,
+        "original": "Light leak overlay"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_floating_bubble_text",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1631,
+        "original": "Floating"
+      }
+    ],
+    "corrections": [
+      "CSS rotation -> frame-driven transform"
+    ]
+  },
+  {
+    "id": "rve_gallery_grid",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_geometric_patterns",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_glitch_text",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1041,
+        "original": "GLITCH"
+      },
+      {
+        "field": "headline",
+        "sourceStart": 1284,
+        "original": "GLITCH"
+      },
+      {
+        "field": "headline",
+        "sourceStart": 1356,
+        "original": "GLITCH"
+      }
+    ],
+    "corrections": [
+      "RGB and clean copies share one field; settled company/tagline text is mapped"
+    ]
+  },
+  {
+    "id": "rve_gradient_shift",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_grid_pulse",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_image_carousel",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_image_comparison_slider",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1394,
+        "original": "After"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2039,
+        "original": "Before"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_image_zoom_reveal",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1905,
+        "original": "Featured Image"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_iris_transition",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1823,
+        "original": "Scene B"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1943,
+        "original": "Iris opening..."
+      },
+      {
+        "field": "body",
+        "sourceStart": 2944,
+        "original": "Scene A"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_ken_burns",
+    "fields": [],
+    "corrections": [
+      "External photo excluded; original neutral artwork",
+      "next/image/CSS keyframes -> Remotion Img/frame transforms"
+    ]
+  },
+  {
+    "id": "rve_letterbox_reveal",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1200,
+        "original": "CINEMATIC"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1462,
+        "original": "A letterbox reveal"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_line_chart",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 5489,
+        "original": "Revenue Growth"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_liquid_wave",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_logo_blur_reveal",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1822,
+        "original": "LOGO"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2174,
+        "original": "Company Name"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_logo_bounce_drop",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 2042,
+        "original": "LOGO"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2394,
+        "original": "Company Name"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_logo_fade_reveal",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1977,
+        "original": "LOGO"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2400,
+        "original": "Company Name"
+      },
+      {
+        "field": "body",
+        "sourceStart": 2696,
+        "original": "Your tagline here"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_logo_glitch_reveal",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 2898,
+        "original": "LOGO"
+      },
+      {
+        "field": "headline",
+        "sourceStart": 3522,
+        "original": "LOGO"
+      },
+      {
+        "field": "headline",
+        "sourceStart": 4144,
+        "original": "LOGO"
+      },
+      {
+        "field": "headline",
+        "sourceStart": 4749,
+        "original": "LOGO"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 5134,
+        "original": "Company Name"
+      },
+      {
+        "field": "body",
+        "sourceStart": 5375,
+        "original": "Your tagline here"
+      }
+    ],
+    "corrections": [
+      "RGB and clean copies share one field; settled company/tagline text is mapped"
+    ]
+  },
+  {
+    "id": "rve_logo_scale_rotate",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1910,
+        "original": "LOGO"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2262,
+        "original": "Company Name"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_logo_spin_reveal",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 2176,
+        "original": "LOGO"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2628,
+        "original": "Company Name"
+      },
+      {
+        "field": "body",
+        "sourceStart": 2924,
+        "original": "Your tagline here"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_logo_split_reveal",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 2103,
+        "original": "LO"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2886,
+        "original": "GO"
+      },
+      {
+        "field": "body",
+        "sourceStart": 3236,
+        "original": "Company Name"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_logo_stroke_draw",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 2997,
+        "original": "Company Name"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_logo_typewriter",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 227,
+        "original": "ACME STUDIO"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_lower_third",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 2407,
+        "original": "John Smith"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2749,
+        "original": "Senior Producer"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_masonry_gallery",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_matrix_rain",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_morph_transition",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1766,
+        "original": "Scene A"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1880,
+        "original": "Morphing away..."
+      },
+      {
+        "field": "body",
+        "sourceStart": 2717,
+        "original": "Scene B"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_noise_grain",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1718,
+        "original": "Film Grain Overlay"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1843,
+        "original": "Subtle noise texture effect"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_notification_pop",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1479,
+        "original": "Notifications"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_parallax_pan",
+    "fields": [],
+    "corrections": [
+      "External photo excluded; original neutral artwork",
+      "next/image/CSS keyframes -> Remotion Img/frame transforms"
+    ]
+  },
+  {
+    "id": "rve_particle_explosion",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_photo_stack",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_picture_in_picture",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 979,
+        "original": "Main Content"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1751,
+        "original": "Speaker"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_pie_chart",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 2085,
+        "original": "Market Share"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_pixel_transition",
+    "fields": [],
+    "corrections": [
+      "Removed wall-clock CSS transitions; existing frame values control motion"
+    ]
+  },
+  {
+    "id": "rve_polaroid_frame",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1609,
+        "original": "Summer 2024"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_popping_text",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 509,
+        "original": "BINGO!"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_progress_bars",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1764,
+        "original": "Skills Overview"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_progress_steps",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1201,
+        "original": "Project Timeline"
+      }
+    ],
+    "corrections": [
+      "Removed wall-clock CSS transitions; existing frame values control motion"
+    ]
+  },
+  {
+    "id": "rve_pulsing_text",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 500,
+        "original": "Pulse"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_push_transition",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1483,
+        "original": "Scene A"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1597,
+        "original": "Being pushed out..."
+      },
+      {
+        "field": "body",
+        "sourceStart": 2494,
+        "original": "Scene B"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_quote_card",
+    "fields": [
+      {
+        "field": "testimonial",
+        "sourceStart": 1629,
+        "original": "Design is not just what it looks like. Design is how it works."
+      },
+      {
+        "field": "author",
+        "sourceStart": 2027,
+        "original": "— Steve Jobs"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_rotating_carousel",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1197,
+        "original": "Our Features"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_slide_text",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1143,
+        "original": "Sliding Text!"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_slide_wipe",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1457,
+        "original": "New Scene"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1573,
+        "original": "Revealed underneath"
+      },
+      {
+        "field": "body",
+        "sourceStart": 2429,
+        "original": "Old Scene"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_sound_wave",
+    "fields": [],
+    "corrections": [
+      "Removed wall-clock CSS transitions; existing frame values control motion"
+    ]
+  },
+  {
+    "id": "rve_split_screen",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1633,
+        "original": "Panel A"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1845,
+        "original": "Left side content slides in from the left edge"
+      },
+      {
+        "field": "body",
+        "sourceStart": 2501,
+        "original": "Panel B"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_spotlight_reveal",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1753,
+        "original": "REVEALED"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1935,
+        "original": "Spotlight reveal transition"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_starfield",
+    "fields": [],
+    "corrections": []
+  },
+  {
+    "id": "rve_stat_counter",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 2276,
+        "original": "Total Users"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 3295,
+        "original": "This Month"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_subscribe_reminder",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1053,
+        "original": "Your Video Content"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2293,
+        "original": "Subscribe"
+      },
+      {
+        "field": "body",
+        "sourceStart": 2511,
+        "original": "@CreativeStudio"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_text_highlight",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 501,
+        "original": "Build amazing videos with code"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_title_split",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1454,
+        "original": "CREATIVE"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1898,
+        "original": "STUDIO"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_typewriter_subtitle",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 456,
+        "original": "I like typing..."
+      }
+    ],
+    "corrections": [
+      "Seeded frame/index randomness; removed wall-clock transition"
+    ]
+  },
+  {
+    "id": "rve_vignette_pulse",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 998,
+        "original": "Your Content Here"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1122,
+        "original": "Vignette pulses around the edges"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_whip_pan",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1833,
+        "original": "Scene A"
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 1947,
+        "original": "Blue content"
+      },
+      {
+        "field": "body",
+        "sourceStart": 2857,
+        "original": "Scene B"
+      }
+    ],
+    "corrections": []
+  },
+  {
+    "id": "rve_zoom_pulse",
+    "fields": [],
+    "corrections": [
+      "External photo excluded; original neutral artwork",
+      "next/image/CSS keyframes -> Remotion Img/frame transforms"
+    ]
+  },
+  {
+    "id": "rve_zoom_through",
+    "fields": [
+      {
+        "field": "headline",
+        "sourceStart": 1861,
+        "original": "Zooming In..."
+      },
+      {
+        "field": "subheadline",
+        "sourceStart": 2696,
+        "original": "Arriving..."
+      }
+    ],
+    "corrections": []
+  }
+]

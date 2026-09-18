@@ -1,0 +1,1222 @@
+{
+  "repository": "https://github.com/reactvideoeditor/remotion-templates",
+  "commit": "6209b724798e48ff395f8df1a6fa2d26082372b5",
+  "files": [
+    {
+      "id": "animated-list",
+      "path": "templates/animated-list.tsx",
+      "sha256": "5c4223bfac9fad5fdd3c616b2866da8db366bfd6e609b0a1d0ad65ef742ac60b",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "animated-text",
+      "path": "templates/animated-text.tsx",
+      "sha256": "771dd5bc6936deca55c29afd64c77475272f2f22f3c2f936e7d3dd694f625fac",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "area-chart",
+      "path": "templates/area-chart.tsx",
+      "sha256": "c1f6d8bee1da76349ab02bd8da62badfa6ea26ebe1616f303dcc298c9babb974",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "blinds-transition",
+      "path": "templates/blinds-transition.tsx",
+      "sha256": "a491bbf7cb23e78ff7c645b9aec6e12b11ef104b448be191552b0ebd4b080735",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "bokeh-circles",
+      "path": "templates/bokeh-circles.tsx",
+      "sha256": "df6320f1ba2b3d92f0496f9ec2f617ce4b68ebe47654440d9937b7fc3a0460ca",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "bounce-text",
+      "path": "templates/bounce-text.tsx",
+      "sha256": "25bed369553944dddbfe501499d408651b314997d48e16966d184852289aff92",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "bubble-pop-text",
+      "path": "templates/bubble-pop-text.tsx",
+      "sha256": "ac5fcf91ee18b1fc1b22212ccbc471424d0b8e501b3f4a0198179818c0dedbfd",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "camera-shake",
+      "path": "templates/camera-shake.tsx",
+      "sha256": "9277aa695bff5cc2bcc161f14a3af27f56b2e420034001eb36814e519e2f90c9",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "card-flip",
+      "path": "templates/card-flip.tsx",
+      "sha256": "e8711455ac4bf7e28879c22dd6724e4d16d09ebe7e6c9ebd39bd3ee37eba25d7",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "chapter-title",
+      "path": "templates/chapter-title.tsx",
+      "sha256": "8b8cbd4abe801c4ba45e536c2d7e3a65df035ff7a7299eb049f85891a6b1ec65",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "chart-animation",
+      "path": "templates/chart-animation.tsx",
+      "sha256": "f9084e8960f7152869b6d9396503aedafa9c7d925d0925f0e2226b66b802e264",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "cinematic-title-intro",
+      "path": "templates/cinematic-title-intro.tsx",
+      "sha256": "beaba9fae335ee08d7828d7b7ad3542017849c2aa04ad6f7e5029b4d64709d86",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "circular-progress",
+      "path": "templates/circular-progress.tsx",
+      "sha256": "8ef1e6fe308a4e212be32c7987c91cc6e423c800edcac973ae49edad3749e396",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "clock-wipe",
+      "path": "templates/clock-wipe.tsx",
+      "sha256": "9bdac8c98c08b3c382a8d9cb97689df9b31467fec0a3ed8598e86412f9abb058",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "comparison-chart",
+      "path": "templates/comparison-chart.tsx",
+      "sha256": "2e132dae9d23a1156318ca8a0f89a94120ba0252b02088ea7b0d6a37651afe23",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "countdown-intro",
+      "path": "templates/countdown-intro.tsx",
+      "sha256": "b576846129980c4cb520c6827a2c7d036500d943c1c41df5df66fc3a2a6439f5",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "countdown-timer",
+      "path": "templates/countdown-timer.tsx",
+      "sha256": "994caa4a677d70475d4a21cddf31c63aeb3cb24e935efcb241f02b0d6db15167",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "credits-roll",
+      "path": "templates/credits-roll.tsx",
+      "sha256": "6944e005bd96b90d0c50742b09b026bd89ecb0fcd3e3c54972339a522f43436d",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "cross-dissolve",
+      "path": "templates/cross-dissolve.tsx",
+      "sha256": "4b9c023e2ac7ef7a9ee535e19228207451aa2b60f42c93dfa194f22a6e981ca9",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "donut-chart",
+      "path": "templates/donut-chart.tsx",
+      "sha256": "17ae26376188313d29d44a9139276f7a2d1c4f18e738434d01b85ec88a69f8d7",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "end-card",
+      "path": "templates/end-card.tsx",
+      "sha256": "024565783e13116aefc68c7a186f39b0a4f0cfaf55638ab637849b603d02ace5",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "fade-through-black",
+      "path": "templates/fade-through-black.tsx",
+      "sha256": "cc459ea9c6acb0580b72bb21269722cc6fdbb79bf4d46e8255eb71d4ac2c1fcc",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "film-burn",
+      "path": "templates/film-burn.tsx",
+      "sha256": "77b3f95b782dd2d027a0ed93fac1fb17e73f67021d0d01780e722cfd1233801d",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "floating-bubble-text",
+      "path": "templates/floating-bubble-text.tsx",
+      "sha256": "cce11d7de5f88d6dfa8da3c5dd0463eb4dc66fdbe7044573a7328e2159cb3a7e",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": true,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "gallery-grid",
+      "path": "templates/gallery-grid.tsx",
+      "sha256": "2b3c5f41317fbaa5c8be366dc5c02f81c7325223719f474bac3c6bc009c8b9e5",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "geometric-patterns",
+      "path": "templates/geometric-patterns.tsx",
+      "sha256": "dbcb0a36bf193096ccfea1282cb88dbfb451cd2bdbd6a27a88d9b7f171467219",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "glitch-text",
+      "path": "templates/glitch-text.tsx",
+      "sha256": "062dc33860575ebaa0671ac1d7db8f8b15d8363d4774de060317720126e4d380",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "gradient-shift",
+      "path": "templates/gradient-shift.tsx",
+      "sha256": "c916e83e13dd103967eb4990b43d47407c94769af360b33e08752bed06b476d9",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "grid-pulse",
+      "path": "templates/grid-pulse.tsx",
+      "sha256": "4f3420a51652b6292fcb52c595f8b05e03273117c3b2838e2d4cbab748c79f6d",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "image-carousel",
+      "path": "templates/image-carousel.tsx",
+      "sha256": "9ce63614454dd2a1f6d5e1c68d38c540b88bf8123c5d06afe8931eac2010aac0",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "image-comparison-slider",
+      "path": "templates/image-comparison-slider.tsx",
+      "sha256": "c2514eb97a50e2aeba20ae877994d0e2bac780951b260dbc7478733cb1317f8e",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "image-zoom-reveal",
+      "path": "templates/image-zoom-reveal.tsx",
+      "sha256": "04f63b6a62288aa9b1c43b15bfbd461de2b61434833043c6ca7fe3d6e178813f",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "iris-transition",
+      "path": "templates/iris-transition.tsx",
+      "sha256": "0355bdc73daeb8c95e47fae8d3b87a8e0e50b6cbfa45e5341c84f57f950c48bf",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "ken-burns",
+      "path": "templates/ken-burns.tsx",
+      "sha256": "08efe31718f3185f7609195a49b148f74d606645f6baa497922aa7b3c45cbb22",
+      "imports": [
+        "react"
+      ],
+      "urls": [
+        "https://images.unsplash.com/photo-1682687220742-aba13b6e50ba"
+      ],
+      "cssAnimation": true,
+      "nondeterministicRandom": false,
+      "hasProps": true,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "letterbox-reveal",
+      "path": "templates/letterbox-reveal.tsx",
+      "sha256": "1e97e03dca8b15b07526b64167b08ac0f73f89989e8a9ad5f6389fb3bb20a689",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "line-chart",
+      "path": "templates/line-chart.tsx",
+      "sha256": "b86980ffef14adbe369c4d98871129fdea8e29f8424444f769bef4bf57ada0bb",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "liquid-wave",
+      "path": "templates/liquid-wave.tsx",
+      "sha256": "ad9a93ac7ec1666b9a01bb18c692364027c9f9dee350c7e445f7b24f25e60bf7",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "logo-blur-reveal",
+      "path": "templates/logo-blur-reveal.tsx",
+      "sha256": "5a5d399703556593abd2789f4ac96c6bcfc37ebcd5939c493fe7dc2ac3888084",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "logo-bounce-drop",
+      "path": "templates/logo-bounce-drop.tsx",
+      "sha256": "91c51feee2e1f4a47d6c2a3b1ebd9a0371764b9b149d91006250eab8b1176bad",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "logo-fade-reveal",
+      "path": "templates/logo-fade-reveal.tsx",
+      "sha256": "002a42c3fe983aada4795a507009eeb5b0caa701b214b11e8718946eb3a2c0dd",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "logo-glitch-reveal",
+      "path": "templates/logo-glitch-reveal.tsx",
+      "sha256": "7f9f42510900f0821ef0befe4efe08e8f82a6343a486aa07836a1f8eec96efe5",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "logo-scale-rotate",
+      "path": "templates/logo-scale-rotate.tsx",
+      "sha256": "be5f77a228d420933628e504a3eca2b4ab6acc6056e55c35b0d09887340d2dcb",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "logo-spin-reveal",
+      "path": "templates/logo-spin-reveal.tsx",
+      "sha256": "45f9d5be9e7610542ab0522ecf740c95e76e4497b0a3fa1a4bc05bb630c4f9c1",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "logo-split-reveal",
+      "path": "templates/logo-split-reveal.tsx",
+      "sha256": "d280419d81947f2a83f5c327b59b893fa29ff415218f0c115b618542911fa9c1",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "logo-stroke-draw",
+      "path": "templates/logo-stroke-draw.tsx",
+      "sha256": "931bf2e8c0f836406d60a7cead3608d61351ac2cf3f8e209be21e85d05fae275",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "logo-typewriter",
+      "path": "templates/logo-typewriter.tsx",
+      "sha256": "08fd4c13be17472604c747f2e78b03b508ec8fcad0442ddc6d46c02b4cce43a4",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "lower-third",
+      "path": "templates/lower-third.tsx",
+      "sha256": "9f210a83d93231a9db1a243eb0146fa810291fa31973f56411ed09a321caee4c",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "masonry-gallery",
+      "path": "templates/masonry-gallery.tsx",
+      "sha256": "50c5d7878e84a99b9c3c54cb587e9388e17e3d482514dfbc8ba96e0be4c7939e",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "matrix-rain",
+      "path": "templates/matrix-rain.tsx",
+      "sha256": "58d7da9cb03223cc32986b0380972c2599de15eb6f3979b36e19c858279a23e0",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "morph-transition",
+      "path": "templates/morph-transition.tsx",
+      "sha256": "20deed4f417b66115c2e9373abf370cec5e605e54a9055e029f11634951eec5d",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "noise-grain",
+      "path": "templates/noise-grain.tsx",
+      "sha256": "b34fdb726dda51bbc41c32b002f1abbd9b6568a319291882aab758b156397c0e",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "notification-pop",
+      "path": "templates/notification-pop.tsx",
+      "sha256": "bc3397bec9e87e41c317dfefb1b82955ed2c107d394c5eee2bd1c8376c0a1f07",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "parallax-pan",
+      "path": "templates/parallax-pan.tsx",
+      "sha256": "37297957eb101280a87ea2131cbc6cd6f0a945bd678d6bdc2b196c4138b9f112",
+      "imports": [
+        "react",
+        "next/image"
+      ],
+      "urls": [
+        "https://images.pexels.com/photos/1644724/pexels-photo-1644724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
+      "cssAnimation": true,
+      "nondeterministicRandom": false,
+      "hasProps": true,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "particle-explosion",
+      "path": "templates/particle-explosion.tsx",
+      "sha256": "d7491b92fed10a42fcb7dc2f71eb287933439442b4af3d87c8fe237502e3e90b",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "photo-stack",
+      "path": "templates/photo-stack.tsx",
+      "sha256": "3649e1d7bd1b9f79ae2e22985c0caec148343d0dbf8dbab5856239e16352dbdf",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "picture-in-picture",
+      "path": "templates/picture-in-picture.tsx",
+      "sha256": "2a171d15c461fb1b3e06413fafa5804f234a076dfc2918efc5705e07f02e0111",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "pie-chart",
+      "path": "templates/pie-chart.tsx",
+      "sha256": "34c14ba44a4f555fad62c6e52b534092a9204e3d2fc8fffd49f0b8126c42d244",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "pixel-transition",
+      "path": "templates/pixel-transition.tsx",
+      "sha256": "35bd98cd32946d62dafb9e0641e7a058b5643d805e3171d52efc215751ba8247",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "polaroid-frame",
+      "path": "templates/polaroid-frame.tsx",
+      "sha256": "fb0b6a5338b73851507ccfb807795f123fb7ec736485c2ca2c28cfd67aa40585",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "popping-text",
+      "path": "templates/popping-text.tsx",
+      "sha256": "47145626f9d52cb7aae81148119efd1ffa22bb27fdfc93e8b6f24e6a2e5748d2",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "progress-bars",
+      "path": "templates/progress-bars.tsx",
+      "sha256": "586017b8bceacadf6f5ba90090b697723fc371cb9ead6f910ee560aad194808b",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "progress-steps",
+      "path": "templates/progress-steps.tsx",
+      "sha256": "d0a40079205e3da97a74823e85ea8ee66b8e4acc678e0dafa9dd4c7dab37e13e",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "pulsing-text",
+      "path": "templates/pulsing-text.tsx",
+      "sha256": "216dbad9f49c7ec67ac83cbe4bcac21fff81636b0c6058d567f9e9704215885d",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "push-transition",
+      "path": "templates/push-transition.tsx",
+      "sha256": "b543cd8518bdd3fe6cb73918bae9b791e89baecc481104ca643d461c99ec593e",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "quote-card",
+      "path": "templates/quote-card.tsx",
+      "sha256": "66c126ec8a20caef718d8dfe9f4fb7b2781b3a5b4322b3e02b1fbfaf34c9a226",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "rotating-carousel",
+      "path": "templates/rotating-carousel.tsx",
+      "sha256": "3fe60e444f7b51d7d25e9afba52664adf17f5bad3aa4448d0928a191845708a5",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "slide-text",
+      "path": "templates/slide-text.tsx",
+      "sha256": "49020d51a2f7a44f26c178eb0200a1e4d860953db7d871ae3adc68a518c5f808",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "slide-wipe",
+      "path": "templates/slide-wipe.tsx",
+      "sha256": "efebbd8c1e09f429a61051c60375e8ca12df6c9638cf3d549f573b739a98e242",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "sound-wave",
+      "path": "templates/sound-wave.tsx",
+      "sha256": "41b075de8d9ca5c21c92625735c7eb5aff220203c8f7517245e38841ecf1bfaa",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "split-screen",
+      "path": "templates/split-screen.tsx",
+      "sha256": "4b4394efcc796d35aa1f63be4eeef82317e160f0542d08a5498683c538ef31b9",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "spotlight-reveal",
+      "path": "templates/spotlight-reveal.tsx",
+      "sha256": "4434a6531caf0c6e6c2379fae98b9667d79a864a6cbe19090b0a4b4f0aca64ae",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "starfield",
+      "path": "templates/starfield.tsx",
+      "sha256": "10b8c8bd901a163a753c6b518096c9036f798b4d4e711a9fac5638e20a287797",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "stat-counter",
+      "path": "templates/stat-counter.tsx",
+      "sha256": "dcd489950012ab452c72af86cf1ededc5a58809e0d0b81da5ef50800469a2781",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "subscribe-reminder",
+      "path": "templates/subscribe-reminder.tsx",
+      "sha256": "91abecc19e38a9dea216e7eecbe23a9967d86334659f184fdd1b96d23918f71c",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "text-highlight",
+      "path": "templates/text-highlight.tsx",
+      "sha256": "dc2a4279b8e8f1fa4e5d707f415fd1e276d978352bed5baa0fdd56f166035a37",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "title-split",
+      "path": "templates/title-split.tsx",
+      "sha256": "7cccac874fc15c6891ee9285f08682c0f998d4a7ee9d0d8ec7d9f3b690e93d2c",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "typewriter-subtitle",
+      "path": "templates/typewriter-subtitle.tsx",
+      "sha256": "7e7ca6ae94cbc6112bff6ae8a8c2ebf14b69440657732d7e1a92e75a12639605",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [
+        "https://www.reactvideoeditor.com"
+      ],
+      "cssAnimation": false,
+      "nondeterministicRandom": true,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "vignette-pulse",
+      "path": "templates/vignette-pulse.tsx",
+      "sha256": "0a7155727ae661296910820585d819620a0bedab6e6b97a9294621bf233ac28c",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "whip-pan",
+      "path": "templates/whip-pan.tsx",
+      "sha256": "4e494ecac390f0496cefa46d11fbd0c04626c6a8e64f963125db68ba79d5d30b",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "zoom-pulse",
+      "path": "templates/zoom-pulse.tsx",
+      "sha256": "a5327a158dfeed52680bc54c179788fab5b42d1c818792a9a54495def12a1e80",
+      "imports": [
+        "react",
+        "next/image"
+      ],
+      "urls": [
+        "https://images.pexels.com/photos/1726310/pexels-photo-1726310.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
+      "cssAnimation": true,
+      "nondeterministicRandom": false,
+      "hasProps": true,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    },
+    {
+      "id": "zoom-through",
+      "path": "templates/zoom-through.tsx",
+      "sha256": "96f768a9ac55c79e04bfd64dde8e799df9f42d2997765be94fdce020f404533a",
+      "imports": [
+        "remotion"
+      ],
+      "urls": [],
+      "cssAnimation": false,
+      "nondeterministicRandom": false,
+      "hasProps": false,
+      "license": "MIT (repository README declaration)",
+      "status": "discovered"
+    }
+  ]
+}

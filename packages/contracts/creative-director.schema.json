@@ -1,0 +1,477 @@
+{
+  "$defs": {
+    "AudioDirection": {
+      "additionalProperties": false,
+      "properties": {
+        "native": {
+          "const": true,
+          "title": "Native",
+          "type": "boolean"
+        },
+        "speechRequired": {
+          "title": "Speechrequired",
+          "type": "boolean"
+        },
+        "voiceTone": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Voicetone",
+          "type": "string"
+        },
+        "ambience": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Ambience",
+          "type": "string"
+        },
+        "music": {
+          "anyOf": [
+            {
+              "maxLength": 1500,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Music"
+        }
+      },
+      "required": [
+        "native",
+        "speechRequired",
+        "voiceTone",
+        "ambience",
+        "music"
+      ],
+      "title": "AudioDirection",
+      "type": "object"
+    },
+    "Beat": {
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "exclusiveMaximum": 15,
+          "minimum": 0,
+          "title": "Start",
+          "type": "number"
+        },
+        "end": {
+          "exclusiveMinimum": 0,
+          "maximum": 15,
+          "title": "End",
+          "type": "number"
+        },
+        "purpose": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Purpose",
+          "type": "string"
+        },
+        "action": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Action",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "purpose",
+        "action"
+      ],
+      "title": "Beat",
+      "type": "object"
+    },
+    "ClipPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "const": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "const": 15,
+          "title": "End",
+          "type": "integer"
+        },
+        "role": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Role",
+          "type": "string"
+        },
+        "narrativePurpose": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Narrativepurpose",
+          "type": "string"
+        },
+        "visualDirection": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Visualdirection",
+          "type": "string"
+        },
+        "spokenScript": {
+          "maxLength": 1500,
+          "title": "Spokenscript",
+          "type": "string"
+        },
+        "camera": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Camera",
+          "type": "string"
+        },
+        "performance": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Performance",
+          "type": "string"
+        },
+        "audio": {
+          "$ref": "#/$defs/AudioDirection"
+        },
+        "beats": {
+          "items": {
+            "$ref": "#/$defs/Beat"
+          },
+          "maxItems": 5,
+          "title": "Beats",
+          "type": "array"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "role",
+        "narrativePurpose",
+        "visualDirection",
+        "spokenScript",
+        "camera",
+        "performance",
+        "audio",
+        "beats"
+      ],
+      "title": "ClipPlan",
+      "type": "object"
+    },
+    "CreativePlan": {
+      "additionalProperties": false,
+      "properties": {
+        "creativeMechanism": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Creativemechanism"
+        },
+        "objective": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Objective",
+          "type": "string"
+        },
+        "audience": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Audience",
+          "type": "string"
+        },
+        "offer": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Offer",
+          "type": "string"
+        },
+        "coreTension": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Coretension",
+          "type": "string"
+        },
+        "creativeAngle": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Creativeangle",
+          "type": "string"
+        },
+        "selectedFormat": {
+          "enum": [
+            "ugc_review",
+            "product_unboxing",
+            "problem_solution",
+            "product_demo",
+            "testimonial",
+            "trending_style",
+            "hook_cta",
+            "before_after",
+            "self_presentation"
+          ],
+          "title": "Selectedformat",
+          "type": "string"
+        },
+        "hookStrategy": {
+          "enum": [
+            "verbal",
+            "visual",
+            "situational",
+            "emotional",
+            "curiosity",
+            "contradiction",
+            "demonstration",
+            "pattern_interrupt"
+          ],
+          "title": "Hookstrategy",
+          "type": "string"
+        },
+        "tone": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Tone",
+          "type": "string"
+        },
+        "visualMode": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Visualmode",
+          "type": "string"
+        },
+        "language": {
+          "pattern": "^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$",
+          "title": "Language",
+          "type": "string"
+        },
+        "spokenLanguage": {
+          "pattern": "^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$",
+          "title": "Spokenlanguage",
+          "type": "string"
+        },
+        "characterConcepts": {
+          "items": {
+            "maxLength": 1500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 3,
+          "title": "Characterconcepts",
+          "type": "array"
+        },
+        "productPresentation": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Productpresentation",
+          "type": "string"
+        },
+        "audioDirection": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Audiodirection",
+          "type": "string"
+        },
+        "featuredItems": {
+          "items": {
+            "maxLength": 1500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 4,
+          "title": "Featureditems",
+          "type": "array"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        }
+      },
+      "required": [
+        "objective",
+        "audience",
+        "offer",
+        "coreTension",
+        "creativeAngle",
+        "selectedFormat",
+        "hookStrategy",
+        "tone",
+        "visualMode",
+        "language",
+        "spokenLanguage",
+        "characterConcepts",
+        "productPresentation",
+        "audioDirection",
+        "confidence"
+      ],
+      "title": "CreativePlan",
+      "type": "object"
+    },
+    "VideoPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "duration": {
+          "const": 15,
+          "title": "Duration",
+          "type": "integer"
+        },
+        "aspectRatio": {
+          "enum": [
+            "9:16",
+            "1:1",
+            "16:9"
+          ],
+          "title": "Aspectratio",
+          "type": "string"
+        },
+        "language": {
+          "title": "Language",
+          "type": "string"
+        },
+        "spokenLanguage": {
+          "title": "Spokenlanguage",
+          "type": "string"
+        },
+        "continuity": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Continuity",
+          "type": "string"
+        },
+        "characters": {
+          "items": {
+            "maxLength": 1500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 3,
+          "title": "Characters",
+          "type": "array"
+        },
+        "productRules": {
+          "items": {
+            "maxLength": 1500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 5,
+          "title": "Productrules",
+          "type": "array"
+        },
+        "constraints": {
+          "items": {
+            "maxLength": 1500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 6,
+          "title": "Constraints",
+          "type": "array"
+        },
+        "negativeRules": {
+          "items": {
+            "maxLength": 1500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 12,
+          "title": "Negativerules",
+          "type": "array"
+        },
+        "clips": {
+          "items": {
+            "$ref": "#/$defs/ClipPlan"
+          },
+          "maxItems": 1,
+          "minItems": 1,
+          "title": "Clips",
+          "type": "array"
+        }
+      },
+      "required": [
+        "duration",
+        "aspectRatio",
+        "language",
+        "spokenLanguage",
+        "continuity",
+        "characters",
+        "productRules",
+        "constraints",
+        "negativeRules",
+        "clips"
+      ],
+      "title": "VideoPlan",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "assistantMessage": {
+      "maxLength": 1500,
+      "minLength": 1,
+      "title": "Assistantmessage",
+      "type": "string"
+    },
+    "assessment": {
+      "enum": [
+        "enough_to_plan",
+        "clarification_needed"
+      ],
+      "title": "Assessment",
+      "type": "string"
+    },
+    "clarificationQuestion": {
+      "anyOf": [
+        {
+          "maxLength": 1500,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Clarificationquestion"
+    },
+    "creativePlan": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CreativePlan"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "videoPlan": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/VideoPlan"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "assistantMessage",
+    "assessment",
+    "clarificationQuestion",
+    "creativePlan",
+    "videoPlan"
+  ],
+  "title": "DirectorAnswer",
+  "type": "object"
+}

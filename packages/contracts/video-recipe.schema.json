@@ -1,0 +1,239 @@
+{
+  "$defs": {
+    "RecipeScene": {
+      "additionalProperties": false,
+      "properties": {
+        "duration": {
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Duration",
+          "type": "integer"
+        },
+        "description": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "duration",
+        "description"
+      ],
+      "title": "RecipeScene",
+      "type": "object"
+    },
+    "SpokenContent": {
+      "additionalProperties": false,
+      "properties": {
+        "required": {
+          "title": "Required",
+          "type": "boolean"
+        },
+        "language": {
+          "maxLength": 35,
+          "pattern": "^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$",
+          "title": "Language",
+          "type": "string"
+        },
+        "dialogue": {
+          "maxLength": 1500,
+          "title": "Dialogue",
+          "type": "string"
+        }
+      },
+      "required": [
+        "required",
+        "language",
+        "dialogue"
+      ],
+      "title": "SpokenContent",
+      "type": "object"
+    },
+    "VideoRecipe": {
+      "additionalProperties": false,
+      "properties": {
+        "language": {
+          "default": "en",
+          "maxLength": 35,
+          "pattern": "^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$",
+          "title": "Language",
+          "type": "string"
+        },
+        "spokenContent": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SpokenContent"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "intent": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Intent",
+          "type": "string"
+        },
+        "concept": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Concept",
+          "type": "string"
+        },
+        "duration": {
+          "enum": [
+            15,
+            20,
+            30
+          ],
+          "title": "Duration",
+          "type": "integer"
+        },
+        "aspectRatio": {
+          "enum": [
+            "9:16",
+            "1:1",
+            "16:9"
+          ],
+          "title": "Aspectratio",
+          "type": "string"
+        },
+        "qualityTier": {
+          "const": "auto",
+          "title": "Qualitytier",
+          "type": "string"
+        },
+        "subject": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Subject",
+          "type": "string"
+        },
+        "product": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Product",
+          "type": "string"
+        },
+        "visualStyle": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Visualstyle",
+          "type": "string"
+        },
+        "camera": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Camera",
+          "type": "string"
+        },
+        "performance": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Performance",
+          "type": "string"
+        },
+        "scenes": {
+          "items": {
+            "$ref": "#/$defs/RecipeScene"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Scenes",
+          "type": "array"
+        },
+        "audio": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Audio",
+          "type": "string"
+        },
+        "constraints": {
+          "items": {
+            "maxLength": 1500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 12,
+          "title": "Constraints",
+          "type": "array"
+        },
+        "negativeRules": {
+          "items": {
+            "maxLength": 1500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 12,
+          "title": "Negativerules",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intent",
+        "concept",
+        "duration",
+        "aspectRatio",
+        "qualityTier",
+        "subject",
+        "product",
+        "visualStyle",
+        "camera",
+        "performance",
+        "scenes",
+        "audio",
+        "constraints",
+        "negativeRules"
+      ],
+      "title": "VideoRecipe",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "assistantMessage": {
+      "maxLength": 1500,
+      "minLength": 1,
+      "title": "Assistantmessage",
+      "type": "string"
+    },
+    "needsMoreInformation": {
+      "title": "Needsmoreinformation",
+      "type": "boolean"
+    },
+    "clarificationQuestion": {
+      "anyOf": [
+        {
+          "maxLength": 1500,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Clarificationquestion"
+    },
+    "recipe": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/VideoRecipe"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "assistantMessage",
+    "needsMoreInformation",
+    "clarificationQuestion",
+    "recipe"
+  ],
+  "title": "RecipeAnswer",
+  "type": "object"
+}

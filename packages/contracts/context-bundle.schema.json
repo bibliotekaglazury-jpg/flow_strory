@@ -1,0 +1,421 @@
+{
+  "$defs": {
+    "AssetContext": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "role": {
+          "title": "Role",
+          "type": "string"
+        },
+        "mimeType": {
+          "title": "Mimetype",
+          "type": "string"
+        },
+        "width": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Width"
+        },
+        "height": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Height"
+        },
+        "durationSeconds": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Durationseconds"
+        },
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label"
+        }
+      },
+      "required": [
+        "id",
+        "role",
+        "mimeType",
+        "width",
+        "height",
+        "durationSeconds"
+      ],
+      "title": "AssetContext",
+      "type": "object"
+    },
+    "PriorConcept": {
+      "additionalProperties": false,
+      "properties": {
+        "revision": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Revision",
+          "type": "integer"
+        },
+        "contextFingerprint": {
+          "default": "",
+          "maxLength": 128,
+          "title": "Contextfingerprint",
+          "type": "string"
+        },
+        "mechanism": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Mechanism"
+        },
+        "summary": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Summary",
+          "type": "string"
+        },
+        "status": {
+          "default": "selected",
+          "enum": [
+            "selected",
+            "rejected"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "mechanism",
+        "summary"
+      ],
+      "title": "PriorConcept",
+      "type": "object"
+    },
+    "SourceFact": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "maxLength": 2048,
+          "title": "Source",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 24000,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "text"
+      ],
+      "title": "SourceFact",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "1",
+      "default": "1",
+      "title": "Version",
+      "type": "string"
+    },
+    "userText": {
+      "maxLength": 4000,
+      "title": "Usertext",
+      "type": "string"
+    },
+    "brief": {
+      "maxLength": 4000,
+      "title": "Brief",
+      "type": "string"
+    },
+    "productUrl": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Producturl"
+    },
+    "offer": {
+      "anyOf": [
+        {
+          "maxLength": 1500,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Offer"
+    },
+    "product": {
+      "anyOf": [
+        {
+          "maxLength": 1500,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Product"
+    },
+    "service": {
+      "anyOf": [
+        {
+          "maxLength": 1500,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Service"
+    },
+    "audience": {
+      "anyOf": [
+        {
+          "maxLength": 1500,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Audience"
+    },
+    "objective": {
+      "anyOf": [
+        {
+          "maxLength": 1500,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Objective"
+    },
+    "benefits": {
+      "items": {
+        "maxLength": 1500,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 12,
+      "title": "Benefits",
+      "type": "array"
+    },
+    "differentiators": {
+      "items": {
+        "maxLength": 1500,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 12,
+      "title": "Differentiators",
+      "type": "array"
+    },
+    "proof": {
+      "items": {
+        "maxLength": 1500,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 12,
+      "title": "Proof",
+      "type": "array"
+    },
+    "CTA": {
+      "anyOf": [
+        {
+          "maxLength": 1500,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Cta"
+    },
+    "brandTone": {
+      "anyOf": [
+        {
+          "maxLength": 1500,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Brandtone"
+    },
+    "availableAssets": {
+      "items": {
+        "$ref": "#/$defs/AssetContext"
+      },
+      "title": "Availableassets",
+      "type": "array"
+    },
+    "selectedFormat": {
+      "anyOf": [
+        {
+          "const": "auto",
+          "type": "string"
+        },
+        {
+          "enum": [
+            "ugc_review",
+            "product_unboxing",
+            "problem_solution",
+            "product_demo",
+            "testimonial",
+            "trending_style",
+            "hook_cta",
+            "before_after",
+            "self_presentation"
+          ],
+          "type": "string"
+        }
+      ],
+      "title": "Selectedformat"
+    },
+    "aspectRatio": {
+      "enum": [
+        "9:16",
+        "1:1",
+        "16:9"
+      ],
+      "title": "Aspectratio",
+      "type": "string"
+    },
+    "requestedLanguage": {
+      "anyOf": [
+        {
+          "pattern": "^[a-z]{2,3}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Requestedlanguage"
+    },
+    "preferredMechanism": {
+      "anyOf": [
+        {
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Preferredmechanism"
+    },
+    "sourceFacts": {
+      "items": {
+        "$ref": "#/$defs/SourceFact"
+      },
+      "title": "Sourcefacts",
+      "type": "array"
+    },
+    "missingFacts": {
+      "items": {
+        "maxLength": 1500,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 12,
+      "title": "Missingfacts",
+      "type": "array"
+    },
+    "conversation": {
+      "items": {
+        "additionalProperties": {
+          "type": "string"
+        },
+        "type": "object"
+      },
+      "title": "Conversation",
+      "type": "array"
+    },
+    "priorConcepts": {
+      "items": {
+        "$ref": "#/$defs/PriorConcept"
+      },
+      "maxItems": 24,
+      "title": "Priorconcepts",
+      "type": "array"
+    }
+  },
+  "required": [
+    "userText",
+    "brief",
+    "productUrl",
+    "availableAssets",
+    "selectedFormat",
+    "aspectRatio",
+    "sourceFacts",
+    "conversation"
+  ],
+  "title": "ContextBundle",
+  "type": "object"
+}

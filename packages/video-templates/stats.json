@@ -1,0 +1,104 @@
+{
+  "discovered": 81,
+  "imported": 81,
+  "validated": 81,
+  "enabled": 61,
+  "disabled": 20,
+  "featured": 8,
+  "thumbnails": 81,
+  "previewVideos": 3,
+  "categories": {
+    "Other": 35,
+    "Hooks": 12,
+    "Data / Metrics": 10,
+    "Product": 9,
+    "Before / After": 1,
+    "Branding": 9,
+    "Explainers": 2,
+    "Social Ads": 2,
+    "Testimonials": 1
+  },
+  "failures": [],
+  "curatedDisabled": [
+    {
+      "id": "rve_area_chart",
+      "reason": "Illustrative source metrics are fixed; editable metrics mapping not implemented"
+    },
+    {
+      "id": "rve_chart_animation",
+      "reason": "Illustrative source metrics are fixed; editable metrics mapping not implemented"
+    },
+    {
+      "id": "rve_circular_progress",
+      "reason": "Illustrative source metrics are fixed; editable metrics mapping not implemented"
+    },
+    {
+      "id": "rve_comparison_chart",
+      "reason": "Illustrative source metrics are fixed; editable metrics mapping not implemented"
+    },
+    {
+      "id": "rve_donut_chart",
+      "reason": "Illustrative source metrics are fixed; editable metrics mapping not implemented"
+    },
+    {
+      "id": "rve_gallery_grid",
+      "reason": "Source uses fixed media placeholders; owned image/video layout mapping not implemented"
+    },
+    {
+      "id": "rve_image_carousel",
+      "reason": "Source uses fixed media placeholders; owned image/video layout mapping not implemented"
+    },
+    {
+      "id": "rve_image_comparison_slider",
+      "reason": "Source uses fixed media placeholders; owned image/video layout mapping not implemented"
+    },
+    {
+      "id": "rve_image_zoom_reveal",
+      "reason": "Source uses fixed media placeholders; owned image/video layout mapping not implemented"
+    },
+    {
+      "id": "rve_line_chart",
+      "reason": "Illustrative source metrics are fixed; editable metrics mapping not implemented"
+    },
+    {
+      "id": "rve_masonry_gallery",
+      "reason": "Source uses fixed media placeholders; owned image/video layout mapping not implemented"
+    },
+    {
+      "id": "rve_photo_stack",
+      "reason": "Source uses fixed media placeholders; owned image/video layout mapping not implemented"
+    },
+    {
+      "id": "rve_picture_in_picture",
+      "reason": "Source uses fixed media placeholders; owned image/video layout mapping not implemented"
+    },
+    {
+      "id": "rve_pie_chart",
+      "reason": "Illustrative source metrics are fixed; editable metrics mapping not implemented"
+    },
+    {
+      "id": "rve_polaroid_frame",
+      "reason": "Source uses fixed media placeholders; owned image/video layout mapping not implemented"
+    },
+    {
+      "id": "rve_progress_bars",
+      "reason": "Illustrative source metrics are fixed; editable metrics mapping not implemented"
+    },
+    {
+      "id": "rve_progress_steps",
+      "reason": "Illustrative source metrics are fixed; editable metrics mapping not implemented"
+    },
+    {
+      "id": "rve_rotating_carousel",
+      "reason": "Source uses fixed media placeholders; owned image/video layout mapping not implemented"
+    },
+    {
+      "id": "rve_split_screen",
+      "reason": "Source uses fixed media placeholders; owned image/video layout mapping not implemented"
+    },
+    {
+      "id": "rve_stat_counter",
+      "reason": "Illustrative source metrics are fixed; editable metrics mapping not implemented"
+    }
+  ]
+}

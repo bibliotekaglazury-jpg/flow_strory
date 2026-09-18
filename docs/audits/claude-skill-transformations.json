@@ -1,0 +1,213 @@
+{
+  "version": 1,
+  "reviewer": "Codex implementation agent /root/skills",
+  "reviewed_at": "2026-09-11",
+  "files": [
+    {
+      "id": "customer-research",
+      "source": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/skills/customer-research/SKILL.md",
+      "original_path": "skills/customer-research/SKILL.md",
+      "commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+      "upstream_sha256": "ae4769147f63dd5aea1308a0fddd85473601164893f58111dce738738226317e",
+      "vendored_sha256": "2c4353a9d79261e1678afb1915334fdb5693c6a9ab9ae4c3663cba33b12c7b16",
+      "vendored_path": "vendor/marketingskills/customer-research.md",
+      "rules": {
+        "extract_sections_between": [
+          [
+            "## Mode 1: Analyzing Existing Research Assets",
+            "## Mode 2:"
+          ]
+        ],
+        "remove_everything_outside_selected_sections": true,
+        "remove_exact_lines": [],
+        "replace_exact_text": [
+          [
+            "**Minimum viable sample**: Don't build personas or draw messaging conclusions from fewer than 5 independent data points per segment.",
+            "**Sample limitation**: Fewer than five independent data points per segment cannot establish a validated persona; describe any audience interpretation as provisional."
+          ]
+        ],
+        "prepend": "# Customer research\n\nAdapted from coreyhaines31/marketingskills at 5b2c0007766c6a1cf1d53fd8fc73e979e0821022; MIT license in the adjacent LICENSE file.\n\nThis is a scoped excerpt for creative planning from supplied context only. Examples and numerical claims are illustrative patterns, not facts about the current offer. Only substantiated claims, real deadlines, existing guarantees and supplied testimonials may enter a plan. Missing evidence remains unknown; no research, filesystem access, campaign action, or new business terms are authorized. The application decides questions, tool use, output structure, and candidate count.\n\n"
+      },
+      "diff": "docs/audits/claude-skill-customer-research.diff",
+      "review_decision": "approved"
+    },
+    {
+      "id": "product-marketing",
+      "source": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/skills/product-marketing/SKILL.md",
+      "original_path": "skills/product-marketing/SKILL.md",
+      "commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+      "upstream_sha256": "6dfd6bd485f62448385844cb9eceefcee0977c843d7a1c9e6077590d4e19d1ec",
+      "vendored_sha256": "b1e1d3fa88b295c9730ad6c4cf6b1ea4e543c514a6f96b48d9a64030e2d15a11",
+      "vendored_path": "vendor/marketingskills/product-marketing.md",
+      "rules": {
+        "extract_sections_between": [
+          [
+            "## Sections to Capture",
+            "## Step 3:"
+          ]
+        ],
+        "remove_everything_outside_selected_sections": true,
+        "remove_exact_lines": [],
+        "replace_exact_text": [],
+        "prepend": "# Product marketing\n\nAdapted from coreyhaines31/marketingskills at 5b2c0007766c6a1cf1d53fd8fc73e979e0821022; MIT license in the adjacent LICENSE file.\n\nThis is a scoped excerpt for creative planning from supplied context only. Examples and numerical claims are illustrative patterns, not facts about the current offer. Only substantiated claims, real deadlines, existing guarantees and supplied testimonials may enter a plan. Missing evidence remains unknown; no research, filesystem access, campaign action, or new business terms are authorized. The application decides questions, tool use, output structure, and candidate count.\n\n"
+      },
+      "diff": "docs/audits/claude-skill-product-marketing.diff",
+      "review_decision": "approved"
+    },
+    {
+      "id": "offers",
+      "source": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/skills/offers/SKILL.md",
+      "original_path": "skills/offers/SKILL.md",
+      "commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+      "upstream_sha256": "f27239be82e5d4ad42daa944fad7d0a640b80ca82697ba7399843437a001e5aa",
+      "vendored_sha256": "7b31ad90184db447ee8cb7c49571dd6ed2a8c3174ebc8af4e2cfc5a2979977b1",
+      "vendored_path": "vendor/marketingskills/offers.md",
+      "rules": {
+        "extract_sections_between": [
+          [
+            "## The Value Equation",
+            "## The Anatomy"
+          ],
+          [
+            "## Banned Vocabulary",
+            "## Related Skills"
+          ]
+        ],
+        "remove_everything_outside_selected_sections": true,
+        "remove_exact_lines": [
+          "**For the full framework, examples, and how to diagnose which lever is broken:** see [references/value-equation.md](references/value-equation.md)"
+        ],
+        "replace_exact_text": [],
+        "prepend": "# Offer framing\n\nAdapted from coreyhaines31/marketingskills at 5b2c0007766c6a1cf1d53fd8fc73e979e0821022; MIT license in the adjacent LICENSE file.\n\nThis is a scoped excerpt for creative planning from supplied context only. Examples and numerical claims are illustrative patterns, not facts about the current offer. Only substantiated claims, real deadlines, existing guarantees and supplied testimonials may enter a plan. Missing evidence remains unknown; no research, filesystem access, campaign action, or new business terms are authorized. The application decides questions, tool use, output structure, and candidate count.\n\n"
+      },
+      "diff": "docs/audits/claude-skill-offers.diff",
+      "review_decision": "approved"
+    },
+    {
+      "id": "ad-creative",
+      "source": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/skills/ad-creative/SKILL.md",
+      "original_path": "skills/ad-creative/SKILL.md",
+      "commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+      "upstream_sha256": "e5b0cd0bc6bf55ab2abd02ca399fa996b67324cbda0dd1a719689e9322ba6808",
+      "vendored_sha256": "5bc35ebeeb30f83fd9916bcd6de0a5500789ed38e76fa57e0250f0f14b728b22",
+      "vendored_path": "vendor/marketingskills/ad-creative.md",
+      "rules": {
+        "extract_sections_between": [
+          [
+            "### Step 1: Define Your Angles",
+            "### Step 3: Validate"
+          ],
+          [
+            "## Writing Quality Standards",
+            "## Output Formats"
+          ]
+        ],
+        "remove_everything_outside_selected_sections": true,
+        "remove_exact_lines": [],
+        "replace_exact_text": [],
+        "prepend": "# Ad creative\n\nAdapted from coreyhaines31/marketingskills at 5b2c0007766c6a1cf1d53fd8fc73e979e0821022; MIT license in the adjacent LICENSE file.\n\nThis is a scoped excerpt for creative planning from supplied context only. Examples and numerical claims are illustrative patterns, not facts about the current offer. Only substantiated claims, real deadlines, existing guarantees and supplied testimonials may enter a plan. Missing evidence remains unknown; no research, filesystem access, campaign action, or new business terms are authorized. The application decides questions, tool use, output structure, and candidate count.\n\n"
+      },
+      "diff": "docs/audits/claude-skill-ad-creative.diff",
+      "review_decision": "approved"
+    },
+    {
+      "id": "copywriting",
+      "source": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/5b2c0007766c6a1cf1d53fd8fc73e979e0821022/skills/copywriting/SKILL.md",
+      "original_path": "skills/copywriting/SKILL.md",
+      "commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+      "upstream_sha256": "ce18137ae31ab37f261078501431649865ab6b403054d97490754e82acb002d8",
+      "vendored_sha256": "ca892af658369ce1d6e0700a6235fd8737559f7e8f78b9232b2d4b4d81be3fb0",
+      "vendored_path": "vendor/marketingskills/copywriting.md",
+      "rules": {
+        "extract_sections_between": [
+          [
+            "## Copywriting Principles",
+            "## Best Practices"
+          ],
+          [
+            "## CTA Copy Guidelines",
+            "## Page-Specific Guidance"
+          ],
+          [
+            "## Voice and Tone",
+            "## Output Format"
+          ]
+        ],
+        "remove_everything_outside_selected_sections": true,
+        "remove_exact_lines": [
+          "**For message-market fit tools** — the \"Now you can\" test, the Human Action Model (discomfort → vision → path), the Perception Gap, and the clarity metrics: See [references/copy-frameworks.md](references/copy-frameworks.md#clarity--message-market-fit)",
+          "For thorough line-by-line review, use the **copy-editing** skill after your draft."
+        ],
+        "replace_exact_text": [
+          [
+            "If you have to choose between clear and creative, choose clear. Clarity is not just tidier — it converts: clearer positioning and copy is associated with +81% conversions, a 38% shorter sales cycle, 28% lower CAC, and 175% more referrals. When a reader has to decode your line, you've lost them.",
+            "If you have to choose between clear and creative, choose clear. When a reader has to decode your line, you've lost them."
+          ]
+        ],
+        "prepend": "# Copywriting\n\nAdapted from coreyhaines31/marketingskills at 5b2c0007766c6a1cf1d53fd8fc73e979e0821022; MIT license in the adjacent LICENSE file.\n\nThis is a scoped excerpt for creative planning from supplied context only. Examples and numerical claims are illustrative patterns, not facts about the current offer. Only substantiated claims, real deadlines, existing guarantees and supplied testimonials may enter a plan. Missing evidence remains unknown; no research, filesystem access, campaign action, or new business terms are authorized. The application decides questions, tool use, output structure, and candidate count.\n\n"
+      },
+      "diff": "docs/audits/claude-skill-copywriting.diff",
+      "review_decision": "approved"
+    },
+    {
+      "id": "hook-method",
+      "source": "https://raw.githubusercontent.com/DV0x/creative-ad-agent/751b9e5146604dc65049bd0f62dcbdad6212f8a3/agent/.claude/skills/hook-methodology/SKILL.md",
+      "original_path": "agent/.claude/skills/hook-methodology/SKILL.md",
+      "commit": "751b9e5146604dc65049bd0f62dcbdad6212f8a3",
+      "upstream_sha256": "8ccd130cd56da6dfed9fcecfad98c2bd47481960522fb77ae5216d0b8a8012fe",
+      "vendored_sha256": "bd61b2ae922f840801730c83be5dd1d3757a40dbeaaab44200db38b702fe924e",
+      "vendored_path": "vendor/creative-ad-agent/hook-method.md",
+      "rules": {
+        "extract_sections_between": [
+          [
+            "## Core Philosophy",
+            "## Output Format"
+          ],
+          [
+            "## Validation Checklist",
+            "## Remember"
+          ]
+        ],
+        "remove_everything_outside_selected_sections": true,
+        "remove_exact_lines": [],
+        "replace_exact_text": [
+          [
+            "Read `agent/files/research/{brand}_research.md`",
+            "Use only the evidence already supplied in context."
+          ],
+          [
+            "**You MUST extract from EVERY section. No exceptions.**",
+            "Consider each available evidence category; missing categories remain unknown."
+          ],
+          [
+            "**If any checkbox is unchecked, go back and extract from that section.**",
+            "Unchecked categories indicate missing evidence, not permission to fetch or fabricate it."
+          ],
+          [
+            "WHY IT WORKS: [Psychology — pattern interrupt? self-reference? open loop?]",
+            "FIT: [Concise source-to-audience match; no hidden reasoning]"
+          ],
+          [
+            "WHY IT WORKS: Pattern interrupt (unexpected speed) + Tension (bad vs. good)",
+            "FIT: Contrast links the sourced speed claim to the audience pain."
+          ]
+        ],
+        "prepend": "# Research-first hooks\n\nAdapted from DV0x/creative-ad-agent at 751b9e5146604dc65049bd0f62dcbdad6212f8a3; MIT license in the adjacent LICENSE file.\n\nThis is a scoped excerpt for creative planning from supplied context only. Examples and numerical claims are illustrative patterns, not facts about the current offer. Only substantiated claims, real deadlines, existing guarantees and supplied testimonials may enter a plan. Missing evidence remains unknown; no research, filesystem access, campaign action, or new business terms are authorized. The application decides questions, tool use, output structure, and candidate count.\n\n"
+      },
+      "diff": "docs/audits/claude-skill-hook-method.diff",
+      "review_decision": "approved"
+    }
+  ],
+  "licenses": [
+    {
+      "repository": "marketingskills",
+      "sha256": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591",
+      "adaptations": "none"
+    },
+    {
+      "repository": "creative-ad-agent",
+      "sha256": "af159194ab479e30f26865f58fddad995167f887a350270d3fd5da92954326ca",
+      "adaptations": "none"
+    }
+  ]
+}

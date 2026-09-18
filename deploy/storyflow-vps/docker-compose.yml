@@ -1,0 +1,77 @@
+name: storyflow-web
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ugc
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ugc
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ugc -d ugc"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+
+  api:
+    build:
+      context: ../..
+      dockerfile: apps/api/Dockerfile.runtime
+    restart: unless-stopped
+    env_file: .env.production
+    command: ["sh", "-c", "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000 --no-access-log"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    ports:
+      - "172.18.0.1:3800:8000"
+    volumes:
+      - storyflow_assets:/data/assets
+
+  worker:
+    build:
+      context: ../..
+      dockerfile: apps/api/Dockerfile.runtime
+    restart: unless-stopped
+    env_file: .env.production
+    command: ["python", "-m", "app.worker"]
+    depends_on:
+      api:
+        condition: service_started
+    volumes:
+      - storyflow_assets:/data/assets
+
+  web:
+    build:
+      context: ../..
+      dockerfile: apps/web/Dockerfile
+      args:
+        NEXT_PUBLIC_USE_MOCK_API: "false"
+        API_INTERNAL_URL: http://api:8000
+    restart: unless-stopped
+    environment:
+      NEXT_PUBLIC_USE_MOCK_API: "false"
+      AUTH_MODE: mock
+      API_INTERNAL_URL: http://api:8000
+    depends_on:
+      api:
+        condition: service_started
+    ports:
+      - "172.18.0.1:3300:3000"
+
+volumes:
+  postgres_data:
+  redis_data:
+  storyflow_assets:

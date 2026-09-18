@@ -1,0 +1,1933 @@
+{
+  "method": "64-bit difference hash, Hamming <=4; then mean RGB difference <=0.5 on128x72 pixels",
+  "candidates": [
+    {
+      "a": "rve_animated_text",
+      "b": "rve_bubble_pop_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 4.313512731481482,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_animated_text",
+      "b": "rve_letterbox_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 10.884729456018519,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_animated_text",
+      "b": "rve_popping_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 4.94263599537037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_animated_text",
+      "b": "rve_text_highlight",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 16.72435619212963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_animated_text",
+      "b": "rve_typewriter_subtitle",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.781177662037037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_blinds_transition",
+      "b": "rve_push_transition",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 0.0865162037037037,
+      "status": "retained-distinct-motion",
+      "note": "Staggered perspective rotateX blinds versus a horizontal spring push; shared destination artwork is intentional."
+    },
+    {
+      "a": "rve_blinds_transition",
+      "b": "rve_whip_pan",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 0.050383391203703706,
+      "status": "retained-distinct-motion",
+      "note": "Staggered rotateX blinds versus a rapid horizontal pan with scaleX motion stretch."
+    },
+    {
+      "a": "rve_bounce_text",
+      "b": "rve_split_screen",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 71.32454427083333,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_bubble_pop_text",
+      "b": "rve_popping_text",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 4.5991030092592595,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_bubble_pop_text",
+      "b": "rve_text_highlight",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 15.208369502314815,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_camera_shake",
+      "b": "rve_chapter_title",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 2.902850115740741,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_camera_shake",
+      "b": "rve_countdown_intro",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 2.676685474537037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_camera_shake",
+      "b": "rve_logo_typewriter",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 2.8946397569444446,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_chapter_title",
+      "b": "rve_countdown_intro",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 1.1254701967592593,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_chapter_title",
+      "b": "rve_logo_typewriter",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 1.3743851273148149,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cinematic_title_intro",
+      "b": "rve_letterbox_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 13.553421585648149,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_circular_progress",
+      "b": "rve_cross_dissolve",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 2.5893012152777777,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_circular_progress",
+      "b": "rve_logo_blur_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 2.6328125,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_circular_progress",
+      "b": "rve_logo_bounce_drop",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 2.630931712962963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_circular_progress",
+      "b": "rve_logo_fade_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 3.159649884259259,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_circular_progress",
+      "b": "rve_logo_glitch_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 3.190936053240741,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_circular_progress",
+      "b": "rve_logo_scale_rotate",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 2.5831886574074074,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_circular_progress",
+      "b": "rve_logo_spin_reveal",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 3.073603877314815,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_circular_progress",
+      "b": "rve_morph_transition",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 2.4806495949074074,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_circular_progress",
+      "b": "rve_slide_wipe",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 3.0351924189814814,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_circular_progress",
+      "b": "rve_spotlight_reveal",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 18.245478877314813,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_circular_progress",
+      "b": "rve_zoom_through",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 3.0083912037037037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_countdown_timer",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 1.7396556712962963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_cross_dissolve",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.3840060763888888,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_fade_through_black",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 21.033275462962962,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_glitch_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 2.6532841435185186,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_letterbox_reveal",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 8.917426215277779,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_logo_blur_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.7564380787037037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_logo_bounce_drop",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.75390625,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_logo_scale_rotate",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.627025462962963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_logo_split_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 2.0241608796296298,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_logo_stroke_draw",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 0.6610966435185185,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_logo_typewriter",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 0.9222366898148148,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_morph_transition",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.3053023726851851,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_noise_grain",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 25.80808738425926,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_popping_text",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 4.541666666666667,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_progress_steps",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 9.900028935185185,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_pulsing_text",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.390480324074074,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_slide_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 2.3860677083333335,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_slide_wipe",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.8699001736111112,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_subscribe_reminder",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 0.7533275462962963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_intro",
+      "b": "rve_typewriter_subtitle",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.6198640046296295,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_cross_dissolve",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 1.7565465856481481,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_fade_through_black",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 21.928385416666668,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_glitch_text",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 3.013744212962963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_letterbox_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 9.417281539351851,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_logo_blur_reveal",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 1.8416521990740742,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_logo_bounce_drop",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 1.859302662037037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_logo_fade_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 2.6987847222222223,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_logo_glitch_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 2.775860821759259,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_logo_scale_rotate",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 1.8017939814814814,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_logo_spin_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.4775390625,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_logo_split_reveal",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 2.76171875,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_logo_stroke_draw",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.3715277777777777,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_logo_typewriter",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 1.6861979166666667,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_morph_transition",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 1.7616102430555556,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_noise_grain",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 26.539930555555557,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_progress_steps",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 10.887514467592593,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_pulsing_text",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 3.0029658564814814,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_slide_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 3.2170862268518516,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_countdown_timer",
+      "b": "rve_slide_wipe",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 2.1834852430555554,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_credits_roll",
+      "b": "rve_fade_through_black",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 20.63892505787037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_credits_roll",
+      "b": "rve_lower_third",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 8.382414641203704,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_credits_roll",
+      "b": "rve_starfield",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 11.073314525462964,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_credits_roll",
+      "b": "rve_subscribe_reminder",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 0.39037181712962965,
+      "status": "retained-distinct-motion",
+      "note": "Sparse frame silhouettes differ in purpose and motion: vertically scrolling credits versus a bottom-corner subscribe/bell overlay."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_glitch_text",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 2.861942997685185,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_logo_blur_reveal",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 1.6020326967592593,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_logo_bounce_drop",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 1.5992838541666667,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_logo_fade_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.3080512152777777,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_logo_glitch_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.3603153935185186,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_logo_scale_rotate",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 1.5461154513888888,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_logo_spin_reveal",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 2.066550925925926,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_logo_split_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.813838252314815,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_logo_stroke_draw",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 1.1252531828703705,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_logo_typewriter",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.7620442708333333,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_morph_transition",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 0.6456163194444444,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_noise_grain",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 26.05523003472222,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_progress_steps",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 10.236942997685185,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_pulsing_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 2.7741247106481484,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_slide_text",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 3.0668041087962963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_slide_wipe",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 0.7684461805555556,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_cross_dissolve",
+      "b": "rve_spotlight_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 17.777271412037038,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_fade_through_black",
+      "b": "rve_glitch_text",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 22.88179976851852,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_fade_through_black",
+      "b": "rve_letterbox_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 19.18377459490741,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_fade_through_black",
+      "b": "rve_logo_stroke_draw",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 20.854600694444443,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_fade_through_black",
+      "b": "rve_logo_typewriter",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 21.13057002314815,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_fade_through_black",
+      "b": "rve_lower_third",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 28.613642939814813,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_fade_through_black",
+      "b": "rve_noise_grain",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 46.40675636574074,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_fade_through_black",
+      "b": "rve_slide_text",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 22.741102430555557,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_fade_through_black",
+      "b": "rve_starfield",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 9.673394097222221,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_fade_through_black",
+      "b": "rve_subscribe_reminder",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 20.698133680555557,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_floating_bubble_text",
+      "b": "rve_slide_text",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 5.7367983217592595,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_floating_bubble_text",
+      "b": "rve_typewriter_subtitle",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 6.382269965277778,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_letterbox_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 9.950629340277779,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_logo_blur_reveal",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 3.449146412037037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_logo_bounce_drop",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 3.44921875,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_logo_fade_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 4.205946180555555,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_logo_glitch_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 4.242368344907407,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_logo_scale_rotate",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 3.3821614583333335,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_logo_spin_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 4.0283203125,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_logo_split_reveal",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 3.3266059027777777,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_logo_stroke_draw",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.443431712962963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_logo_typewriter",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 2.2609953703703702,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_morph_transition",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 2.8597728587962963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_noise_grain",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 26.115162037037038,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_progress_steps",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 11.55490451388889,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_pulsing_text",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 2.236834490740741,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_slide_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 2.598017939814815,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_glitch_text",
+      "b": "rve_slide_wipe",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 3.1230107060185186,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_ken_burns",
+      "b": "rve_zoom_pulse",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 3.7224030671296298,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_letterbox_reveal",
+      "b": "rve_logo_typewriter",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 8.998155381944445,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_letterbox_reveal",
+      "b": "rve_noise_grain",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 32.36071325231482,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_letterbox_reveal",
+      "b": "rve_popping_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 10.779477719907407,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_letterbox_reveal",
+      "b": "rve_slide_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 10.16626880787037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_letterbox_reveal",
+      "b": "rve_text_highlight",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 21.28030960648148,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_letterbox_reveal",
+      "b": "rve_title_split",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 11.795717592592593,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_letterbox_reveal",
+      "b": "rve_typewriter_subtitle",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 9.236147280092593,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_logo_bounce_drop",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 0.08304398148148148,
+      "status": "retained-distinct-motion",
+      "note": "20px blur resolves over1.5seconds versus spring translateY drop with squash/stretch."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_logo_fade_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.2034866898148149,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_logo_glitch_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.2889539930555556,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_logo_scale_rotate",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 0.2808883101851852,
+      "status": "retained-distinct-motion",
+      "note": "Blur-to-sharp rounded square versus scale-plus360degree rotation on a circular mark."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_logo_spin_reveal",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 1.0330946180555556,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_logo_split_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.6297019675925926,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_logo_stroke_draw",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 1.3359375,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_logo_typewriter",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.9615162037037037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_morph_transition",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 1.621997974537037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_noise_grain",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 26.40625,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_progress_steps",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 10.49927662037037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_pulsing_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 3.320818865740741,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_slide_text",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 3.574146412037037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_slide_wipe",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 1.9749348958333333,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_blur_reveal",
+      "b": "rve_spotlight_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 18.07743778935185,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_logo_fade_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.1615306712962963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_logo_glitch_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.2477936921296295,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_logo_scale_rotate",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 0.20999710648148148,
+      "status": "retained-distinct-motion",
+      "note": "Vertical drop with squash/stretch versus circular scale-and-rotate entrance."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_logo_spin_reveal",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 0.9915726273148148,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_logo_split_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.6472077546296298,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_logo_stroke_draw",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 1.3355758101851851,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_logo_typewriter",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.9618055555555556,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_morph_transition",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 1.626048900462963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_noise_grain",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 26.404441550925927,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_progress_steps",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 10.503472222222221,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_pulsing_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 3.3229890046296298,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_slide_text",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 3.574363425925926,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_slide_wipe",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 1.9790581597222223,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_bounce_drop",
+      "b": "rve_spotlight_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 18.08525028935185,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_fade_reveal",
+      "b": "rve_logo_glitch_reveal",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 0.11852575231481481,
+      "status": "retained-distinct-motion",
+      "note": "Opacity/scale fade versus separated RGB channel offsets that settle into a clean mark."
+    },
+    {
+      "a": "rve_logo_fade_reveal",
+      "b": "rve_logo_scale_rotate",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.2340856481481481,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_fade_reveal",
+      "b": "rve_logo_spin_reveal",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 0.3362630208333333,
+      "status": "retained-distinct-motion",
+      "note": "Rounded-square fade/scale versus circular3D rotateY reveal."
+    },
+    {
+      "a": "rve_logo_fade_reveal",
+      "b": "rve_morph_transition",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.252857349537037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_fade_reveal",
+      "b": "rve_slide_wipe",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.6466652199074074,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_fade_reveal",
+      "b": "rve_spotlight_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 18.32230179398148,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_fade_reveal",
+      "b": "rve_zoom_through",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 2.6731770833333335,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_glitch_reveal",
+      "b": "rve_logo_scale_rotate",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.3185402199074074,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_glitch_reveal",
+      "b": "rve_logo_spin_reveal",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 0.404296875,
+      "status": "retained-distinct-motion",
+      "note": "RGB-channel displacement versus3D rotateY entrance; different mark shapes."
+    },
+    {
+      "a": "rve_logo_glitch_reveal",
+      "b": "rve_morph_transition",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.316550925925926,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_glitch_reveal",
+      "b": "rve_slide_wipe",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.6975549768518516,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_glitch_reveal",
+      "b": "rve_spotlight_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 18.32660590277778,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_glitch_reveal",
+      "b": "rve_zoom_through",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 2.653175636574074,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_scale_rotate",
+      "b": "rve_logo_spin_reveal",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 1.0007595486111112,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_scale_rotate",
+      "b": "rve_logo_split_reveal",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.5558449074074074,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_scale_rotate",
+      "b": "rve_logo_stroke_draw",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 1.2390769675925926,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_scale_rotate",
+      "b": "rve_logo_typewriter",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.8976417824074074,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_scale_rotate",
+      "b": "rve_morph_transition",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 1.5675998263888888,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_scale_rotate",
+      "b": "rve_noise_grain",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 26.298249421296298,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_scale_rotate",
+      "b": "rve_progress_steps",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 10.384114583333334,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_scale_rotate",
+      "b": "rve_pulsing_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 3.2570167824074074,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_scale_rotate",
+      "b": "rve_slide_text",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 3.5068721064814814,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_scale_rotate",
+      "b": "rve_slide_wipe",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 1.9466507523148149,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_scale_rotate",
+      "b": "rve_spotlight_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 18.00661892361111,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_spin_reveal",
+      "b": "rve_morph_transition",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 2.015407986111111,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_spin_reveal",
+      "b": "rve_pulsing_text",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 3.8264973958333335,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_spin_reveal",
+      "b": "rve_slide_wipe",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 2.4033564814814814,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_spin_reveal",
+      "b": "rve_spotlight_reveal",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 18.173755787037038,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_spin_reveal",
+      "b": "rve_zoom_through",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.743670428240741,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_split_reveal",
+      "b": "rve_logo_typewriter",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 2.058955439814815,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_split_reveal",
+      "b": "rve_morph_transition",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.521954571759259,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_split_reveal",
+      "b": "rve_noise_grain",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 26.04607928240741,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_split_reveal",
+      "b": "rve_pulsing_text",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 3.3002025462962963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_split_reveal",
+      "b": "rve_slide_text",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 3.4740306712962963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_split_reveal",
+      "b": "rve_slide_wipe",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 3.2541594328703702,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_stroke_draw",
+      "b": "rve_logo_typewriter",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 0.8092447916666666,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_stroke_draw",
+      "b": "rve_morph_transition",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 0.9654586226851852,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_stroke_draw",
+      "b": "rve_noise_grain",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 25.72800925925926,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_stroke_draw",
+      "b": "rve_progress_steps",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 9.836299189814815,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_stroke_draw",
+      "b": "rve_pulsing_text",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 2.475115740740741,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_stroke_draw",
+      "b": "rve_slide_wipe",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 1.6235170717592593,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_stroke_draw",
+      "b": "rve_starfield",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 11.288990162037036,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_stroke_draw",
+      "b": "rve_subscribe_reminder",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 0.5865885416666666,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_stroke_draw",
+      "b": "rve_typewriter_subtitle",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 1.4565972222222223,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_typewriter",
+      "b": "rve_morph_transition",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.6107855902777777,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_typewriter",
+      "b": "rve_noise_grain",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 25.933955439814813,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_typewriter",
+      "b": "rve_popping_text",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 4.450159143518518,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_typewriter",
+      "b": "rve_progress_steps",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 10.152054398148149,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_typewriter",
+      "b": "rve_pulsing_text",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.1963252314814814,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_typewriter",
+      "b": "rve_slide_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 1.9338831018518519,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_typewriter",
+      "b": "rve_slide_wipe",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.2049696180555554,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_typewriter",
+      "b": "rve_subscribe_reminder",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 0.7853732638888888,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_logo_typewriter",
+      "b": "rve_typewriter_subtitle",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 1.125072337962963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_lower_third",
+      "b": "rve_matrix_rain",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 31.237666377314813,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_lower_third",
+      "b": "rve_starfield",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 19.10474537037037,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_matrix_rain",
+      "b": "rve_starfield",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 46.00871672453704,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_morph_transition",
+      "b": "rve_noise_grain",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 25.88798466435185,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_morph_transition",
+      "b": "rve_progress_steps",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 9.995985243055555,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_morph_transition",
+      "b": "rve_pulsing_text",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 2.731807002314815,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_morph_transition",
+      "b": "rve_slide_text",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.9827473958333335,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_morph_transition",
+      "b": "rve_slide_wipe",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 1.1734664351851851,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_morph_transition",
+      "b": "rve_spotlight_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 17.5703125,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_noise_grain",
+      "b": "rve_progress_steps",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 18.43410011574074,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_noise_grain",
+      "b": "rve_pulsing_text",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 25.90993923611111,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_noise_grain",
+      "b": "rve_slide_text",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 26.388527199074073,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_noise_grain",
+      "b": "rve_slide_wipe",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 26.293872974537038,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_noise_grain",
+      "b": "rve_stat_counter",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 19.374095775462962,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_noise_grain",
+      "b": "rve_subscribe_reminder",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 25.909288194444443,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_photo_stack",
+      "b": "rve_polaroid_frame",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 12.036241319444445,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_photo_stack",
+      "b": "rve_zoom_through",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 7.890842013888889,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_popping_text",
+      "b": "rve_progress_steps",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 12.521195023148149,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_popping_text",
+      "b": "rve_slide_text",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 4.624348958333333,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_popping_text",
+      "b": "rve_text_highlight",
+      "distance": 1,
+      "meanAbsoluteColorDifference": 15.366283275462964,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_popping_text",
+      "b": "rve_typewriter_subtitle",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 4.584201388888889,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_progress_steps",
+      "b": "rve_pulsing_text",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 11.210358796296296,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_progress_steps",
+      "b": "rve_slide_wipe",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 10.424008969907407,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_progress_steps",
+      "b": "rve_text_highlight",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 6.849790219907407,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_progress_steps",
+      "b": "rve_typewriter_subtitle",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 10.778501157407407,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_pulsing_text",
+      "b": "rve_slide_text",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.3984375,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_pulsing_text",
+      "b": "rve_slide_wipe",
+      "distance": 2,
+      "meanAbsoluteColorDifference": 3.0211588541666665,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_pulsing_text",
+      "b": "rve_title_split",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 5.705692997685185,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_push_transition",
+      "b": "rve_whip_pan",
+      "distance": 0,
+      "meanAbsoluteColorDifference": 0.06839554398148148,
+      "status": "retained-distinct-motion",
+      "note": "Spring horizontal push starts at0.8seconds; whip pan runs1.0–1.4seconds with nonuniform scaleX stretch."
+    },
+    {
+      "a": "rve_slide_text",
+      "b": "rve_slide_wipe",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 3.3358289930555554,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_slide_text",
+      "b": "rve_title_split",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 6.040834780092593,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_slide_text",
+      "b": "rve_typewriter_subtitle",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 2.0912181712962963,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_slide_wipe",
+      "b": "rve_spotlight_reveal",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 17.99761284722222,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_split_screen",
+      "b": "rve_starfield",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 88.16109664351852,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_spotlight_reveal",
+      "b": "rve_zoom_through",
+      "distance": 3,
+      "meanAbsoluteColorDifference": 18.58980758101852,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_starfield",
+      "b": "rve_subscribe_reminder",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 11.169126157407407,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    },
+    {
+      "a": "rve_text_highlight",
+      "b": "rve_typewriter_subtitle",
+      "distance": 4,
+      "meanAbsoluteColorDifference": 15.980794270833334,
+      "status": "distinct-pixel-content",
+      "note": "Hash candidates are compared at128x72 RGB; source motion determines whether a shared end layout is redundant."
+    }
+  ]
+}

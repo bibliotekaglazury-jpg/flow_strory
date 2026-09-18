@@ -1,0 +1,32 @@
+{
+  "name": "ugc-studio",
+  "private": true,
+  "packageManager": "pnpm@10.11.1",
+  "scripts": {
+    "dev": "pnpm --filter @ugc/web dev",
+    "build": "pnpm --filter @ugc/web build",
+    "lint": "pnpm --filter @ugc/web lint",
+    "typecheck": "pnpm --filter @ugc/web typecheck",
+    "test": "pnpm --filter @ugc/web test",
+    "test:e2e": "pnpm --filter @ugc/web test:e2e",
+    "templates:rve:import": "node --import tsx scripts/templates/import-rve.ts",
+    "templates:rve:validate": "node --import tsx scripts/templates/validate-rve.ts",
+    "templates:rve:previews": "node --import tsx scripts/templates/generate-rve-previews.ts",
+    "templates:rve:render": "node --import tsx scripts/templates/render-rve.ts",
+    "templates:rve:test": "node --import tsx --test packages/video-templates/tests/*.test.*",
+    "templates:rve:stats": "node -e \"console.log(require('./packages/video-templates/stats.json'))\""
+  },
+  "devDependencies": {
+    "@remotion/bundler": "4.0.523",
+    "@remotion/layout-utils": "4.0.523",
+    "@remotion/renderer": "4.0.523",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.523",
+    "sharp": "0.35.4",
+    "tsx": "4.23.13",
+    "typescript": "5.9.3"
+  }
+}

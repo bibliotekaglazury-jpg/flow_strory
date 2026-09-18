@@ -1,0 +1,138 @@
+--- DV0x/creative-ad-agent@751b9e5146604dc65049bd0f62dcbdad6212f8a3/agent/.claude/skills/hook-methodology/SKILL.md
++++ vendor/creative-ad-agent/hook-method.md
+@@ -1,11 +1,8 @@
+----
+-name: hook-methodology
+-description: Generates conversion-focused ad copy through research-first extraction. Creates unique hook concepts by mining EVERY section of the research document. Use when creating Meta ads, conversion campaigns, or scroll-stopping copy.
+----
+-
+-# Research-First Hook Methodology
+-
+-Every hook must be traceable to a specific research element. No invention—only discovery.
++# Research-first hooks
++
++Adapted from DV0x/creative-ad-agent at 751b9e5146604dc65049bd0f62dcbdad6212f8a3; MIT license in the adjacent LICENSE file.
++
++This is a scoped excerpt for creative planning from supplied context only. Examples and numerical claims are illustrative patterns, not facts about the current offer. Only substantiated claims, real deadlines, existing guarantees and supplied testimonials may enter a plan. Missing evidence remains unknown; no research, filesystem access, campaign action, or new business terms are authorized. The application decides questions, tool use, output structure, and candidate count.
+ 
+ ## Core Philosophy
+ 
+@@ -49,9 +46,9 @@
+ 
+ ## Step 1: EXTRACT (Read EVERY Section)
+ 
+-Read `agent/files/research/{brand}_research.md`
+-
+-**You MUST extract from EVERY section. No exceptions.**
++Use only the evidence already supplied in context.
++
++Consider each available evidence category; missing categories remain unknown.
+ 
+ ---
+ 
+@@ -229,7 +226,7 @@
+ - [ ] **ICP Segment 2** — WHO, PAIN, MOTIVATION, LANGUAGE (if exists)
+ - [ ] **ICP Segment 3** — WHO, PAIN, MOTIVATION, LANGUAGE (if exists)
+ 
+-**If any checkbox is unchecked, go back and extract from that section.**
++Unchecked categories indicate missing evidence, not permission to fetch or fabricate it.
+ 
+ ---
+ 
+@@ -262,7 +259,7 @@
+ SOURCE: [Which research section + specific element]
+ TARGET: [Which ICP segment, or "General"]
+ HOOK: [The actual headline — under 10 words ideal]
+-WHY IT WORKS: [Psychology — pattern interrupt? self-reference? open loop?]
++FIT: [Concise source-to-audience match; no hidden reasoning]
+ ```
+ 
+ ### Construction Principles
+@@ -289,7 +286,7 @@
+ SOURCE: Value Props ("24-48 hour approval") + Pain Points ("banks take 3-6 weeks")
+ TARGET: Complex Residential Borrowers
+ HOOK: "Banks take weeks. We close in 48 hours."
+-WHY IT WORKS: Pattern interrupt (unexpected speed) + Tension (bad vs. good)
++FIT: Contrast links the sourced speed claim to the audience pain.
+ ```
+ 
+ ---
+@@ -350,62 +347,6 @@
+ 
+ ---
+ 
+-## Output Format
+-
+-Write to: `agent/.claude/skills/hook-methodology/hook-bank/{brand}-{YYYY-MM-DD}.md`
+-
+-```markdown
+-# [Brand Name] - Hook Bank
+-**Date:** YYYY-MM-DD
+-**Hooks Generated:** [number]
+-
+-## Brand Colors
+-- Primary: #hex
+-- Secondary: #hex
+-- Accent: #hex
+-
+-## Research Elements Used
+-[List which sections were mined for each hook]
+-
+----
+-
+-## Hook 1
+-**Type:** [Hook type from the 10]
+-**Source:** [Research section + specific element]
+-**Target:** [ICP segment or "General"]
+-**Hook:** "[The headline]"
+-**Body:** [1-2 sentences]
+-**CTA:** [Action + outcome]
+-**Psychology:** [Why it stops scroll + drives click]
+-
+-## Hook 2
+-[Same structure]
+-
+-## Hook 3
+-[Same structure]
+-
+-[Continue for each hook — default 3, or as specified by user]
+-
+----
+-
+-## Variety Verification
+-- Hook Types Used: [list]
+-- Research Sections Used: [list]
+-- ICP Segments Covered: [list]
+-- Emotions Triggered: [list]
+-```
+-
+----
+-
+-## Hook Volume
+-
+-- **Default:** Generate 3 hooks
+-- **User-specified:** Generate the number requested
+-
+-Quality over quantity. Each hook must pass all validation checks.
+-
+----
+-
+ ## Validation Checklist (Final Pass)
+ 
+ Before each hook is complete, verify:
+@@ -438,15 +379,3 @@
+ Creating claims that aren't in the research. If you can't cite the source, don't use it.
+ 
+ ---
+-
+-## Remember
+-
+-```
+-Mine the research. Every hook must be traceable.
+-
+-The goal is not to be clever.
+-The goal is to find what the brand has already proven
+-and frame it in a way that stops the scroll.
+-
+-If you can't point to where it came from, start over.
+-```

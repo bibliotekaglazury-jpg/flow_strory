@@ -1,0 +1,307 @@
+{
+  "templates": [
+    {
+      "description": "Motion story",
+      "tags": [
+        "motion"
+      ],
+      "supportedAspectRatios": [
+        "9:16"
+      ],
+      "supportedDurations": [
+        15
+      ],
+      "inputSchema": {
+        "properties": {}
+      },
+      "useCases": [
+        "organic-social"
+      ],
+      "enabled": true,
+      "featured": true,
+      "templateType": "remotion",
+      "id": "text",
+      "name": "Bold headline",
+      "category": "Hooks"
+    },
+    {
+      "description": "Motion story",
+      "tags": [
+        "motion"
+      ],
+      "supportedAspectRatios": [
+        "9:16"
+      ],
+      "supportedDurations": [
+        20,
+        30
+      ],
+      "inputSchema": {
+        "properties": {
+          "productImage": {
+            "type": "string",
+            "format": "asset-id",
+            "mediaType": "image"
+          }
+        }
+      },
+      "useCases": [
+        "organic-social"
+      ],
+      "enabled": true,
+      "featured": false,
+      "templateType": "remotion",
+      "id": "photo",
+      "name": "Photo motion",
+      "category": "Product"
+    },
+    {
+      "description": "Motion story",
+      "tags": [
+        "motion"
+      ],
+      "supportedAspectRatios": [
+        "16:9"
+      ],
+      "supportedDurations": [
+        15
+      ],
+      "inputSchema": {
+        "properties": {
+          "sourceVideo": {
+            "type": "string",
+            "format": "asset-id",
+            "mediaType": "video"
+          }
+        }
+      },
+      "useCases": [
+        "organic-social"
+      ],
+      "enabled": false,
+      "featured": false,
+      "templateType": "remotion",
+      "id": "video",
+      "name": "Video frame",
+      "category": "Other"
+    },
+    {
+      "description": "Motion story",
+      "tags": [
+        "motion"
+      ],
+      "supportedAspectRatios": [
+        "9:16"
+      ],
+      "supportedDurations": [
+        15
+      ],
+      "inputSchema": {
+        "properties": {
+          "image": {
+            "type": "string"
+          },
+          "video": {
+            "type": "string"
+          },
+          "productUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "personImage": {
+            "type": "string",
+            "mediaType": "image"
+          }
+        }
+      },
+      "useCases": [
+        "organic-social"
+      ],
+      "enabled": true,
+      "featured": false,
+      "templateType": "generative",
+      "id": "both",
+      "name": "Mixed frame",
+      "category": "Other"
+    }
+  ],
+  "cases": [
+    {
+      "filters": {
+        "search": "BOLD"
+      },
+      "expected": [
+        "text"
+      ]
+    },
+    {
+      "filters": {
+        "category": "hooks"
+      },
+      "expected": [
+        "text"
+      ]
+    },
+    {
+      "filters": {
+        "templateType": "generative"
+      },
+      "expected": [
+        "both"
+      ]
+    },
+    {
+      "filters": {
+        "aspectRatio": "16:9"
+      },
+      "expected": []
+    },
+    {
+      "filters": {
+        "duration": "up-to-15"
+      },
+      "expected": [
+        "text",
+        "both"
+      ]
+    },
+    {
+      "filters": {
+        "duration": "20"
+      },
+      "expected": [
+        "photo"
+      ]
+    },
+    {
+      "filters": {
+        "duration": "30-plus"
+      },
+      "expected": [
+        "photo"
+      ]
+    },
+    {
+      "filters": {
+        "duration": "15"
+      },
+      "expected": [
+        "text",
+        "both"
+      ]
+    },
+    {
+      "filters": {
+        "inputType": "product-image"
+      },
+      "expected": [
+        "photo"
+      ]
+    },
+    {
+      "filters": {
+        "inputType": "existing-video"
+      },
+      "expected": [
+        "both"
+      ]
+    },
+    {
+      "filters": {
+        "inputType": "images"
+      },
+      "expected": [
+        "both"
+      ]
+    },
+    {
+      "filters": {
+        "inputType": "text-only"
+      },
+      "expected": [
+        "text"
+      ]
+    },
+    {
+      "filters": {
+        "useCase": "Organic Social"
+      },
+      "expected": [
+        "text",
+        "photo",
+        "both"
+      ]
+    },
+    {
+      "filters": {
+        "featured": true
+      },
+      "expected": [
+        "text"
+      ]
+    },
+    {
+      "filters": {
+        "enabled": false
+      },
+      "expected": [
+        "video"
+      ]
+    },
+    {
+      "filters": {
+        "enabled": true,
+        "category": "other"
+      },
+      "expected": [
+        "both"
+      ]
+    },
+    {
+      "filters": {
+        "search": "missing"
+      },
+      "expected": []
+    },
+    {
+      "filters": {},
+      "expected": [
+        "text",
+        "photo",
+        "both"
+      ]
+    },
+    {
+      "filters": {
+        "inputType": "product-url"
+      },
+      "expected": [
+        "both"
+      ]
+    },
+    {
+      "filters": {
+        "inputType": "person-image"
+      },
+      "expected": [
+        "both"
+      ]
+    },
+    {
+      "filters": {
+        "search": "Hooks"
+      },
+      "expected": []
+    },
+    {
+      "filters": {
+        "enabled": null
+      },
+      "expected": [
+        "text",
+        "photo",
+        "both"
+      ]
+    }
+  ]
+}
