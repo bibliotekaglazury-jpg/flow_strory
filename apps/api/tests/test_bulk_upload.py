@@ -74,6 +74,16 @@ def test_a_bulk_upload_tagged_with_source_survives_in_the_product_library(client
     assert len(library_response.json()["assets"]) == 1
 
 
+def test_a_bulk_upload_with_an_unknown_source_is_rejected(client):
+    response = client.post(
+        "/api/assets/bulk",
+        files=[image("item0.png")],
+        data={"source": "not-a-real-module"},
+    )
+    assert response.status_code == 422
+    assert response.json()["error"]["code"] == "INVALID_SOURCE"
+
+
 def test_a_bulk_upload_without_source_stays_out_of_the_product_library(client):
     response = client.post("/api/assets/bulk", files=[image("item0.png")])
     assert response.status_code == 201, response.text

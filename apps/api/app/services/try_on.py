@@ -14,7 +14,7 @@ from app.prompts.tryon import compose
 from app.providers.mock import MockImageProvider
 from app.providers.openrouter_image import OpenRouterImageProvider
 from app.services.assets import owned_inputs, store_asset
-from app.services.credits import change
+from app.services.credits import account, change
 from app.services.storage import Storage, asset_view
 
 ROLE = "tryon_photo"
@@ -62,9 +62,15 @@ async def preview(db, user_id, body):
     Retry-safe end to end, not just on the credit ledger: a repeated request with the
     same idempotencyKey (e.g. the client never saw the first response) returns the photo
     already generated instead of paying the provider again and creating a duplicate asset.
+    The account row lock (same one credits.change() takes) serializes this per user, the
+    same way generations.create() already does - a second request for this account blocks
+    until the first commits, then sees its result via the idempotency_key lookup below
+    instead of racing it into the paid provider call. The normal 4-angle shoot is already
+    sequential from the client, so this costs real concurrency only on an actual double-submit.
     """
     from app.services import look_projects
 
+    account(db, user_id)
     key = f"try-on:{body.idempotencyKey}"
     storage = Storage()
     existing = db.scalar(select(Asset).where(Asset.user_id == user_id, Asset.idempotency_key == key))

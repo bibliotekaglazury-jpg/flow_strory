@@ -481,3 +481,60 @@ def test_subtitle_export_real_render_storage_and_poll(client):
     output = polled["export"]["outputAsset"]
     assert output["mimeType"] == "video/mp4" and output["height"] > output["width"]
     assert c.get(output["url"]).status_code == 200
+
+
+def test_try_on_concurrent_same_key_calls_the_provider_once(client, monkeypatch):
+    """The account row lock in try_on.preview() serializes same-user requests, so a
+    genuine concurrent double-submit with the same idempotencyKey never reaches the paid
+    provider twice - only the DB-level unique constraint was proven before this fix.
+
+    Driven directly through try_on.preview() with two independent sessions via
+    asyncio.gather, not TestClient + threads: two OS threads sharing one TestClient's
+    internal event-loop portal serialize in ways that don't reflect two real concurrent
+    HTTP requests (verified separately - it isn't an app-level deadlock, just an artifact
+    of that specific harness), so it can't tell real request-level concurrency apart from
+    a single blocked thread. Real concurrent request handling in production runs each
+    request with its own session on the shared engine's connection pool, which is what
+    this reproduces.
+    """
+    from app.db import SessionLocal
+    from app.schemas import TryOn
+    from app.services import try_on
+
+    monkeypatch.setenv("IMAGE_PROVIDER", "mock")
+    monkeypatch.setenv("IMAGE_CREDITS_PER_GENERATION", "5")
+    settings.cache_clear()
+    c, user = client
+    person = Image.new("RGB", (16, 16), "blue")
+    product = Image.new("RGB", (16, 16), "red")
+    person_data, product_data = BytesIO(), BytesIO()
+    person.save(person_data, format="PNG")
+    product.save(product_data, format="PNG")
+    person_asset = c.post(
+        "/api/assets",
+        files={"file": ("model.png", person_data.getvalue(), "image/png")},
+        data={"role": "person"},
+    ).json()["asset"]
+    product_asset = c.post(
+        "/api/assets",
+        files={"file": ("shirt.png", product_data.getvalue(), "image/png")},
+        data={"role": "product"},
+    ).json()["asset"]
+    body = TryOn(
+        inputAssets={"productImageId": product_asset["id"], "personImageId": person_asset["id"]},
+        aspectRatio="9:16",
+        idempotencyKey="concurrent-preview",
+    )
+
+    async def submit():
+        with SessionLocal() as db, db.begin():
+            return await try_on.preview(db, user, body)
+
+    async def run_both():
+        return await asyncio.gather(submit(), submit())
+
+    results = asyncio.run(run_both())
+    asset_ids = {r["asset"]["id"] for r in results}
+    assert len(asset_ids) == 1
+    # Only one of the two calls actually paid the provider; the other returned the cached result.
+    assert sorted(r["creditsCharged"] for r in results) == [0, 5]

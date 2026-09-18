@@ -218,6 +218,8 @@ async def upload_many(
     """
     if not files or len(files) > LOOK_SIZE:
         raise DomainError("INVALID_UPLOAD", f"Upload 1 to {LOOK_SIZE} product images.", 422) from None
+    if source is not None and source not in ASSET_SOURCES:
+        raise DomainError("INVALID_SOURCE", "Unsupported upload source.", 422) from None
     storage = Storage()
     assets = []
     for file in files:
