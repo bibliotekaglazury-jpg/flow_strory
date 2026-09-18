@@ -35,13 +35,18 @@ export async function mockApi(page: Page) {
         (data as { asset: { url: string } }).asset.url =
           "/template-styles/ugc-review.webp";
       } else if (path === "/assets/bulk") {
-        const count = (request.postData()?.match(/name="files"/g) || []).length;
+        const raw = request.postData() ?? "";
+        const count = (raw.match(/name="files"/g) || []).length;
+        // Text form fields (unlike file content) are preserved in postData(), so this one
+        // reads the real value the client sent instead of a fixed stand-in.
+        const source = raw.match(/name="source"\r\n\r\n([^\r\n]*)/)?.[1] as "try_on" | undefined;
         const uploaded = await s.assets.uploadMany(
           Array.from(
             { length: count },
             (_, i) =>
               new File([new Uint8Array(20)], `piece-${i}.png`, { type: "image/png" }),
           ),
+          source,
         );
         for (const asset of uploaded.assets)
           asset.url = "/template-styles/ugc-review.webp";

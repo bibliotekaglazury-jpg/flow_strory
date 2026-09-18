@@ -9,7 +9,9 @@ const styles = readFileSync(new URL("../app/globals.css", import.meta.url), "utf
 
 describe("product look studio", () => {
   it("uploads real assets instead of keeping local blob previews", () => {
-    expect(studio).toContain("assets.uploadMany(files)");
+    // Tagged as a try-on upload, same as a single model photo, so it survives a reload
+    // through the product library instead of vanishing once the session ends.
+    expect(studio).toContain('assets.uploadMany(files, "try_on")');
     expect(studio).toContain('assets.upload(file, "person", "try_on")');
     expect(studio).not.toContain("URL.createObjectURL(file)");
   });

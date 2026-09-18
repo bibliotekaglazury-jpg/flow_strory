@@ -383,9 +383,9 @@ export function createMockServices(persist = false): Services {
         assets.set(asset.id, asset);
         return { asset };
       },
-      async uploadMany(files) {
+      async uploadMany(files, source) {
         const uploaded = [];
-        for (const file of files) uploaded.push((await this.upload(file, "product")).asset);
+        for (const file of files) uploaded.push((await this.upload(file, "product", source)).asset);
         return { assets: uploaded };
       },
       async list(role, source) {
@@ -702,6 +702,29 @@ export function createMockServices(persist = false): Services {
         // created it, so the public viewer falls back to the bundled clip like a reload does.
         const outputAsset = entry.outputAsset ? demoClip(entry.outputAsset) : null;
         return { export: { id: entry.id, outputAsset, aspectRatio: project.aspectRatio } };
+      },
+      async getSrt(id, exportId) {
+        const project = subtitleProjects.get(id) ??
+          fail("SUBTITLE_PROJECT_NOT_FOUND", "That project is unavailable.");
+        const entry = [...subtitleExportKeys.values()].find((value) => value.id === exportId) ??
+          fail("SUBTITLE_EXPORT_NOT_FOUND", "That export is unavailable.");
+        if (entry.status !== "completed")
+          fail("EXPORT_NOT_READY", "This export has not finished rendering yet.");
+        const timestamp = (ms: number) => {
+          const h = Math.floor(ms / 3_600_000);
+          const m = Math.floor((ms % 3_600_000) / 60_000);
+          const s = Math.floor((ms % 60_000) / 1000);
+          const milli = ms % 1000;
+          const pad = (n: number, len = 2) => String(n).padStart(len, "0");
+          return `${pad(h)}:${pad(m)}:${pad(s)},${pad(milli, 3)}`;
+        };
+        const content = project.cues
+          .map(
+            (cue, index) =>
+              `${index + 1}\n${timestamp(cue.startMs)} --> ${timestamp(cue.endMs)}\n${cue.text}\n`,
+          )
+          .join("\n");
+        return { content, fileName: `${entry.id}.srt` };
       },
     },
     products: {

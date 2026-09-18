@@ -72,6 +72,14 @@ class Asset(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
     # Module the upload came from ("try_on"); null for everything uploaded elsewhere.
     source: Mapped[str | None] = mapped_column(String, nullable=True)
+    # Set only by callers that need retry-safety on a paid provider call (e.g. try-on
+    # preview): a repeated request with the same key returns the asset already made
+    # instead of paying for and creating a second one. Null everywhere else; Postgres and
+    # SQLite both treat multiple NULLs as distinct, so ordinary uploads never collide.
+    idempotency_key: Mapped[str | None] = mapped_column(String, nullable=True)
+    __table_args__ = (
+        UniqueConstraint("user_id", "idempotency_key", name="uq_assets_user_id_idempotency_key"),
+    )
 
 
 class Prompt(Base):

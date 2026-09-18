@@ -57,10 +57,19 @@ def references(db, user_id, body, storage):
 
 
 async def preview(db, user_id, body):
-    """Charge only for an image that actually came back."""
+    """Charge only for an image that actually came back.
+
+    Retry-safe end to end, not just on the credit ledger: a repeated request with the
+    same idempotencyKey (e.g. the client never saw the first response) returns the photo
+    already generated instead of paying the provider again and creating a duplicate asset.
+    """
     from app.services import look_projects
 
+    key = f"try-on:{body.idempotencyKey}"
     storage = Storage()
+    existing = db.scalar(select(Asset).where(Asset.user_id == user_id, Asset.idempotency_key == key))
+    if existing:
+        return {"asset": asset_view(existing, storage), "creditsCharged": 0}
     # Checked before the paid call: a photo can never be generated into another user's project.
     project = look_projects.owned(db, user_id, body.projectId) if body.projectId else None
     image_urls = references(db, user_id, body, storage)
@@ -69,8 +78,8 @@ async def preview(db, user_id, body):
     )
     price = settings().image_credits_per_generation
     if price:
-        change(db, user_id, -price, 0, f"try-on:{body.idempotencyKey}", "look_preview")
-    asset = store_asset(db, storage, user_id, ROLE, data, "look-preview.png")
+        change(db, user_id, -price, 0, key, "look_preview")
+    asset = store_asset(db, storage, user_id, ROLE, data, "look-preview.png", idempotency_key=key)
     if project:
         look_projects.record(db, project, asset, body.angle)
     return {"asset": asset_view(asset, storage), "creditsCharged": price}

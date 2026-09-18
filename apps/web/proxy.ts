@@ -36,5 +36,8 @@ export const config = {
     "/brand-kit",
     "/analytics",
     "/settings",
+    "/try-on",
+    "/subtitles",
+    "/templates",
   ],
 };

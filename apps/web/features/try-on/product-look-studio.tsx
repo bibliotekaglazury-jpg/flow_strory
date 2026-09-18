@@ -175,7 +175,9 @@ export function ProductLookStudio() {
     setBusy("products");
     setNotice(null);
     try {
-      const { assets } = await getServices().assets.uploadMany(files);
+      // Tagged as a try-on upload, same as a single model photo, so it survives a reload
+      // through the product library (assets.list("product", "try_on")).
+      const { assets } = await getServices().assets.uploadMany(files, "try_on");
       setProducts((current) => [...current, ...assets].slice(0, LOOK_SIZE));
     } catch (error) {
       fail(error);

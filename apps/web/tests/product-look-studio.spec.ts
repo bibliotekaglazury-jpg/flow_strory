@@ -157,6 +157,23 @@ test("bulk CSV import fills the product library, and picking from it fills the l
   await expect(page.getByText("1 / 5 items")).toBeVisible();
 });
 
+test("products uploaded via Upload products survive a reload through the product library", async ({
+  page,
+}) => {
+  await page.goto("/try-on");
+
+  await page
+    .getByLabel("Product images")
+    .setInputFiles(["tests/fixtures/product.png", "tests/fixtures/product.png"]);
+  await expect(page.getByText("2 / 5 items")).toBeVisible();
+
+  await page.reload();
+  await page.getByRole("button", { name: "Choose from product library" }).click();
+  await expect(page.getByText("Your product library")).toBeVisible();
+  const items = page.locator('[aria-label="Your product library"] .look-library-grid button');
+  await expect(items).toHaveCount(2);
+});
+
 test("product look studio does not overflow on a phone", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/try-on");

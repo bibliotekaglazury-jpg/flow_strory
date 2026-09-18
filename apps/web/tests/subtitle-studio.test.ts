@@ -152,4 +152,11 @@ describe("subtitle studio frontend", () => {
     // Only a completed export can be shared; the button lives with Download, not Export.
     expect(studio).toMatch(/downloadUrl \?[\s\S]*?subtitle-share-anchor/);
   });
+
+  it("offers a real .srt download next to the video, backing the 'Video and SRT ready' promise", () => {
+    expect(studio).toContain("subtitleProjects.getSrt(");
+    expect(studio).toContain("Download SRT");
+    // The subtitle track download, not the video: a Blob built from the API's cue text.
+    expect(studio).toContain('new Blob([content], { type: "application/x-subrip" })');
+  });
 });

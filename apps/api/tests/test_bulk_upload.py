@@ -62,6 +62,25 @@ def test_a_whole_look_uploads_in_one_request(client):
     assert len({a["id"] for a in assets}) == LOOK_SIZE
 
 
+def test_a_bulk_upload_tagged_with_source_survives_in_the_product_library(client):
+    response = client.post(
+        "/api/assets/bulk",
+        files=[image("item0.png")],
+        data={"source": "try_on"},
+    )
+    assert response.status_code == 201, response.text
+    library_response = client.get("/api/assets", params={"role": "product", "source": "try_on"})
+    assert library_response.status_code == 200
+    assert len(library_response.json()["assets"]) == 1
+
+
+def test_a_bulk_upload_without_source_stays_out_of_the_product_library(client):
+    response = client.post("/api/assets/bulk", files=[image("item0.png")])
+    assert response.status_code == 201, response.text
+    library_response = client.get("/api/assets", params={"role": "product", "source": "try_on"})
+    assert library_response.json()["assets"] == []
+
+
 def test_more_pieces_than_a_look_holds_are_refused(client):
     response = client.post(
         "/api/assets/bulk", files=[image(f"item{i}.png") for i in range(LOOK_SIZE + 1)]

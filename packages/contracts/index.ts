@@ -261,7 +261,7 @@ export interface Services {
       /** Real upload progress, 0-100, for large files such as source videos. */
       onProgress?: (percent: number) => void,
     ): Promise<{ asset: Asset }>;
-    uploadMany(files: File[]): Promise<{ assets: Asset[] }>;
+    uploadMany(files: File[], source?: "try_on"): Promise<{ assets: Asset[] }>;
     /** The user's own earlier model photos or catalog-imported products, newest first. */
     list(role: "person" | "product", source: "try_on"): Promise<{ assets: Asset[] }>;
     /** Bulk-populates the product library from a CSV of product pages or direct image URLs

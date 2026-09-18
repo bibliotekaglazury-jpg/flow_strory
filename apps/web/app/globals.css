@@ -4985,6 +4985,11 @@ input.slot-label {
 .subtitle-output-bar .subtitle-export {
   margin-left: auto;
 }
+.subtitle-download-srt {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
 .subtitle-share-anchor {
   position: relative;
 }

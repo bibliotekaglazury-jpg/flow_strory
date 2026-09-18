@@ -206,7 +206,10 @@ async def upload(
 
 @app.post("/api/assets/bulk", response_model=responses.AssetsResponse, status_code=201)
 async def upload_many(
-    files: list[UploadFile] = File(), user=Depends(identity), db=Depends(session)
+    files: list[UploadFile] = File(),
+    source: str | None = Form(default=None),
+    user=Depends(identity),
+    db=Depends(session),
 ):
     """Several product photos of one look in a single request.
 
@@ -219,9 +222,11 @@ async def upload_many(
     assets = []
     for file in files:
         data = await read_upload(file, 10 * 1024 * 1024)
-        assets.append(
-            await run_in_threadpool(store_asset, db, storage, user, "product", data, file.filename)
-        )
+        asset = await run_in_threadpool(store_asset, db, storage, user, "product", data, file.filename)
+        if source:
+            asset.source = source
+            await run_in_threadpool(db.flush)
+        assets.append(asset)
     return {"assets": [asset_view(a, storage) for a in assets]}
 
 

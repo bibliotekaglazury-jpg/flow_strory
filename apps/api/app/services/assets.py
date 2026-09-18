@@ -231,7 +231,7 @@ async def import_catalog_csv(db, storage, user_id, rows):
     return created, errors
 
 
-def store_asset(db, storage, user_id, role, data, file_name):
+def store_asset(db, storage, user_id, role, data, file_name, idempotency_key=None):
     mime, width, height, duration = inspect_media(data, role)
     key = f"{user_id}/{uid()}"
     storage.put(key, data, mime)
@@ -245,6 +245,7 @@ def store_asset(db, storage, user_id, role, data, file_name):
         width=width,
         height=height,
         duration_seconds=duration,
+        idempotency_key=idempotency_key,
     )
     db.add(a)
     db.flush()

@@ -120,6 +120,9 @@ const fixture: Services["subtitleProjects"] = {
   async getShared() {
     return { export: shared };
   },
+  async getSrt() {
+    return { content: "1\n00:00:00,000 --> 00:00:01,000\nHi\n", fileName: "e1.srt" };
+  },
 };
 
 describe("subtitleProjects contract fixture", () => {
@@ -136,5 +139,6 @@ describe("subtitleProjects contract fixture", () => {
     expect((await fixture.share(project.id, exported.id)).export.shareToken).toBe("tok-1");
     expect((await fixture.unshare(project.id, exported.id)).export.shareToken).toBeNull();
     expect((await fixture.getShared("tok-1")).export.id).toBe("e1");
+    expect((await fixture.getSrt(project.id, exported.id)).fileName).toBe("e1.srt");
   });
 });

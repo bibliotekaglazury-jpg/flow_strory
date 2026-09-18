@@ -604,6 +604,24 @@ export function SubtitleStudio() {
     setTimeout(() => setShareCopied(false), 2000);
   }
 
+  async function downloadSrt() {
+    if (!project || !exportJob) return;
+    try {
+      const { content, fileName } = await getServices().subtitleProjects.getSrt(project.id, exportJob.id);
+      const blob = new Blob([content], { type: "application/x-subrip" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 0);
+    } catch (error) {
+      setNotice(messageOf(error));
+    }
+  }
+
   async function sendVideoFile() {
     if (!downloadUrl) return;
     try {
@@ -752,6 +770,9 @@ export function SubtitleStudio() {
                     <a className="button button-primary subtitle-export" href={downloadUrl} download>
                       <Download size={17} /> Download video
                     </a>
+                    <button type="button" className="button subtitle-download-srt" onClick={() => void downloadSrt()}>
+                      <Download size={15} /> Download SRT
+                    </button>
                     <div className="subtitle-share-anchor">
                       <button
                         className="button subtitle-share-toggle"

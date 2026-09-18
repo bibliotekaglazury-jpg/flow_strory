@@ -4,11 +4,14 @@ from fastapi import APIRouter, Depends, Header, Query, Response
 
 from app.auth import identity
 from app.db import session as db_session
+from app.errors import DomainError
 from app.subtitles import service
 from app.subtitles.schemas import SubtitleExportCreate, SubtitleProjectCreate, SubtitleProjectPatch
+from app.subtitles.srt import render_srt
 from app.responses import (
     SubtitleExportPollResponse,
     SubtitleExportResponse,
+    SubtitleExportSrtResponse,
     SubtitleProjectResponse,
     SubtitleProjectsResponse,
     SubtitleSharedExportResponse,
@@ -82,6 +85,14 @@ def get_export(project_id: str, export_id: str, user=Depends(identity), db=Depen
         "export": service.export_view(db, export),
         "pollAfterMs": None if export.status in service.EXPORT_TERMINAL else 2000,
     }
+
+
+@router.get("/{project_id}/exports/{export_id}/srt", response_model=SubtitleExportSrtResponse)
+def get_export_srt(project_id: str, export_id: str, user=Depends(identity), db=Depends(db_session)):
+    export = service.owned_export(db, user, project_id, export_id)
+    if export.status != "completed":
+        raise DomainError("EXPORT_NOT_READY", "This export has not finished rendering yet.", 409)
+    return {"content": render_srt(export.cues), "fileName": f"{export.id}.srt"}
 
 
 @router.post("/{project_id}/exports/{export_id}/share", response_model=SubtitleExportResponse)

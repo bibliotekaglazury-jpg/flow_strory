@@ -1,7 +1,7 @@
 """A look preview answers in one request: no quote, no job, no polling."""
 
 import pytest
-from sqlalchemy import create_engine, select
+from sqlalchemy import create_engine, func, select
 from sqlalchemy.orm import Session
 
 from app.db import Account, Asset, Base, Ledger
@@ -134,6 +134,30 @@ async def test_credits_are_charged_once_per_key_and_never_on_failure(db, monkeyp
     assert db.scalar(select(Account).where(Account.user_id == "alice")).available == 96
 
 
+async def test_a_repeated_key_never_calls_the_provider_or_creates_a_second_asset(db, monkeypatch):
+    """The credit ledger being idempotent is not enough on its own: a lost response must
+    not re-run the paid provider call or leave a duplicate photo behind either."""
+    calls = 0
+
+    async def capture(*args):
+        nonlocal calls
+        calls += 1
+        return png()
+
+    monkeypatch.setattr(try_on, "provider", lambda: type("P", (), {"generate": staticmethod(capture)})())
+
+    first = await try_on.preview(db, "alice", request())
+    second = await try_on.preview(db, "alice", request())
+
+    assert calls == 1
+    assert first["asset"]["id"] == second["asset"]["id"]
+    assert second["creditsCharged"] == 0
+    assert db.scalar(select(Account).where(Account.user_id == "alice")).available == 100
+    assert (
+        db.scalar(select(func.count()).select_from(Asset).where(Asset.role == "tryon_photo")) == 1
+    )
+
+
 async def test_another_angle_reshoots_an_approved_preview(db, monkeypatch):
     first = await try_on.preview(db, "alice", request())
     seen = {}
@@ -154,6 +178,38 @@ async def test_another_angle_reshoots_an_approved_preview(db, monkeypatch):
     assert base.storage_key in seen["urls"][0]
     assert ANGLES["back"] in seen["prompt"]
     assert "change only the camera position" in seen["prompt"]
+
+
+async def test_two_users_reusing_the_same_client_generated_key_never_collide(db, monkeypatch):
+    session_key = "preview-0001"  # e.g. both browser tabs generated the same uuid by coincidence
+
+    async def capture(*args):
+        return png()
+
+    monkeypatch.setattr(try_on, "provider", lambda: type("P", (), {"generate": staticmethod(capture)})())
+    db.add(Account(user_id="bob", available=100, reserved=0))
+    db.add(
+        Asset(
+            id="bob-model",
+            user_id="bob",
+            role="person",
+            mime_type="image/png",
+            file_name="bob-model.png",
+            size_bytes=1,
+            storage_key="bob/bob-model",
+        )
+    )
+    db.flush()
+    alice = await try_on.preview(db, "alice", request(idempotencyKey=session_key))
+    bob = await try_on.preview(
+        db,
+        "bob",
+        request(
+            idempotencyKey=session_key,
+            inputAssets={"productImageId": "stranger", "personImageId": "bob-model", "items": []},
+        ),
+    )
+    assert alice["asset"]["id"] != bob["asset"]["id"]
 
 
 async def test_an_unknown_base_preview_is_refused(db):

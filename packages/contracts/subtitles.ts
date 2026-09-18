@@ -121,4 +121,6 @@ export interface SubtitleService {
   share(id: string, exportId: string): Promise<{ export: SubtitleExport }>;
   unshare(id: string, exportId: string): Promise<{ export: SubtitleExport }>;
   getShared(token: string): Promise<{ export: SubtitleSharedExport }>;
+  /** The .srt file for a completed export, built from its frozen cues. */
+  getSrt(id: string, exportId: string): Promise<{ content: string; fileName: string }>;
 }

@@ -46,6 +46,11 @@ test("subtitle studio uploads, transcribes, autosaves, switches ratio and export
   await expect(page.getByRole("button", { name: /Preparing video/ })).toBeVisible();
   await expect(page.getByRole("link", { name: "Download video" })).toBeVisible();
 
+  // The "Video and SRT ready" promise on the entry screen backs a real download.
+  const srtDownload = page.waitForEvent("download");
+  await page.getByRole("button", { name: "Download SRT" }).click();
+  expect((await srtDownload).suggestedFilename()).toMatch(/\.srt$/);
+
   // Sharing opens a link, and that link resolves publicly to just the video, not the editor.
   await page.getByRole("button", { name: "Share" }).click();
   await page.getByRole("button", { name: "Create shareable link" }).click();

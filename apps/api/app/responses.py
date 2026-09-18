@@ -382,5 +382,10 @@ class SubtitleExportPollResponse(BaseModel):
     pollAfterMs: int | None
 
 
+class SubtitleExportSrtResponse(BaseModel):
+    content: str
+    fileName: str
+
+
 class SubtitleSharedExportResponse(BaseModel):
     export: SubtitleSharedExportView

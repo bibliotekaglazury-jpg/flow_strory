@@ -123,6 +123,10 @@ export function useCreation() {
         ),
       )
       .finally(() => setBusy(null));
+    // startRecreate is stable enough for this one-time mount load: it only reads refs and
+    // setters, and adding it here would recreate load() every render, re-triggering the
+    // load effect below on every render instead of once on mount.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     void load();

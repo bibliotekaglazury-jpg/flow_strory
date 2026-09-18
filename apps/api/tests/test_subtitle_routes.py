@@ -226,6 +226,76 @@ def _complete(client, project_id, export_id):
         db.flush()
 
 
+def test_srt_download_reflects_the_frozen_cues_and_is_only_ready_once_completed(client):
+    project = client.post(
+        "/api/subtitle-projects", json=create_body(), headers={"Idempotency-Key": "srt-p"}
+    ).json()["project"]
+    patch_body = {
+        "revision": 0,
+        "aspectRatio": "9:16",
+        "cues": [
+            {
+                "id": "c1",
+                "startMs": 0,
+                "endMs": 1000,
+                "text": "Hello",
+                "words": [{"id": "w1", "text": "Hello", "startMs": 0, "endMs": 1000}],
+            }
+        ],
+        "style": {
+            "preset": "classic",
+            "position": "top",
+            "size": "large",
+            "safeArea": False,
+            "textColor": "#000000",
+            "highlightColor": "#FF0000",
+        },
+    }
+    client.patch(f"/api/subtitle-projects/{project['id']}", json=patch_body)
+    export = client.post(
+        f"/api/subtitle-projects/{project['id']}/exports",
+        json={"revision": 1},
+        headers={"Idempotency-Key": "srt-e"},
+    ).json()["export"]
+
+    not_ready = client.get(f"/api/subtitle-projects/{project['id']}/exports/{export['id']}/srt")
+    assert not_ready.status_code == 409
+    assert not_ready.json()["error"]["code"] == "EXPORT_NOT_READY"
+
+    with client.factory() as db, db.begin():
+        from app.db import SubtitleExport
+
+        row = db.get(SubtitleExport, export["id"])
+        row.status = "completed"
+        row.output_asset_id = "clip"
+        db.flush()
+
+    response = client.get(f"/api/subtitle-projects/{project['id']}/exports/{export['id']}/srt")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["fileName"] == f"{export['id']}.srt"
+    assert body["content"] == "1\n00:00:00,000 --> 00:00:01,000\nHello\n"
+
+
+def test_srt_download_is_ownership_checked(client):
+    app.dependency_overrides[identity] = lambda: "bob"
+    bob_project = client.post(
+        "/api/subtitle-projects", json=create_body("bob-clip"), headers={"Idempotency-Key": "srt-bp"}
+    ).json()["project"]
+    bob_export = client.post(
+        f"/api/subtitle-projects/{bob_project['id']}/exports",
+        json={"revision": 0},
+        headers={"Idempotency-Key": "srt-be"},
+    ).json()["export"]
+
+    app.dependency_overrides[identity] = lambda: "alice"
+    response = client.get(
+        f"/api/subtitle-projects/{bob_project['id']}/exports/{bob_export['id']}/srt"
+    )
+    assert response.status_code == 404
+    assert response.json()["error"]["code"] == "SUBTITLE_PROJECT_NOT_FOUND"
+
+
 def test_share_export_returns_a_token_the_public_endpoint_can_resolve(client):
     project = client.post(
         "/api/subtitle-projects", json=create_body(), headers={"Idempotency-Key": "sk"}

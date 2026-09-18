@@ -106,9 +106,10 @@ export function createHttpServices(
           xhr.send(form);
         });
       },
-      uploadMany(files) {
+      uploadMany(files, source) {
         const form = new FormData();
         for (const file of files) form.append("files", file);
+        if (source) form.append("source", source);
         return request("/assets/bulk", { method: "POST", body: form });
       },
       list: (role, source) =>
@@ -162,6 +163,10 @@ export function createHttpServices(
           { method: "DELETE" },
         ),
       getShared: (token) => request(`/subtitle-shares/${encodeURIComponent(token)}`),
+      getSrt: (id, exportId) =>
+        request(
+          `/subtitle-projects/${encodeURIComponent(id)}/exports/${encodeURIComponent(exportId)}/srt`,
+        ),
     },
     products: { resolve: (url) => post("/product/resolve", { url }) },
     templates: {
