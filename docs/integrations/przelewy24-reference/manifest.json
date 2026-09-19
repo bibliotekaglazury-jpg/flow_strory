@@ -1,0 +1,148 @@
+[
+  {
+    "source": "booster-engine/api/p24-register.php",
+    "export": "source/api/p24-register.php",
+    "source_sha256": "e971a64e600acf6c1e8f7a1e4f5b65fd07068304961c6d311245fdb6005e1225",
+    "export_sha256": "b4b50bfb0c8f58cf26d3d02de6d4f76ace3c9209647c6b4dd1d28f7e73b05372",
+    "changes": [
+      "Normalized trailing whitespace for Git hygiene."
+    ]
+  },
+  {
+    "source": "booster-engine/api/srm-payment.php",
+    "export": "source/api/srm-payment.php",
+    "source_sha256": "9dc13058abaa43b817658ccbd60912e61a7023ca457173c691b0859c3491f581",
+    "export_sha256": "1299ec7eabf87486fcd116677df2acbebb563316d16843cacad6735bdb94fe3c",
+    "changes": [
+      "Normalized trailing whitespace for Git hygiene."
+    ]
+  },
+  {
+    "source": "booster-engine/api/srm-payment-callback.php",
+    "export": "source/api/srm-payment-callback.php",
+    "source_sha256": "f07f03c5eb51d067c96a00d8f937c9eaf45d6911aaab01b7aca2e5966cef8c3d",
+    "export_sha256": "821f20540b11ca76216eba4e1d7caec55ba4cb41e7fa13725c527033eae4e40e",
+    "changes": [
+      "Normalized trailing whitespace for Git hygiene."
+    ]
+  },
+  {
+    "source": "booster-engine/api/_security.php",
+    "export": "source/api/_security.php",
+    "source_sha256": "c0ad019b13114d3d36347ba287d37e87cf8f82b07fc8cc1be7422f927e69cf1f",
+    "export_sha256": "c0ad019b13114d3d36347ba287d37e87cf8f82b07fc8cc1be7422f927e69cf1f",
+    "changes": []
+  },
+  {
+    "source": "booster-engine/api/posthog.php",
+    "export": "source/api/posthog.php",
+    "source_sha256": "d79c15d5ce1e8cd4f3d517f4d49593d412bdd7afdb600462dc1ab52f835228cc",
+    "export_sha256": "19850603af1cd8af27dfe93c0be81627b16004fc137b10c657a2719fa2ad37c7",
+    "changes": [
+      "Removed embedded PostHog project key; read POSTHOG_API_KEY environment variable instead."
+    ]
+  },
+  {
+    "source": "booster-engine/api/p24-notify.php",
+    "export": "source/api/p24-notify.php",
+    "source_sha256": "2062c8937f9ff59fa43056bd4cf7decda10353c2a3cdd49a96b4cdbf753f5f74",
+    "export_sha256": "2062c8937f9ff59fa43056bd4cf7decda10353c2a3cdd49a96b4cdbf753f5f74",
+    "changes": []
+  },
+  {
+    "source": "booster-engine/api/order-email.php",
+    "export": "source/api/order-email.php",
+    "source_sha256": "ccbc2634200927d4a65a4c7c54f9b64dd3bdc1db960be7c0acb88087c58f893a",
+    "export_sha256": "ccbc2634200927d4a65a4c7c54f9b64dd3bdc1db960be7c0acb88087c58f893a",
+    "changes": []
+  },
+  {
+    "source": "booster-engine/srm-app/backend/p24_manager.py",
+    "export": "source/srm-app/backend/p24_manager.py",
+    "source_sha256": "9e9c28dfa6c8d7db476e2d4d2ed11101bf262e6f198678473c72ed4e86038763",
+    "export_sha256": "9e9c28dfa6c8d7db476e2d4d2ed11101bf262e6f198678473c72ed4e86038763",
+    "changes": []
+  },
+  {
+    "source": "booster-engine/srm-app/backend/db_manager.py",
+    "export": "source/srm-app/backend/db_manager.py",
+    "source_sha256": "693776976270545fef04b80d11d45027a9172c4f5565eb4974b20679a367d170",
+    "export_sha256": "8d988af7a4c6e2b6242437c149855fab2dc9a644cdb43c9fe4fc2e7193034162",
+    "changes": [
+      "Normalized trailing whitespace for Git hygiene."
+    ]
+  },
+  {
+    "source": "booster-engine/srm-app/saas_app_v2/state.py",
+    "export": "source/srm-app/saas_app_v2/state.py",
+    "source_sha256": "3efa52b1a97d3034e71c49eb5521bed1de0ba67554b1ceac48f484c2a6bac2d4",
+    "export_sha256": "2b0ed71d04241e90f2a875163ccd4f1212fb3cb70dd9a72b40f27060920fa397",
+    "changes": [
+      "Normalized trailing whitespace for Git hygiene."
+    ]
+  },
+  {
+    "source": "booster-engine/srm-app/saas_app_v2/pages/payment.py",
+    "export": "source/srm-app/saas_app_v2/pages/payment.py",
+    "source_sha256": "cbf08249e909883561c8325855b56360b63e507a2a482ecd63150117ae68df0a",
+    "export_sha256": "8d75f83c515acfc9dd7e8f48d19cbcdc231a8192a6c9b33c4532849d181a545b",
+    "changes": [
+      "Normalized trailing whitespace for Git hygiene."
+    ]
+  },
+  {
+    "source": "booster-engine/srm-app/saas_app_v2/saas_app_v2.py",
+    "export": "source/srm-app/saas_app_v2/saas_app_v2.py",
+    "source_sha256": "fc8d1bb7bf9aa850ae2e1cd30039f1d08aeb064b2895c9ae4b2b75619c0f084f",
+    "export_sha256": "de3efb3b69103e2e49e3d7ea90d4aeae365e56ad8fe88b97b36e5f80e2c93abe",
+    "changes": [
+      "Normalized trailing whitespace for Git hygiene."
+    ]
+  },
+  {
+    "source": "booster-engine/js/ai-booster.js",
+    "export": "source/js/ai-booster.js",
+    "source_sha256": "87164d786f304892c91d666101a1e61b5c83c8d645783270af92b2add93b7f9b",
+    "export_sha256": "1c92e9513459f9b4763164bc6d5a953d294b16e3dbe4fb016e77182bb725a045",
+    "changes": [
+      "Normalized trailing whitespace for Git hygiene."
+    ]
+  },
+  {
+    "source": "booster-engine/js/ai-booster-v2.js",
+    "export": "source/js/ai-booster-v2.js",
+    "source_sha256": "2fa74d08a3630661b90248704202a8e87476b555e620087c961d9a2ca945b516",
+    "export_sha256": "2fa74d08a3630661b90248704202a8e87476b555e620087c961d9a2ca945b516",
+    "changes": []
+  },
+  {
+    "source": "booster-engine/seo-redirect-manager.html",
+    "export": "source/seo-redirect-manager.html",
+    "source_sha256": "0e661c595b9bb070147cc9fb3a24737e89ef58a104b321520e126ee1fce76a0b",
+    "export_sha256": "0e661c595b9bb070147cc9fb3a24737e89ef58a104b321520e126ee1fce76a0b",
+    "changes": []
+  },
+  {
+    "source": "booster-engine/seo-pogotowie/index.html",
+    "export": "source/seo-pogotowie/index.html",
+    "source_sha256": "7f43166d99bc6827e0a7965df554453b42b4fd97269abf47e70a047ca85615c9",
+    "export_sha256": "7f43166d99bc6827e0a7965df554453b42b4fd97269abf47e70a047ca85615c9",
+    "changes": []
+  },
+  {
+    "source": "booster-engine/apps/llm.txt/landing/index.html",
+    "export": "source/apps/llm.txt/landing/index.html",
+    "source_sha256": "08e487648b45257da3d895052558ed6865c7b9a91030cf33570f65d9a8a03dba",
+    "export_sha256": "08e487648b45257da3d895052558ed6865c7b9a91030cf33570f65d9a8a03dba",
+    "changes": []
+  },
+  {
+    "source": "booster-engine/apps/index-guard/landing/index.html",
+    "export": "source/apps/index-guard/landing/index.html",
+    "source_sha256": "64c65a67dd0876606dcd4343af7a3e5bdbb2d26dcfcd91254fd8aa1a13e7e308",
+    "export_sha256": "075c9bbc577c09fffe85963ba635b8dab23d47219e15fef39fbbb49fbb6c8f0b",
+    "changes": [
+      "Normalized trailing whitespace for Git hygiene."
+    ]
+  }
+]
