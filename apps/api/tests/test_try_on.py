@@ -223,3 +223,74 @@ def test_angle_instructions_come_from_our_catalogue_not_the_request():
     assert compose("detail", False).endswith(ANGLES["detail"])
     # An unknown label is ignored rather than passed through to the model.
     assert compose("../../etc", False) == compose(None, False)
+
+
+def counting_provider(monkeypatch, fail=False):
+    calls = []
+
+    async def generate(*args):
+        calls.append(args)
+        if fail:
+            raise ProviderError("IMAGE_SERVICE_ERROR", "The preview could not be created.")
+        return png()
+
+    monkeypatch.setattr(try_on, "provider", lambda: type("P", (), {"generate": staticmethod(generate)})())
+    return calls
+
+
+def priced(monkeypatch, price, app_env="development"):
+    from types import SimpleNamespace
+
+    monkeypatch.setattr(
+        try_on, "settings", lambda: SimpleNamespace(image_credits_per_generation=price, app_env=app_env)
+    )
+
+
+async def test_the_price_is_reserved_before_the_provider_is_called(db, monkeypatch):
+    calls = counting_provider(monkeypatch)
+    priced(monkeypatch, 500)
+    with pytest.raises(DomainError) as exc:
+        await try_on.preview(db, "alice", request())
+    assert exc.value.code == "INSUFFICIENT_CREDITS"
+    assert calls == []
+
+
+async def test_a_failed_generation_refunds_the_reserved_price(db, monkeypatch):
+    counting_provider(monkeypatch, fail=True)
+    priced(monkeypatch, 4)
+    with pytest.raises(ProviderError):
+        await try_on.preview(db, "alice", request())
+    account = db.scalar(select(Account).where(Account.user_id == "alice"))
+    assert (account.available, account.reserved) == (100, 0)
+    kinds = sorted(row.kind for row in db.scalars(select(Ledger)))
+    assert kinds == ["look_preview_refund", "look_preview_reserve"]
+
+    # The same key can be retried after a refunded failure and is charged once.
+    counting_provider(monkeypatch)
+    result = await try_on.preview(db, "alice", request())
+    assert result["creditsCharged"] == 4
+    account = db.scalar(select(Account).where(Account.user_id == "alice"))
+    assert (account.available, account.reserved) == (96, 0)
+
+
+async def test_a_free_preview_outside_development_refuses_to_start(db, monkeypatch):
+    calls = counting_provider(monkeypatch)
+    priced(monkeypatch, 0, app_env="production")
+    with pytest.raises(DomainError) as exc:
+        await try_on.preview(db, "alice", request())
+    assert exc.value.code == "PREVIEW_UNAVAILABLE"
+    assert calls == []
+
+
+async def test_a_karma_reserved_preview_never_debits_ugc_credits(db, monkeypatch):
+    counting_provider(monkeypatch)
+    priced(monkeypatch, 4, app_env="production")
+    result = await try_on.preview(db, "alice", request(), reservation="hold-1")
+    assert result["creditsCharged"] == 0
+    account = db.scalar(select(Account).where(Account.user_id == "alice"))
+    assert (account.available, account.reserved) == (100, 0)
+    assert [row.kind for row in db.scalars(select(Ledger))] == ["karma_reservation"]
+
+    with pytest.raises(DomainError) as exc:
+        await try_on.preview(db, "alice", request(idempotencyKey="preview-0009"), reservation="hold-1")
+    assert exc.value.code == "RESERVATION_ALREADY_USED"

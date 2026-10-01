@@ -34,6 +34,50 @@ class Storage:
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(data)
 
+    def get(self, key):
+        """The stored bytes, or None when nothing was uploaded under this key."""
+        if self.s3:
+            try:
+                return self.s3.get_object(Bucket=self.cfg.s3_bucket, Key=key)["Body"].read()
+            except self.s3.exceptions.NoSuchKey:
+                return None
+        path = self.path(key)
+        return path.read_bytes() if path.is_file() else None
+
+    def delete(self, key):
+        if self.s3:
+            self.s3.delete_object(Bucket=self.cfg.s3_bucket, Key=key)
+        else:
+            self.path(key).unlink(missing_ok=True)
+
+    def promote(self, source, target):
+        """Moves a verified staging upload to its permanent key; the staging URL can no
+        longer change what the asset points at."""
+        if self.s3:
+            self.s3.copy_object(
+                Bucket=self.cfg.s3_bucket,
+                Key=target,
+                CopySource={"Bucket": self.cfg.s3_bucket, "Key": source},
+            )
+            self.s3.delete_object(Bucket=self.cfg.s3_bucket, Key=source)
+        else:
+            destination = self.path(target)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            self.path(source).replace(destination)
+
+    def upload_url(self, key, content_type, upload_id, expires_in):
+        """A short-lived PUT target for one staging key: S3 presigned, or the local signed
+        endpoint, whose capability is the signed upload id itself."""
+        if self.s3:
+            url = self.s3.generate_presigned_url(
+                "put_object",
+                Params={"Bucket": self.cfg.s3_bucket, "Key": key, "ContentType": content_type},
+                ExpiresIn=expires_in,
+            )
+        else:
+            url = f"{self.cfg.public_api_url}/api/uploads/{quote(upload_id)}"
+        return url, {"Content-Type": content_type}
+
     def path(self, key):
         result = (self.root / key).resolve()
         if not result.is_relative_to(self.root):

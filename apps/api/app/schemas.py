@@ -129,3 +129,19 @@ class Resolve(BaseModel):
 
 class Checkout(BaseModel):
     priceId: str
+
+
+class UploadUrl(BaseModel):
+    """Asks for a short-lived direct-upload target; the file never passes through the API."""
+
+    model_config = ConfigDict(extra="forbid")
+    role: Literal["person", "product", "source_video"]
+    contentType: str = Field(min_length=1, max_length=100)
+    size: int = Field(ge=1)
+    filename: str = Field(default="upload", min_length=1, max_length=255)
+
+
+class UploadComplete(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    uploadId: str = Field(min_length=1, max_length=2048)
+    source: Literal["try_on"] | None = None

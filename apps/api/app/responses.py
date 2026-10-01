@@ -36,6 +36,14 @@ class AssetResponse(BaseModel):
     asset: AssetView
 
 
+class UploadUrlResponse(BaseModel):
+    uploadId: str
+    uploadUrl: str
+    method: Literal["PUT"]
+    headers: dict[str, str]
+    expiresAt: datetime
+
+
 class AssetsResponse(BaseModel):
     assets: list[AssetView]
 

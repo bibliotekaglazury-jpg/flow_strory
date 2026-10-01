@@ -12,7 +12,7 @@ from starlette.concurrency import run_in_threadpool
 from pydantic import ValidationError
 from sqlalchemy import text
 
-from app.auth import identity
+from app.auth import identity, is_service
 from app.config import settings
 from app.chat_api import router as chat_router
 from app.subtitles.routes import public_router as subtitle_public_router
@@ -29,8 +29,10 @@ from app.schemas import (
     LookProjectCreate,
     Resolve,
     TryOn,
+    UploadComplete,
+    UploadUrl,
 )
-from app.services import billing, generations, look_projects, try_on
+from app.services import billing, generations, karma, look_projects, try_on, uploads
 from app.services import profile as profile_service
 from app.services.assets import import_catalog_csv, store_asset
 from app.services.credits import TERMINAL, account
@@ -74,6 +76,37 @@ async def request_context(request, call_next):
     response = await call_next(request)
     response.headers["X-Request-ID"] = request.state.request_id
     response.headers["Cache-Control"] = "private, no-store"
+    return response
+
+
+# Direct uploads and signed media are the only browser-facing storage routes; JSON API
+# routes stay server-to-server for Karma and get no CORS headers.
+CORS_PATHS = ("/api/uploads/", "/api/media/")
+
+
+@app.middleware("http")
+async def storage_cors(request, call_next):
+    origin = request.headers.get("origin")
+    if not origin or not request.url.path.startswith(CORS_PATHS):
+        return await call_next(request)
+    allowed = origin.rstrip("/") in settings().karma_origins
+    if request.method == "OPTIONS":
+        if not allowed or request.headers.get("access-control-request-method") not in {"GET", "PUT"}:
+            return Response(status_code=403)
+        return Response(
+            status_code=204,
+            headers={
+                "Access-Control-Allow-Origin": origin,
+                "Access-Control-Allow-Methods": "GET, PUT",
+                "Access-Control-Allow-Headers": "Content-Type",
+                "Access-Control-Max-Age": "600",
+                "Vary": "Origin",
+            },
+        )
+    response = await call_next(request)
+    if allowed:
+        response.headers["Access-Control-Allow-Origin"] = origin
+        response.headers["Vary"] = "Origin"
     return response
 
 
@@ -204,6 +237,31 @@ async def upload(
     return {"asset": asset_view(asset, storage)}
 
 
+@app.post("/api/assets/upload-url", response_model=responses.UploadUrlResponse, status_code=201)
+def upload_url(body: UploadUrl, user=Depends(identity)):
+    """A short-lived signed PUT target bound to this subject, role, type and size."""
+    return uploads.issue(Storage(), user, body.role, body.contentType, body.size, body.filename)
+
+
+@app.put("/api/uploads/{upload_id}", status_code=204)
+async def receive_upload(upload_id: str, request: Request):
+    """Local storage mode only: the signed upload id is the capability, like a media link."""
+    cfg = settings()
+    if cfg.app_env != "development" or cfg.storage_mode != "local":
+        raise DomainError("NOT_FOUND", "Upload target is unavailable.", 404) from None
+    await uploads.receive(
+        Storage(), upload_id, request.headers.get("content-type", ""), request.stream()
+    )
+    return Response(status_code=204)
+
+
+@app.post("/api/assets/upload-complete", response_model=responses.AssetView)
+def upload_complete(body: UploadComplete, user=Depends(identity), db=Depends(session)):
+    """Records a directly uploaded file after checking owner, exact size and real format."""
+    storage = Storage()
+    return asset_view(uploads.complete(db, storage, user, body.uploadId, body.source), storage)
+
+
 @app.post("/api/assets/bulk", response_model=responses.AssetsResponse, status_code=201)
 async def upload_many(
     files: list[UploadFile] = File(),
@@ -251,8 +309,15 @@ async def catalog_import(file: UploadFile = File(), user=Depends(identity), db=D
 
 
 @app.post("/api/try-on", response_model=responses.TryOnResponse, status_code=201)
-async def look_preview(body: TryOn, user=Depends(identity), db=Depends(session)):
-    return await try_on.preview(db, user, body)
+async def look_preview(
+    body: TryOn,
+    request: Request,
+    x_karma_reservation: str | None = Header(default=None),
+    user=Depends(identity),
+    db=Depends(session),
+):
+    reservation = karma.required_reservation(is_service(request), x_karma_reservation)
+    return await try_on.preview(db, user, body, reservation)
 
 
 @app.post("/api/look-projects", response_model=responses.LookProjectResponse, status_code=201)
@@ -362,9 +427,16 @@ def profile(user=Depends(identity), db=Depends(session)):
 
 @app.post("/api/generations", response_model=responses.GenerationResponse, status_code=202)
 def create(
-    body: CreateGeneration, idempotency_key: str = Header(), user=Depends(identity), db=Depends(session)
+    body: CreateGeneration,
+    request: Request,
+    idempotency_key: str = Header(),
+    x_karma_reservation: str | None = Header(default=None),
+    user=Depends(identity),
+    db=Depends(session),
 ):
-    return {"generation": generations.view(db, generations.create(db, user, body, idempotency_key))}
+    reservation = karma.required_reservation(is_service(request), x_karma_reservation)
+    g = generations.create(db, user, body, idempotency_key, reservation)
+    return {"generation": generations.view(db, g)}
 
 
 @app.get("/api/generations", response_model=responses.HistoryResponse)

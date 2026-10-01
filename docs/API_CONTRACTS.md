@@ -142,6 +142,57 @@ interface UploadAssetResponse { asset: Asset }
 
 Upload transfer progress belongs to the API adapter. No staged-upload or resumable-upload feature is implied. Recover expired display URLs by refetching their owning generation; staged asset expiration behavior remains to be decided.
 
+## Karma service mode and direct upload — 2026-10-02
+
+Server-to-server only (Karma → UGC). Environment names (values never in the repo):
+`KARMA_SERVICE_TOKEN` (service bearer; unset = service mode off; at least 32 characters
+outside development) and `KARMA_ALLOWED_ORIGINS` (comma-separated browser origins allowed to
+PUT direct uploads and GET media; S3/R2 bucket CORS is written from it by
+`python -m app.storage_cors --apply`).
+
+- **Auth.** `Authorization: Bearer <KARMA_SERVICE_TOKEN>` plus `X-Karma-Subject: <uuid v5>`.
+  The bearer is compared in constant time; when it matches, the subject is the UGC user id.
+  A non-v5 or missing subject with the service bearer is 401. Any other bearer takes the
+  unchanged Supabase JWT path and `X-Karma-Subject` is ignored. A service subject receives
+  no UGC credits.
+- **Isolation.** Every asset, look project, look photo, generation and upload is scoped to the
+  subject; another subject's id answers 404. Media links are signed over a storage key that
+  begins with the owner's subject.
+- **One charge.** In service mode `POST /api/try-on` and `POST /api/generations` require
+  `X-Karma-Reservation: <id>` (`[A-Za-z0-9_.:-]{1,200}`), else 403 `RESERVATION_REQUIRED`.
+  Nothing is debited from UGC credits; the reservation is recorded once per subject (a second
+  start with the same reservation is 409 `RESERVATION_ALREADY_USED`; a retry with the same
+  idempotency key returns the first result).
+- **Standalone look preview.** The price is reserved before the provider call and refunded if
+  it raises; `IMAGE_CREDITS_PER_GENERATION=0` outside development refuses to start (503).
+
+```ts
+// POST /api/assets/upload-url
+interface UploadUrlRequest {
+  role: "person" | "product" | "source_video";
+  contentType: string; // images: image/png|jpeg|webp (10 MB); video: video/mp4|quicktime|webm (500 MB)
+  size: number; // exact byte count
+  filename?: string;
+}
+interface UploadUrlResponse {
+  uploadId: string; // opaque, signed, bound to subject, role, type and size
+  uploadUrl: string; // S3 presigned PUT, or the local signed endpoint
+  method: "PUT";
+  headers: Record<string, string>; // send exactly these with the PUT
+  expiresAt: ISODateTime; // 15 minutes
+}
+// POST /api/assets/upload-complete
+interface UploadCompleteRequest { uploadId: string; source?: "try_on" }
+type UploadCompleteResponse = Asset; // the AssetView itself
+```
+
+Errors: 413 over the limit, 415 type not allowed for the role / content does not match by
+magic bytes / not a decodable image or video, 422 size differs from the declared size,
+409 completed before the PUT, 410 expired, 404 unknown or another subject's upload. A rejected
+upload is deleted. The file is uploaded to a staging key and moved to its permanent key only
+after the checks, so a later PUT to the same URL cannot change the asset. Completing twice
+returns the same asset.
+
 ## POST /api/prompts/generate — generate an editable production prompt
 
 Response 200. Combines the supplied creative input; if source video is provided, include remake context. URL fetching/extraction happens server-side with public-URL validation and SSRF protection. No browser scraping or fabricated product claims.
