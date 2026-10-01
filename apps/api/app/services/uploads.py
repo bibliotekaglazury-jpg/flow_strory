@@ -1,4 +1,7 @@
-"""Direct upload: the client PUTs a file straight to storage, never through Karma or this API.
+"""Direct upload: the client sends a file straight to storage, never through Karma or this API.
+
+S3 mode hands out a presigned POST (multipart form with `fields`, size capped by S3);
+local storage mode hands out a signed PUT to this API (raw body).
 
 upload-url hands out a signed upload id bound to the subject, role, content type, declared
 size and a staging key. upload-complete re-checks all of it against the stored bytes (owner,
@@ -33,7 +36,7 @@ CONTENT_TYPES = {
 # MP4 and QuickTime share the ISO base media container; browsers label the same file either way.
 FAMILIES = {"video/quicktime": "video/mp4"}
 TTL_SECONDS = 15 * 60
-# A large video may finish its PUT right at expiry; completion stays possible a little longer.
+# A large video may finish its upload right at expiry; completion stays possible a little longer.
 COMPLETE_GRACE_SECONDS = 15 * 60
 STAGING_PREFIX = "uploads"
 
@@ -103,12 +106,12 @@ def issue(storage, user_id, role, content_type, size, filename):
             "e": expires,
         }
     )
-    url, headers = storage.upload_url(staging_key(user_id, identifier), content_type, upload_id, TTL_SECONDS)
+    target = storage.upload_target(
+        staging_key(user_id, identifier), content_type, size, upload_id, TTL_SECONDS
+    )
     return {
         "uploadId": upload_id,
-        "uploadUrl": url,
-        "method": "PUT",
-        "headers": headers,
+        **target,
         "expiresAt": datetime.fromtimestamp(expires, UTC).isoformat(),
     }
 

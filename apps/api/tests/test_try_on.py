@@ -289,7 +289,10 @@ async def test_a_karma_reserved_preview_never_debits_ugc_credits(db, monkeypatch
     assert result["creditsCharged"] == 0
     account = db.scalar(select(Account).where(Account.user_id == "alice"))
     assert (account.available, account.reserved) == (100, 0)
-    assert [row.kind for row in db.scalars(select(Ledger))] == ["karma_reservation"]
+    assert [row.kind for row in db.scalars(select(Ledger))] == [
+        "karma_reservation",
+        "karma_reservation_result",
+    ]
 
     with pytest.raises(DomainError) as exc:
         await try_on.preview(db, "alice", request(idempotencyKey="preview-0009"), reservation="hold-1")

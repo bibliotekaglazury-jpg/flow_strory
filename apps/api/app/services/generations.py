@@ -134,6 +134,14 @@ def create(db, user_id, body, key, reservation=None):
         return prior
     estimate = Estimate.model_validate({k: v for k, v in snapshot.items() if k in Estimate.model_fields})
     selected, cost = validate_estimate(db, user_id, estimate)
+    if (
+        reservation is None
+        and selected.id != "render_only"
+        and not cost
+        and settings().app_env != "development"
+    ):
+        # Standalone UGC must not start a paid provider video for free while the price is unset.
+        raise DomainError("VIDEO_UNAVAILABLE", "Video generation is not priced yet.", 503) from None
     if not is_remotion(body.templateId):
         prompt = db.get(Prompt, body.promptId)
         creative = Creative.model_validate({k: v for k, v in snapshot.items() if k in Creative.model_fields})
@@ -211,6 +219,7 @@ def delete(db, user_id, generation_id):
     g = owned_generation(db, user_id, generation_id, True)
     if g.status not in TERMINAL:
         raise DomainError("DELETE_UNAVAILABLE", "This generation is still in progress.", 409) from None
+    karma.generation_deleted(db, g)
     db.execute(sa_delete(Output).where(Output.generation_id == g.id))
     db.execute(sa_delete(Job).where(Job.generation_id == g.id))
     db.delete(g)

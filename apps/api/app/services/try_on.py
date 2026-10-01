@@ -57,6 +57,14 @@ def references(db, user_id, body, storage):
     return [media_url(storage, person[0]), *[media_url(storage, a) for a in products]]
 
 
+class Failed:
+    """A service try-on whose provider call failed. The route answers with the error but
+    still commits, so the reservation's failure is recorded rather than rolled back."""
+
+    def __init__(self, error):
+        self.error = error
+
+
 async def preview(db, user_id, body, reservation=None):
     """Charge only for an image that actually came back.
 
@@ -101,6 +109,14 @@ async def preview(db, user_id, body, reservation=None):
         data = await provider().generate(
             image_urls, compose(body.angle, bool(body.baseAssetId)), body.aspectRatio
         )
+    except Exception as exc:
+        if reservation is not None:
+            # Committed with the claim, so Karma's reconciliation reads "failed" and refunds.
+            karma.photo_failed(db, user_id, reservation)
+            return Failed(exc)
+        if price:
+            change(db, user_id, price, -price, f"{ledger_key}:refund:{attempt}", "look_preview_refund")
+        raise
     except BaseException:
         if price:
             change(db, user_id, price, -price, f"{ledger_key}:refund:{attempt}", "look_preview_refund")
@@ -108,6 +124,8 @@ async def preview(db, user_id, body, reservation=None):
     if price:
         change(db, user_id, 0, -price, ledger_key, "look_preview")
     asset = store_asset(db, storage, user_id, ROLE, data, "look-preview.png", idempotency_key=key)
+    if reservation is not None:
+        karma.photo_result(db, user_id, reservation, asset.id)
     if project:
         look_projects.record(db, project, asset, body.angle)
     return {"asset": asset_view(asset, storage), "creditsCharged": price}

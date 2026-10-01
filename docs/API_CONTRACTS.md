@@ -147,8 +147,9 @@ Upload transfer progress belongs to the API adapter. No staged-upload or resumab
 Server-to-server only (Karma → UGC). Environment names (values never in the repo):
 `KARMA_SERVICE_TOKEN` (service bearer; unset = service mode off; at least 32 characters
 outside development) and `KARMA_ALLOWED_ORIGINS` (comma-separated browser origins allowed to
-PUT direct uploads and GET media; S3/R2 bucket CORS is written from it by
-`python -m app.storage_cors --apply`).
+upload directly and GET media). `python -m app.storage_cors --apply` writes the S3 bucket
+CORS (POST, GET for those origins) and a lifecycle rule that expires `uploads/` staging
+objects after 1 day; other lifecycle rules on the bucket are kept.
 
 - **Auth.** `Authorization: Bearer <KARMA_SERVICE_TOKEN>` plus `X-Karma-Subject: <uuid v5>`.
   The bearer is compared in constant time; when it matches, the subject is the UGC user id.
@@ -164,7 +165,14 @@ PUT direct uploads and GET media; S3/R2 bucket CORS is written from it by
   start with the same reservation is 409 `RESERVATION_ALREADY_USED`; a retry with the same
   idempotency key returns the first result).
 - **Standalone look preview.** The price is reserved before the provider call and refunded if
-  it raises; `IMAGE_CREDITS_PER_GENERATION=0` outside development refuses to start (503).
+  it raises; `IMAGE_CREDITS_PER_GENERATION=0` outside development refuses to start (503
+  `PREVIEW_UNAVAILABLE`).
+- **Standalone video.** A provider video quoted at 0 credits outside development refuses to
+  start (503 `VIDEO_UNAVAILABLE`). Karma service starts (with a reservation) and local
+  render-only templates are not affected.
+- **Failed service try-on.** If the provider call fails, the response is the provider error
+  and the reservation is recorded as `failed` (it stays spent: Karma refunds its hold and
+  sends a new reservation for a retry).
 
 ```ts
 // POST /api/assets/upload-url
@@ -176,21 +184,41 @@ interface UploadUrlRequest {
 }
 interface UploadUrlResponse {
   uploadId: string; // opaque, signed, bound to subject, role, type and size
-  uploadUrl: string; // S3 presigned PUT, or the local signed endpoint
-  method: "PUT";
-  headers: Record<string, string>; // send exactly these with the PUT
+  uploadUrl: string;
+  // "POST": S3 presigned POST. Send multipart/form-data with every `fields` entry first and
+  //         the file last as the `file` field; S3 enforces type and exact size by policy.
+  // "PUT":  local storage mode. Send the raw file body with exactly `headers`.
+  method: "POST" | "PUT";
+  headers: Record<string, string>; // empty for POST
+  fields: Record<string, string>; // empty for PUT
   expiresAt: ISODateTime; // 15 minutes
 }
 // POST /api/assets/upload-complete
 interface UploadCompleteRequest { uploadId: string; source?: "try_on" }
-type UploadCompleteResponse = Asset; // the AssetView itself
+interface UploadCompleteResponse { asset: Asset } // same envelope as POST /api/assets
+
+// GET /api/reservations/{reservationId}   (service mode only; read-only)
+interface ReservationResponse {
+  status: "pending" | "succeeded" | "failed" | "unknown";
+  kind?: "photo" | "video"; // absent when unknown
+  result?: { assetId?: string; generationId?: string };
+}
 ```
+
+Reservation lookup is for Karma's background reconciliation and never starts or repeats paid
+work. `unknown`: UGC has no record of the reservation for this subject (never received, or a
+try-on still in flight: a try-on is one synchronous transaction and becomes visible only when
+it commits). `pending`: seen, its video is queued or generating (including a submission under
+operational reconciliation). `succeeded`: the photo was stored (`assetId`) or the video
+completed (`generationId`). `failed`: the provider call failed, or the video failed or was
+cancelled. The outcome survives deleting the photo or video from the library. A reservation
+claimed by another subject is 404; a caller that is not in service mode gets 404.
 
 Errors: 413 over the limit, 415 type not allowed for the role / content does not match by
 magic bytes / not a decodable image or video, 422 size differs from the declared size,
-409 completed before the PUT, 410 expired, 404 unknown or another subject's upload. A rejected
+409 completed before the upload, 410 expired, 404 unknown or another subject's upload. A rejected
 upload is deleted. The file is uploaded to a staging key and moved to its permanent key only
-after the checks, so a later PUT to the same URL cannot change the asset. Completing twice
+after the checks, so a later upload to the same target cannot change the asset. Completing twice
 returns the same asset.
 
 ## POST /api/prompts/generate — generate an editable production prompt

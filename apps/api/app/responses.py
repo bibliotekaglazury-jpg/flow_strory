@@ -39,9 +39,21 @@ class AssetResponse(BaseModel):
 class UploadUrlResponse(BaseModel):
     uploadId: str
     uploadUrl: str
-    method: Literal["PUT"]
+    method: Literal["POST", "PUT"]
     headers: dict[str, str]
+    fields: dict[str, str]
     expiresAt: datetime
+
+
+class ReservationResult(BaseModel):
+    assetId: str | None = None
+    generationId: str | None = None
+
+
+class ReservationResponse(BaseModel):
+    status: Literal["pending", "succeeded", "failed", "unknown"]
+    kind: Literal["photo", "video"] | None
+    result: ReservationResult | None = None
 
 
 class AssetsResponse(BaseModel):

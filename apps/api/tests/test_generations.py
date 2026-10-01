@@ -143,3 +143,37 @@ def test_one_karma_reservation_never_pays_for_two_starts(setup):
     with pytest.raises(DomainError) as error:
         create(db, "alice", body.model_copy(update={"quoteId": fresh.id}), "another-key", reservation="hold-1")
     assert error.value.code == "RESERVATION_ALREADY_USED"
+
+
+def free_video(monkeypatch, db, q, app_env):
+    """Prices the quoted video at 0 and runs admission under the given APP_ENV."""
+    from app.config import settings
+    from app.services import generations
+
+    real = generations.validate_estimate
+    monkeypatch.setattr(generations, "validate_estimate", lambda *a: (real(*a)[0], 0))
+    staged = settings().model_copy(update={"app_env": app_env})
+    monkeypatch.setattr(generations, "settings", lambda: staged)
+    q.amount = 0
+    db.flush()
+
+
+def test_a_standalone_video_at_price_0_refuses_to_start_outside_development(setup, monkeypatch):
+    db, body, q = setup
+    free_video(monkeypatch, db, q, "production")
+    with pytest.raises(DomainError) as error:
+        create(db, "alice", body, "free-key")
+    assert error.value.code == "VIDEO_UNAVAILABLE" and error.value.status == 503
+    assert db.scalar(select(func.count()).select_from(Generation)) == 0
+
+
+def test_a_video_at_price_0_still_starts_in_development(setup, monkeypatch):
+    db, body, q = setup
+    free_video(monkeypatch, db, q, "development")
+    assert create(db, "alice", body, "dev-key").status == "queued"
+
+
+def test_a_karma_video_at_price_0_starts_outside_development(setup, monkeypatch):
+    db, body, q = setup
+    free_video(monkeypatch, db, q, "production")
+    assert create(db, "alice", body, "karma-key", reservation="hold-1").status == "queued"

@@ -65,18 +65,28 @@ class Storage:
             destination.parent.mkdir(parents=True, exist_ok=True)
             self.path(source).replace(destination)
 
-    def upload_url(self, key, content_type, upload_id, expires_in):
-        """A short-lived PUT target for one staging key: S3 presigned, or the local signed
-        endpoint, whose capability is the signed upload id itself."""
+    def upload_target(self, key, content_type, size, upload_id, expires_in):
+        """A short-lived upload target for one staging key.
+
+        S3: a presigned POST whose policy pins the key, the Content-Type and the exact size
+        (content-length-range), so S3 itself refuses a larger body. Local: a signed PUT to
+        this API, whose capability is the signed upload id itself.
+        """
         if self.s3:
-            url = self.s3.generate_presigned_url(
-                "put_object",
-                Params={"Bucket": self.cfg.s3_bucket, "Key": key, "ContentType": content_type},
+            post = self.s3.generate_presigned_post(
+                Bucket=self.cfg.s3_bucket,
+                Key=key,
+                Fields={"Content-Type": content_type},
+                Conditions=[{"Content-Type": content_type}, ["content-length-range", size, size]],
                 ExpiresIn=expires_in,
             )
-        else:
-            url = f"{self.cfg.public_api_url}/api/uploads/{quote(upload_id)}"
-        return url, {"Content-Type": content_type}
+            return {"uploadUrl": post["url"], "method": "POST", "headers": {}, "fields": post["fields"]}
+        return {
+            "uploadUrl": f"{self.cfg.public_api_url}/api/uploads/{quote(upload_id)}",
+            "method": "PUT",
+            "headers": {"Content-Type": content_type},
+            "fields": {},
+        }
 
     def path(self, key):
         result = (self.root / key).resolve()

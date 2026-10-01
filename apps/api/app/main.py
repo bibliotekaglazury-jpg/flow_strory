@@ -239,7 +239,8 @@ async def upload(
 
 @app.post("/api/assets/upload-url", response_model=responses.UploadUrlResponse, status_code=201)
 def upload_url(body: UploadUrl, user=Depends(identity)):
-    """A short-lived signed PUT target bound to this subject, role, type and size."""
+    """A short-lived upload target (S3 presigned POST, or local signed PUT) bound to this
+    subject, role, type and size."""
     return uploads.issue(Storage(), user, body.role, body.contentType, body.size, body.filename)
 
 
@@ -255,11 +256,23 @@ async def receive_upload(upload_id: str, request: Request):
     return Response(status_code=204)
 
 
-@app.post("/api/assets/upload-complete", response_model=responses.AssetView)
+@app.post("/api/assets/upload-complete", response_model=responses.AssetResponse)
 def upload_complete(body: UploadComplete, user=Depends(identity), db=Depends(session)):
     """Records a directly uploaded file after checking owner, exact size and real format."""
     storage = Storage()
-    return asset_view(uploads.complete(db, storage, user, body.uploadId, body.source), storage)
+    return {"asset": asset_view(uploads.complete(db, storage, user, body.uploadId, body.source), storage)}
+
+
+@app.get(
+    "/api/reservations/{reservation_id}",
+    response_model=responses.ReservationResponse,
+    response_model_exclude_none=True,
+)
+def reservation_status(reservation_id: str, request: Request, user=Depends(identity), db=Depends(session)):
+    """Karma reconciliation: what became of one reservation of this subject. Read-only."""
+    if not is_service(request):
+        raise DomainError("NOT_FOUND", "Reservation is unavailable.", 404) from None
+    return karma.status(db, user, reservation_id)
 
 
 @app.post("/api/assets/bulk", response_model=responses.AssetsResponse, status_code=201)
@@ -317,7 +330,19 @@ async def look_preview(
     db=Depends(session),
 ):
     reservation = karma.required_reservation(is_service(request), x_karma_reservation)
-    return await try_on.preview(db, user, body, reservation)
+    result = await try_on.preview(db, user, body, reservation)
+    if isinstance(result, try_on.Failed):
+        # Answered as an error but returned, not raised, so the failure record commits.
+        error = result.error
+        if isinstance(error, ProviderError):
+            return await provider_error(request, error)
+        if isinstance(error, DomainError):
+            return await domain_error(request, error)
+        log.error("try_on_provider_failed", extra={"exception_type": type(error).__name__})
+        return await domain_error(
+            request, DomainError("IMAGE_SERVICE_ERROR", "The preview could not be created.", 503, True)
+        )
+    return result
 
 
 @app.post("/api/look-projects", response_model=responses.LookProjectResponse, status_code=201)

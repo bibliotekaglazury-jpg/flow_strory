@@ -106,7 +106,7 @@ def uploaded_asset(client, subject, role="person", color="white"):
         headers=service(subject),
     )
     assert done.status_code == 200, done.text
-    return done.json()
+    return done.json()["asset"]
 
 
 def staged_files(root):
@@ -251,7 +251,8 @@ def test_a_service_try_on_with_a_reservation_debits_nothing(client, factory, mon
         account = db.get(Account, ALICE)
         assert (account.available, account.reserved) == (0, 0)
         assert [row.kind for row in db.scalars(select(Ledger).where(Ledger.user_id == ALICE))] == [
-            "karma_reservation"
+            "karma_reservation",
+            "karma_reservation_result",
         ]
 
 
@@ -429,6 +430,7 @@ def test_upload_url_is_short_lived_and_bound_to_type(client):
     body = response.json()
     assert body["method"] == "PUT"
     assert body["headers"] == {"Content-Type": "video/mp4"}
+    assert body["fields"] == {}
     expires = datetime.fromisoformat(body["expiresAt"])
     assert expires <= datetime.now(UTC) + timedelta(minutes=15, seconds=5)
     claims = uploads.decode(body["uploadId"])
@@ -461,14 +463,14 @@ def test_completing_twice_returns_the_same_asset(client):
         "/api/assets/upload-complete", json={"uploadId": body["uploadId"]}, headers=service(ALICE)
     )
     assert first.status_code == again.status_code == 200
-    assert first.json()["id"] == again.json()["id"]
+    assert first.json()["asset"]["id"] == again.json()["asset"]["id"]
 
 
 def test_a_put_after_completion_cannot_replace_the_asset(client, tmp_path):
     body, _ = direct_upload(client, ALICE, png())
     asset = client.post(
         "/api/assets/upload-complete", json={"uploadId": body["uploadId"]}, headers=service(ALICE)
-    ).json()
+    ).json()["asset"]
     client.put(
         body["uploadUrl"].replace("http://testserver", ""),
         content=jpeg()[: len(png())],
@@ -607,17 +609,286 @@ def test_cors_allows_only_the_karma_origin_and_only_put_and_get(client):
     assert "access-control-allow-origin" not in api.headers
 
 
-def test_s3_cors_rules_cover_put_and_get_for_the_listed_origins():
+
+
+def test_upload_complete_uses_the_same_envelope_as_post_assets(client):
+    body, _ = direct_upload(client, ALICE, png())
+    done = client.post(
+        "/api/assets/upload-complete", json={"uploadId": body["uploadId"]}, headers=service(ALICE)
+    )
+    assert done.status_code == 200
+    assert set(done.json()) == {"asset"}
+    assert done.json()["asset"]["mimeType"] == "image/png"
+
+
+# --- S3 staging: presigned POST with a size range, CORS and lifecycle -----------------------
+
+
+def s3_storage(tmp_path):
+    from types import SimpleNamespace
+
+    from app.services.storage import Storage
+
+    return Storage(
+        SimpleNamespace(
+            storage_path=str(tmp_path),
+            storage_mode="s3",
+            s3_endpoint_url="https://s3.example.invalid",
+            s3_region="auto",
+            s3_access_key_id="test-key-id",
+            s3_secret_access_key="test-secret",
+            s3_bucket="ugc-private",
+            public_api_url="https://api.example",
+            storage_signing_secret="secret",
+            app_env="production",
+        )
+    )
+
+
+def test_s3_staging_is_a_presigned_post_capped_to_the_declared_size(tmp_path):
+    import base64
+    import json
+
+    target = s3_storage(tmp_path).upload_target(f"uploads/{ALICE}/abc", "video/mp4", 4242, "id", 900)
+    assert target["method"] == "POST"
+    assert target["headers"] == {}
+    fields = target["fields"]
+    assert fields["key"] == f"uploads/{ALICE}/abc" and fields["Content-Type"] == "video/mp4"
+    policy = json.loads(base64.b64decode(fields["policy"]))
+    assert ["content-length-range", 4242, 4242] in policy["conditions"]
+    assert {"Content-Type": "video/mp4"} in policy["conditions"]
+    assert {"bucket": "ugc-private"} in policy["conditions"]
+
+
+def test_upload_url_in_s3_mode_returns_post_and_its_form_fields(client, monkeypatch, tmp_path):
+    monkeypatch.setattr("app.main.Storage", lambda: s3_storage(tmp_path))
+    response = client.post(
+        "/api/assets/upload-url",
+        json={"role": "person", "contentType": "image/png", "size": 1234},
+        headers=service(ALICE),
+    )
+    assert response.status_code == 201, response.text
+    body = response.json()
+    assert body["method"] == "POST" and body["fields"]["Content-Type"] == "image/png"
+    assert body["fields"]["key"].startswith(f"uploads/{ALICE}/")
+
+
+def test_s3_cors_rules_cover_post_and_get_for_the_listed_origins():
     from app.storage_cors import cors_configuration
 
     rules = cors_configuration(["https://app.karmaposting.com"])["CORSRules"]
     assert rules == [
         {
             "AllowedOrigins": ["https://app.karmaposting.com"],
-            "AllowedMethods": ["PUT", "GET"],
+            "AllowedMethods": ["POST", "GET"],
             "AllowedHeaders": ["Content-Type"],
             "MaxAgeSeconds": 600,
         }
     ]
     with pytest.raises(ValueError):
         cors_configuration([])
+
+
+def test_the_lifecycle_rule_expires_staging_after_a_day_and_keeps_other_rules():
+    from app.storage_cors import lifecycle_configuration
+
+    other = {"ID": "keep-me", "Filter": {"Prefix": "exports/"}, "Status": "Enabled", "Expiration": {"Days": 30}}
+    stale = {"ID": "expire-direct-upload-staging", "Filter": {"Prefix": "x/"}, "Status": "Disabled"}
+    rules = lifecycle_configuration([other, stale])["Rules"]
+    assert rules[0] == other
+    assert rules[1] == {
+        "ID": "expire-direct-upload-staging",
+        "Filter": {"Prefix": "uploads/"},
+        "Status": "Enabled",
+        "Expiration": {"Days": 1},
+        "AbortIncompleteMultipartUpload": {"DaysAfterInitiation": 1},
+    }
+
+
+def test_apply_writes_cors_and_merges_the_lifecycle(monkeypatch, capsys):
+    from app import storage_cors
+
+    calls = {}
+
+    class FakeS3:
+        class exceptions:
+            ClientError = Exception
+
+        def get_bucket_lifecycle_configuration(self, Bucket):
+            return {"Rules": [{"ID": "keep-me", "Filter": {"Prefix": "a/"}, "Status": "Enabled"}]}
+
+        def put_bucket_cors(self, **kwargs):
+            calls["cors"] = kwargs
+
+        def put_bucket_lifecycle_configuration(self, **kwargs):
+            calls["lifecycle"] = kwargs
+
+    monkeypatch.setenv("KARMA_ALLOWED_ORIGINS", "https://app.karmaposting.com")
+    monkeypatch.setenv("S3_BUCKET", "ugc-private")
+    settings.cache_clear()
+    monkeypatch.setattr(
+        "app.services.storage.Storage", lambda: type("S", (), {"s3": FakeS3()})()
+    )
+    try:
+        storage_cors.main(["--apply"])
+    finally:
+        settings.cache_clear()
+    assert calls["cors"]["CORSConfiguration"]["CORSRules"][0]["AllowedMethods"] == ["POST", "GET"]
+    ids = [rule["ID"] for rule in calls["lifecycle"]["LifecycleConfiguration"]["Rules"]]
+    assert ids == ["keep-me", "expire-direct-upload-staging"]
+
+
+# --- reservation lookup for Karma reconciliation --------------------------------------------
+
+
+def reservation(client, subject, hold):
+    return client.get(f"/api/reservations/{hold}", headers=service(subject))
+
+
+def test_a_reservation_no_one_has_seen_is_unknown(client):
+    response = reservation(client, ALICE, "hold-never")
+    assert response.status_code == 200
+    assert response.json() == {"status": "unknown"}
+
+
+def test_reservation_lookup_is_service_only(client):
+    assert client.get("/api/reservations/hold-1").status_code == 404
+
+
+def test_a_delivered_photo_reports_succeeded_with_its_asset(client, alice_world):
+    response = reservation(client, ALICE, "hold-a")
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "succeeded",
+        "kind": "photo",
+        "result": {"assetId": alice_world["photo"]["id"]},
+    }
+
+
+def test_another_subjects_reservation_is_404(client, alice_world):
+    assert reservation(client, BOB, "hold-a").status_code == 404
+    # A different id that merely ends the same way is not Alice's.
+    assert reservation(client, BOB, "a").json() == {"status": "unknown"}
+
+
+def test_a_failed_provider_call_is_recorded_as_failed_and_the_hold_is_spent(client, monkeypatch):
+    from app.providers import ProviderError
+
+    async def generate(*args):
+        raise ProviderError("IMAGE_SERVICE_ERROR", "The preview could not be created.", retryable=True)
+
+    monkeypatch.setattr(try_on, "provider", lambda: type("P", (), {"generate": staticmethod(generate)})())
+    person = uploaded_asset(client, ALICE)
+    product = uploaded_asset(client, ALICE, role="product", color="blue")
+    headers = service(ALICE, **{"X-Karma-Reservation": "hold-fail"})
+    response = client.post("/api/try-on", json=try_on_body(person["id"], product["id"]), headers=headers)
+    assert response.status_code == 503
+    assert response.json()["error"]["code"] == "IMAGE_SERVICE_ERROR"
+    assert reservation(client, ALICE, "hold-fail").json() == {"status": "failed", "kind": "photo"}
+    again = client.post(
+        "/api/try-on", json=try_on_body(person["id"], product["id"], key="preview-0002"), headers=headers
+    )
+    assert again.status_code == 409
+
+
+def test_an_unexpected_provider_crash_is_also_failed(client, monkeypatch):
+    async def generate(*args):
+        raise RuntimeError("socket closed")
+
+    monkeypatch.setattr(try_on, "provider", lambda: type("P", (), {"generate": staticmethod(generate)})())
+    person = uploaded_asset(client, ALICE)
+    product = uploaded_asset(client, ALICE, role="product", color="blue")
+    response = client.post(
+        "/api/try-on",
+        json=try_on_body(person["id"], product["id"]),
+        headers=service(ALICE, **{"X-Karma-Reservation": "hold-crash"}),
+    )
+    assert response.status_code == 503
+    assert reservation(client, ALICE, "hold-crash").json()["status"] == "failed"
+
+
+def test_a_claimed_photo_without_a_result_is_pending(client, factory):
+    from app.services import karma
+
+    whoami(client, service(ALICE))
+    with factory() as db, db.begin():
+        karma.claim(db, ALICE, "hold-running")
+    assert reservation(client, ALICE, "hold-running").json() == {"status": "pending", "kind": "photo"}
+
+
+@pytest.mark.parametrize(
+    "status,expected",
+    [
+        ("queued", "pending"),
+        ("generating", "pending"),
+        ("completed", "succeeded"),
+        ("failed", "failed"),
+        ("cancelled", "failed"),
+    ],
+)
+def test_a_video_reservation_follows_its_generation(client, factory, status, expected):
+    from app.services import karma
+
+    whoami(client, service(ALICE))
+    with factory() as db, db.begin():
+        db.add(
+            Generation(
+                id="video-1",
+                user_id=ALICE,
+                snapshot={},
+                request_hash="h",
+                idempotency_key="k",
+                status=status,
+                estimated=0,
+                charged=0,
+            )
+        )
+        db.flush()
+        karma.claim(db, ALICE, "hold-video", "video-1")
+    assert reservation(client, ALICE, "hold-video").json() == {
+        "status": expected,
+        "kind": "video",
+        "result": {"generationId": "video-1"},
+    }
+    assert reservation(client, BOB, "hold-video").status_code == 404
+
+
+@pytest.mark.parametrize("status,expected", [("completed", "succeeded"), ("failed", "failed")])
+def test_deleting_a_video_keeps_its_reservation_outcome(client, factory, status, expected):
+    from app.services import generations, karma
+
+    whoami(client, service(ALICE))
+    with factory() as db, db.begin():
+        db.add(
+            Generation(
+                id="video-2",
+                user_id=ALICE,
+                snapshot={},
+                request_hash="h",
+                idempotency_key="k",
+                status=status,
+                estimated=0,
+                charged=0,
+            )
+        )
+        db.flush()
+        karma.claim(db, ALICE, "hold-deleted", "video-2")
+    with factory() as db, db.begin():
+        generations.delete(db, ALICE, "video-2")
+    assert reservation(client, ALICE, "hold-deleted").json() == {
+        "status": expected,
+        "kind": "video",
+        "result": {"generationId": "video-2"},
+    }
+
+
+def test_a_reservation_id_cannot_forge_another_reservations_marker(client, factory):
+    from app.services import karma
+
+    whoami(client, service(ALICE))
+    with factory() as db, db.begin():
+        karma.claim(db, ALICE, "hold-x")
+        karma.photo_failed(db, ALICE, "hold-x")
+    # '#' is outside the reservation alphabet, so the marker is not addressable as an id.
+    assert reservation(client, ALICE, "hold-x%23failed").json() == {"status": "unknown"}
+    assert reservation(client, ALICE, "hold-x").json()["status"] == "failed"
