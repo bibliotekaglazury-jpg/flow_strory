@@ -323,3 +323,30 @@ def test_openrouter_image_records_real_cost_and_per_model_limit():
 
     assert asyncio.run(run()) == 0.01
     assert OpenRouterImageProvider("k", "google/gemini-3-pro-image").max_references == 6
+
+
+def test_muse_requests_lossless_png_and_the_frame_as_size():
+    import asyncio
+    import base64
+    import json
+
+    import httpx
+
+    from app.providers.openrouter_image import OpenRouterImageProvider
+
+    png = base64.b64encode(b"\x89PNG\r\n\x1a\n" + b"0" * 16).decode()
+    seen = {}
+
+    def handler(request):
+        seen.update(json.loads(request.content))
+        return httpx.Response(200, json={"data": [{"b64_json": png}], "usage": {"cost": 0.01}})
+
+    async def run(model, ratio):
+        async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+            await OpenRouterImageProvider("k", model, client=client).generate(["https://m.example/a.png"], "p", ratio)
+
+    asyncio.run(run("meta/muse-image", "4:5"))
+    assert seen["output_format"] == "png" and seen["size"] == "1024x1280" and "aspect_ratio" not in seen
+    seen.clear()
+    asyncio.run(run("google/gemini-3-pro-image", "9:16"))
+    assert seen["aspect_ratio"] == "9:16" and "size" not in seen and "output_format" not in seen

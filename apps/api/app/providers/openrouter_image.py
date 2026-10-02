@@ -18,6 +18,12 @@ MODEL = "meta/muse-image"
 MAX_REFERENCES_BY_MODEL = {"google/gemini-3-pro-image": 6, "meta/muse-image": 10}
 MAX_REFERENCES = 6
 RATIOS = ("9:16", "1:1", "16:9", "4:5")
+# Meta Muse Image (dev.meta.ai/docs/image-generation): `size` "WxH" sets only the frame
+# shape (the model keeps its own resolution); `output_format` png is lossless at the same
+# $0.01 — its default webp is heavily compressed. Verified through OpenRouter 2026-10-02:
+# size "1080x1920" + png returned a 1152x2048 PNG.
+MUSE_MODEL = "meta/muse-image"
+MUSE_SIZES = {"9:16": "1080x1920", "1:1": "1024x1024", "16:9": "1920x1080", "4:5": "1024x1280"}
 
 log = logging.getLogger(__name__)
 
@@ -50,11 +56,12 @@ class OpenRouterImageProvider:
 
     async def generate(self, image_urls, prompt, aspect_ratio) -> bytes:
         self.validate(image_urls, aspect_ratio)
-        payload = {
-            "model": self.model,
-            "prompt": prompt,
-            "aspect_ratio": aspect_ratio,
-            "n": 1,
+        payload = {"model": self.model, "prompt": prompt, "n": 1}
+        if self.model == MUSE_MODEL:
+            payload.update({"size": MUSE_SIZES[aspect_ratio], "output_format": "png"})
+        else:
+            payload["aspect_ratio"] = aspect_ratio
+        payload |= {
             "input_references": [
                 {"type": "image_url", "image_url": {"url": url}} for url in image_urls
             ],
