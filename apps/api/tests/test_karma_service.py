@@ -128,10 +128,19 @@ def test_a_service_subject_gets_no_development_credits(client, factory):
         assert not db.scalar(select(Ledger).where(Ledger.user_id == ALICE))
 
 
-def test_a_forged_subject_without_the_secret_is_ignored(client, factory):
-    whoami(client, {"Authorization": "Bearer not-the-token", "X-Karma-Subject": ALICE})
-    whoami(client, {"X-Karma-Subject": ALICE})
+def test_a_forged_subject_without_the_secret_is_rejected_not_mock_admitted(client, factory):
+    for headers in (
+        {"Authorization": "Bearer not-the-token", "X-Karma-Subject": ALICE},
+        {"X-Karma-Subject": ALICE},
+        {"Authorization": "Bearer not-the-token"},
+    ):
+        assert client.get("/api/profile", headers=headers).status_code == 401, headers
     assert ALICE not in subjects(factory)
+    assert settings().mock_user_id not in subjects(factory)
+
+
+def test_a_plain_request_in_mock_mode_still_uses_the_mock_user(client, factory):
+    whoami(client, {})
     assert settings().mock_user_id in subjects(factory)
 
 

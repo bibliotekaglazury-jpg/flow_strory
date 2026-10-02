@@ -28,9 +28,18 @@ def service_subject(authorization, subject):
     and the request takes the ordinary Supabase path.
     """
     token = settings().karma_service_token.get_secret_value()
-    if not token or not authorization or not authorization.startswith("Bearer "):
+    if not token:
+        return None
+    if not authorization or not authorization.startswith("Bearer "):
+        # A Karma-shaped request without the service credential never falls back to mock auth.
+        if subject:
+            raise DomainError("UNAUTHENTICATED", "Service credential required.", 401) from None
         return None
     if not hmac.compare_digest(authorization[7:].encode(), token.encode()):
+        # Wrong bearer: in mock mode the ordinary path would admit it as the mock user, so a
+        # service-shaped request (X-Karma-Subject) or any bearer under mock auth is rejected outright.
+        if subject or settings().auth_mode == "mock":
+            raise DomainError("UNAUTHENTICATED", "Service credential is invalid.", 401) from None
         return None
     if not subject or not KARMA_SUBJECT.match(subject):
         raise DomainError("UNAUTHENTICATED", "Service request is missing a valid subject.", 401) from None
