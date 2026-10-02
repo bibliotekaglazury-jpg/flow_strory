@@ -297,3 +297,28 @@ async def test_a_karma_reserved_preview_never_debits_ugc_credits(db, monkeypatch
     with pytest.raises(DomainError) as exc:
         await try_on.preview(db, "alice", request(idempotencyKey="preview-0009"), reservation="hold-1")
     assert exc.value.code == "RESERVATION_ALREADY_USED"
+
+
+def test_openrouter_image_records_real_cost_and_per_model_limit():
+    import asyncio
+    import base64
+
+    import httpx
+
+    from app.providers.openrouter_image import OpenRouterImageProvider
+
+    png = base64.b64encode(b"\x89PNG\r\n\x1a\n" + b"0" * 16).decode()
+
+    def handler(request):
+        return httpx.Response(200, json={"data": [{"b64_json": png}], "usage": {"cost": 0.01}})
+
+    async def run():
+        async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+            provider = OpenRouterImageProvider("k", "meta/muse-image", client=client)
+            assert provider.max_references == 10
+            urls = [f"https://media.example/{i}.png" for i in range(5)]
+            await provider.generate(urls, "prompt", "4:5")
+            return provider.last_cost_usd
+
+    assert asyncio.run(run()) == 0.01
+    assert OpenRouterImageProvider("k", "google/gemini-3-pro-image").max_references == 6

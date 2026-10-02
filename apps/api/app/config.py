@@ -74,7 +74,7 @@ class Settings(BaseSettings):
     # Still-image look preview (virtual try-on). Separate from the video route on
     # purpose: different model, different endpoint, flat per-image price.
     image_provider: Literal["openrouter", "mock"] = "mock"
-    openrouter_image_model: str = "google/gemini-3-pro-image"
+    openrouter_image_model: str = "meta/muse-image"
     image_credits_per_generation: int = Field(default=0, ge=0)
     # Subtitle Studio transcription, server-only. "whisper" (Whisper via the existing OpenRouter
     # key) measures word timing from the audio; "openrouter"/"gemini" ask Gemini, whose

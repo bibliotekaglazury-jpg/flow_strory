@@ -105,8 +105,9 @@ async def preview(db, user_id, body, reservation=None):
             raise DomainError("PREVIEW_UNAVAILABLE", "Look previews are not priced yet.", 503)
         if price:
             change(db, user_id, -price, price, f"{ledger_key}:reserve:{attempt}", "look_preview_reserve")
+    image_provider = provider()
     try:
-        data = await provider().generate(
+        data = await image_provider.generate(
             image_urls, compose(body.angle, bool(body.baseAssetId)), body.aspectRatio
         )
     except Exception as exc:
@@ -128,4 +129,5 @@ async def preview(db, user_id, body, reservation=None):
         karma.photo_result(db, user_id, reservation, asset.id)
     if project:
         look_projects.record(db, project, asset, body.angle)
-    return {"asset": asset_view(asset, storage), "creditsCharged": price}
+    # Real supplier cost (USD) when the provider reports it; Karma stores it as supplier_cost_usd.
+    return {"asset": asset_view(asset, storage), "creditsCharged": price, "costUsd": getattr(image_provider, "last_cost_usd", None)}

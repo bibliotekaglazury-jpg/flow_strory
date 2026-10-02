@@ -73,6 +73,8 @@ class CatalogImportResponse(BaseModel):
 class TryOnResponse(BaseModel):
     asset: AssetView
     creditsCharged: int = Field(ge=0)
+    # Real supplier cost of this photo in USD when the provider reports it (internal, not shown to users).
+    costUsd: float | None = None
 
 
 LookScene = Literal["studio", "lifestyle", "outdoor", "custom"]

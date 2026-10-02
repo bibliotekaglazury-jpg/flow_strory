@@ -11,8 +11,11 @@ from .base import ProviderError
 from .openrouter import _safe_provider_error
 
 BASE = "https://openrouter.ai/api/v1/images"
-MODEL = "google/gemini-3-pro-image"
-# The model's documented identity-preservation range; a base photo to re-angle counts too.
+# Stan 2026-10-02: Meta Muse Image won the try-on test (person + 3-4 products, $0.010/photo,
+# input images free). The model is configurable; see config.openrouter_image_model.
+MODEL = "meta/muse-image"
+# Per-model reference limits; a base photo to re-angle counts too.
+MAX_REFERENCES_BY_MODEL = {"google/gemini-3-pro-image": 6, "meta/muse-image": 10}
 MAX_REFERENCES = 6
 RATIOS = ("9:16", "1:1", "16:9", "4:5")
 
@@ -26,9 +29,15 @@ class OpenRouterImageProvider:
 
     def __init__(self, api_key, model=MODEL, client=None):
         self.api_key, self.model, self.client = api_key, model, client
+        # Real supplier cost of the last successful call (OpenRouter usage.cost, USD), or None.
+        self.last_cost_usd = None
+
+    @property
+    def max_references(self):
+        return MAX_REFERENCES_BY_MODEL.get(self.model, MAX_REFERENCES)
 
     def validate(self, image_urls, aspect_ratio):
-        if not image_urls or len(image_urls) > MAX_REFERENCES:
+        if not image_urls or len(image_urls) > self.max_references:
             raise ProviderError("UNSUPPORTED_SETTINGS", "Too many reference images for one look.")
         if aspect_ratio not in RATIOS:
             raise ProviderError("UNSUPPORTED_SETTINGS", "This frame is unavailable for previews.")
@@ -89,7 +98,12 @@ class OpenRouterImageProvider:
                 )
             raise ProviderError("IMAGE_SERVICE_ERROR", "The preview could not be created.")
         try:
-            encoded = response.json()["data"][0]["b64_json"]
-            return base64.b64decode(encoded, validate=True)
+            body = response.json()
+            encoded = body["data"][0]["b64_json"]
+            data = base64.b64decode(encoded, validate=True)
         except (ValueError, KeyError, IndexError, TypeError, binascii.Error):
             raise ProviderError("IMAGE_SERVICE_ERROR", "The preview could not be created.") from None
+        cost = (body.get("usage") or {}).get("cost")
+        self.last_cost_usd = float(cost) if isinstance(cost, (int, float)) else None
+        log.info("image_generated model=%s cost_usd=%s", self.model, self.last_cost_usd)
+        return data
