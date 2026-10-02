@@ -93,8 +93,9 @@ async def test_every_piece_of_the_look_reaches_the_model(db, monkeypatch):
     assert "alice/model" in seen["urls"][0]
     assert all(f"alice/{piece}/" in seen["urls"][i + 1] for i, piece in enumerate(("coat", "trousers")))
     # Only supplied items may change; the person's own clothes and bag stay as photographed.
-    assert "Change only what is supplied" in seen["prompt"]
-    assert "never swap trousers for a dress" in seen["prompt"]
+    assert "person from image 1" in seen["prompt"]
+    assert "every product from the other images" in seen["prompt"]
+    assert "Do not copy any other person" in seen["prompt"]
     assert "one complete outfit" not in seen["prompt"]
 
 
@@ -219,7 +220,133 @@ async def test_an_unknown_base_preview_is_refused(db):
 
 
 def test_angle_instructions_come_from_our_catalogue_not_the_request():
-    assert compose(None, False).count("\n\n") == 4
+    assert compose(None, False).count("\n\n") == 2
     assert compose("detail", False).endswith(ANGLES["detail"])
     # An unknown label is ignored rather than passed through to the model.
     assert compose("../../etc", False) == compose(None, False)
+
+
+def counting_provider(monkeypatch, fail=False):
+    calls = []
+
+    async def generate(*args):
+        calls.append(args)
+        if fail:
+            raise ProviderError("IMAGE_SERVICE_ERROR", "The preview could not be created.")
+        return png()
+
+    monkeypatch.setattr(try_on, "provider", lambda: type("P", (), {"generate": staticmethod(generate)})())
+    return calls
+
+
+def priced(monkeypatch, price, app_env="development"):
+    from types import SimpleNamespace
+
+    monkeypatch.setattr(
+        try_on, "settings", lambda: SimpleNamespace(image_credits_per_generation=price, app_env=app_env)
+    )
+
+
+async def test_the_price_is_reserved_before_the_provider_is_called(db, monkeypatch):
+    calls = counting_provider(monkeypatch)
+    priced(monkeypatch, 500)
+    with pytest.raises(DomainError) as exc:
+        await try_on.preview(db, "alice", request())
+    assert exc.value.code == "INSUFFICIENT_CREDITS"
+    assert calls == []
+
+
+async def test_a_failed_generation_refunds_the_reserved_price(db, monkeypatch):
+    counting_provider(monkeypatch, fail=True)
+    priced(monkeypatch, 4)
+    with pytest.raises(ProviderError):
+        await try_on.preview(db, "alice", request())
+    account = db.scalar(select(Account).where(Account.user_id == "alice"))
+    assert (account.available, account.reserved) == (100, 0)
+    kinds = sorted(row.kind for row in db.scalars(select(Ledger)))
+    assert kinds == ["look_preview_refund", "look_preview_reserve"]
+
+    # The same key can be retried after a refunded failure and is charged once.
+    counting_provider(monkeypatch)
+    result = await try_on.preview(db, "alice", request())
+    assert result["creditsCharged"] == 4
+    account = db.scalar(select(Account).where(Account.user_id == "alice"))
+    assert (account.available, account.reserved) == (96, 0)
+
+
+async def test_a_free_preview_outside_development_refuses_to_start(db, monkeypatch):
+    calls = counting_provider(monkeypatch)
+    priced(monkeypatch, 0, app_env="production")
+    with pytest.raises(DomainError) as exc:
+        await try_on.preview(db, "alice", request())
+    assert exc.value.code == "PREVIEW_UNAVAILABLE"
+    assert calls == []
+
+
+async def test_a_karma_reserved_preview_never_debits_ugc_credits(db, monkeypatch):
+    counting_provider(monkeypatch)
+    priced(monkeypatch, 4, app_env="production")
+    result = await try_on.preview(db, "alice", request(), reservation="hold-1")
+    assert result["creditsCharged"] == 0
+    account = db.scalar(select(Account).where(Account.user_id == "alice"))
+    assert (account.available, account.reserved) == (100, 0)
+    assert [row.kind for row in db.scalars(select(Ledger))] == [
+        "karma_reservation",
+        "karma_reservation_result",
+    ]
+
+    with pytest.raises(DomainError) as exc:
+        await try_on.preview(db, "alice", request(idempotencyKey="preview-0009"), reservation="hold-1")
+    assert exc.value.code == "RESERVATION_ALREADY_USED"
+
+
+def test_openrouter_image_records_real_cost_and_per_model_limit():
+    import asyncio
+    import base64
+
+    import httpx
+
+    from app.providers.openrouter_image import OpenRouterImageProvider
+
+    png = base64.b64encode(b"\x89PNG\r\n\x1a\n" + b"0" * 16).decode()
+
+    def handler(request):
+        return httpx.Response(200, json={"data": [{"b64_json": png}], "usage": {"cost": 0.01}})
+
+    async def run():
+        async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+            provider = OpenRouterImageProvider("k", "meta/muse-image", client=client)
+            assert provider.max_references == 10
+            urls = [f"https://media.example/{i}.png" for i in range(5)]
+            await provider.generate(urls, "prompt", "4:5")
+            return provider.last_cost_usd
+
+    assert asyncio.run(run()) == 0.01
+    assert OpenRouterImageProvider("k", "google/gemini-3-pro-image").max_references == 6
+
+
+def test_muse_requests_lossless_png_and_the_frame_as_size():
+    import asyncio
+    import base64
+    import json
+
+    import httpx
+
+    from app.providers.openrouter_image import OpenRouterImageProvider
+
+    png = base64.b64encode(b"\x89PNG\r\n\x1a\n" + b"0" * 16).decode()
+    seen = {}
+
+    def handler(request):
+        seen.update(json.loads(request.content))
+        return httpx.Response(200, json={"data": [{"b64_json": png}], "usage": {"cost": 0.01}})
+
+    async def run(model, ratio):
+        async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+            await OpenRouterImageProvider("k", model, client=client).generate(["https://m.example/a.png"], "p", ratio)
+
+    asyncio.run(run("meta/muse-image", "4:5"))
+    assert seen["output_format"] == "png" and seen["size"] == "1024x1280" and "aspect_ratio" not in seen
+    seen.clear()
+    asyncio.run(run("google/gemini-3-pro-image", "9:16"))
+    assert seen["aspect_ratio"] == "9:16" and "size" not in seen and "output_format" not in seen

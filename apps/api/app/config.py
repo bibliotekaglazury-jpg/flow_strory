@@ -27,6 +27,10 @@ class Settings(BaseSettings):
     s3_secret_access_key: str | None = None
     supabase_url: str = ""
     supabase_jwt_audience: str = "authenticated"
+    # Karma -> UGC service credential. Unset = service mode off; X-Karma-Subject is then ignored.
+    karma_service_token: SecretStr = Field(default=SecretStr(""), repr=False, exclude=True)
+    # Comma-separated browser origins allowed to PUT/GET direct uploads and media (e.g. Karma).
+    karma_allowed_origins: str = ""
     stripe_secret_key: str = ""
     stripe_webhook_secret: str = ""
     stripe_catalog_json: str = "{}"
@@ -70,7 +74,7 @@ class Settings(BaseSettings):
     # Still-image look preview (virtual try-on). Separate from the video route on
     # purpose: different model, different endpoint, flat per-image price.
     image_provider: Literal["openrouter", "mock"] = "mock"
-    openrouter_image_model: str = "google/gemini-3-pro-image"
+    openrouter_image_model: str = "meta/muse-image"
     image_credits_per_generation: int = Field(default=0, ge=0)
     # Subtitle Studio transcription, server-only. "whisper" (Whisper via the existing OpenRouter
     # key) measures word timing from the audio; "openrouter"/"gemini" ask Gemini, whose
@@ -85,6 +89,10 @@ class Settings(BaseSettings):
     subtitle_max_duration_seconds: int = Field(default=60 * 60, ge=60, le=4 * 60 * 60)
     storyflow_video_duration_seconds: int = Field(default=15, ge=15, le=15)
 
+    @property
+    def karma_origins(self) -> list[str]:
+        return [o.strip().rstrip("/") for o in self.karma_allowed_origins.split(",") if o.strip()]
+
     @model_validator(mode="after")
     def production_guard(self):
         if self.provider_asset_origin and (
@@ -92,6 +100,8 @@ class Settings(BaseSettings):
         ):
             raise ValueError("Provider asset origin is HTTPS and local-development only")
         if self.app_env != "development":
+            if 0 < len(self.karma_service_token.get_secret_value()) < 32:
+                raise ValueError("KARMA_SERVICE_TOKEN must be at least 32 characters")
             if (
                 self.auth_mode == "mock"
                 or self.storage_mode == "local"

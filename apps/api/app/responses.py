@@ -36,6 +36,26 @@ class AssetResponse(BaseModel):
     asset: AssetView
 
 
+class UploadUrlResponse(BaseModel):
+    uploadId: str
+    uploadUrl: str
+    method: Literal["POST", "PUT"]
+    headers: dict[str, str]
+    fields: dict[str, str]
+    expiresAt: datetime
+
+
+class ReservationResult(BaseModel):
+    assetId: str | None = None
+    generationId: str | None = None
+
+
+class ReservationResponse(BaseModel):
+    status: Literal["pending", "succeeded", "failed", "unknown"]
+    kind: Literal["photo", "video"] | None
+    result: ReservationResult | None = None
+
+
 class AssetsResponse(BaseModel):
     assets: list[AssetView]
 
@@ -53,6 +73,8 @@ class CatalogImportResponse(BaseModel):
 class TryOnResponse(BaseModel):
     asset: AssetView
     creditsCharged: int = Field(ge=0)
+    # Real supplier cost of this photo in USD when the provider reports it (internal, not shown to users).
+    costUsd: float | None = None
 
 
 LookScene = Literal["studio", "lifestyle", "outdoor", "custom"]

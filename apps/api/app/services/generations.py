@@ -10,6 +10,7 @@ from app.db import Asset, Generation, Job, Output, Prompt, Quote, now, uid
 from app.errors import DomainError
 from app.providers import GenerationInput, build_registry, route_model
 from app.schemas import Creative, Estimate
+from app.services import karma
 from app.services.assets import owned_inputs
 from app.services.credits import TERMINAL, account, finish, reserve
 from app.services.prompts import fingerprint
@@ -112,7 +113,10 @@ def owned_generation(db, user_id, generation_id, lock=False):
     return g
 
 
-def create(db, user_id, body, key):
+def create(db, user_id, body, key, reservation=None):
+    """Admits a paid video start. A Karma service request (reservation set) was already
+    paid for in Karma, so it is recorded against the reservation and reserves nothing here;
+    its zero estimate makes the worker's settlement a no-op on UGC credits."""
     if not key or len(key) > 200:
         raise DomainError("INVALID_IDEMPOTENCY_KEY", "Provide a valid Idempotency-Key.", 400) from None
     snapshot = body.model_dump()
@@ -130,6 +134,14 @@ def create(db, user_id, body, key):
         return prior
     estimate = Estimate.model_validate({k: v for k, v in snapshot.items() if k in Estimate.model_fields})
     selected, cost = validate_estimate(db, user_id, estimate)
+    if (
+        reservation is None
+        and selected.id != "render_only"
+        and not cost
+        and settings().app_env != "development"
+    ):
+        # Standalone UGC must not start a paid provider video for free while the price is unset.
+        raise DomainError("VIDEO_UNAVAILABLE", "Video generation is not priced yet.", 503) from None
     if not is_remotion(body.templateId):
         prompt = db.get(Prompt, body.promptId)
         creative = Creative.model_validate({k: v for k, v in snapshot.items() if k in Creative.model_fields})
@@ -163,12 +175,15 @@ def create(db, user_id, body, key):
         idempotency_key=key,
         selected_model=selected.id,
         status="queued",
-        estimated=q.amount,
+        estimated=0 if reservation is not None else q.amount,
         charged=0,
     )
     db.add(g)
     db.flush()
-    reserve(db, g)
+    if reservation is not None:
+        karma.claim(db, user_id, reservation, g.id)
+    else:
+        reserve(db, g)
     db.add(Job(generation_id=g.id))
     db.info["wake_worker"] = True
     q.accepted = True
@@ -204,6 +219,7 @@ def delete(db, user_id, generation_id):
     g = owned_generation(db, user_id, generation_id, True)
     if g.status not in TERMINAL:
         raise DomainError("DELETE_UNAVAILABLE", "This generation is still in progress.", 409) from None
+    karma.generation_deleted(db, g)
     db.execute(sa_delete(Output).where(Output.generation_id == g.id))
     db.execute(sa_delete(Job).where(Job.generation_id == g.id))
     db.delete(g)

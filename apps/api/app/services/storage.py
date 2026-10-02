@@ -34,6 +34,60 @@ class Storage:
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(data)
 
+    def get(self, key):
+        """The stored bytes, or None when nothing was uploaded under this key."""
+        if self.s3:
+            try:
+                return self.s3.get_object(Bucket=self.cfg.s3_bucket, Key=key)["Body"].read()
+            except self.s3.exceptions.NoSuchKey:
+                return None
+        path = self.path(key)
+        return path.read_bytes() if path.is_file() else None
+
+    def delete(self, key):
+        if self.s3:
+            self.s3.delete_object(Bucket=self.cfg.s3_bucket, Key=key)
+        else:
+            self.path(key).unlink(missing_ok=True)
+
+    def promote(self, source, target):
+        """Moves a verified staging upload to its permanent key; the staging URL can no
+        longer change what the asset points at."""
+        if self.s3:
+            self.s3.copy_object(
+                Bucket=self.cfg.s3_bucket,
+                Key=target,
+                CopySource={"Bucket": self.cfg.s3_bucket, "Key": source},
+            )
+            self.s3.delete_object(Bucket=self.cfg.s3_bucket, Key=source)
+        else:
+            destination = self.path(target)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            self.path(source).replace(destination)
+
+    def upload_target(self, key, content_type, size, upload_id, expires_in):
+        """A short-lived upload target for one staging key.
+
+        S3: a presigned POST whose policy pins the key, the Content-Type and the exact size
+        (content-length-range), so S3 itself refuses a larger body. Local: a signed PUT to
+        this API, whose capability is the signed upload id itself.
+        """
+        if self.s3:
+            post = self.s3.generate_presigned_post(
+                Bucket=self.cfg.s3_bucket,
+                Key=key,
+                Fields={"Content-Type": content_type},
+                Conditions=[{"Content-Type": content_type}, ["content-length-range", size, size]],
+                ExpiresIn=expires_in,
+            )
+            return {"uploadUrl": post["url"], "method": "POST", "headers": {}, "fields": post["fields"]}
+        return {
+            "uploadUrl": f"{self.cfg.public_api_url}/api/uploads/{quote(upload_id)}",
+            "method": "PUT",
+            "headers": {"Content-Type": content_type},
+            "fields": {},
+        }
+
     def path(self, key):
         result = (self.root / key).resolve()
         if not result.is_relative_to(self.root):

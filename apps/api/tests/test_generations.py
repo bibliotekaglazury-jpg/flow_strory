@@ -2,7 +2,7 @@ import pytest
 from sqlalchemy import create_engine, func, select
 from sqlalchemy.orm import Session
 
-from app.db import Account, Base, Generation, Job, Prompt
+from app.db import Account, Base, Generation, Job, Ledger, Prompt
 from app.errors import DomainError
 from app.providers import ProviderError
 from app.schemas import CreateGeneration, Creative, Estimate
@@ -118,3 +118,62 @@ def test_bob_cannot_delete_alices_generation(setup):
         delete(db, "bob", g.id)
     assert owned_generation(db, "alice", g.id).id == g.id
 
+
+
+def test_a_karma_service_start_records_its_reservation_and_reserves_no_ugc_credits(setup):
+    db, body, q = setup
+    before = db.get(Account, "alice").available
+    g = create(db, "alice", body, "karma-key", reservation="hold-1")
+    assert g.estimated == 0
+    assert db.get(Account, "alice").reserved == 0
+    assert db.get(Account, "alice").available == before
+    claim = db.scalar(select(Ledger).where(Ledger.kind == "karma_reservation"))
+    assert claim.generation_id == g.id and claim.available_delta == 0 and claim.reserved_delta == 0
+    # A retry with the same request key is the same start, not a second use of the hold.
+    assert create(db, "alice", body, "karma-key", reservation="hold-1").id == g.id
+    # Cancelling refunds nothing in UGC: Karma releases its own hold.
+    cancel(db, "alice", g.id)
+    assert db.get(Account, "alice").available == before
+
+
+def test_one_karma_reservation_never_pays_for_two_starts(setup):
+    db, body, q = setup
+    create(db, "alice", body, "karma-key", reservation="hold-1")
+    fresh = quote(db, "alice", Estimate(**{k: v for k, v in body.model_dump().items() if k in Estimate.model_fields}))
+    with pytest.raises(DomainError) as error:
+        create(db, "alice", body.model_copy(update={"quoteId": fresh.id}), "another-key", reservation="hold-1")
+    assert error.value.code == "RESERVATION_ALREADY_USED"
+
+
+def free_video(monkeypatch, db, q, app_env):
+    """Prices the quoted video at 0 and runs admission under the given APP_ENV."""
+    from app.config import settings
+    from app.services import generations
+
+    real = generations.validate_estimate
+    monkeypatch.setattr(generations, "validate_estimate", lambda *a: (real(*a)[0], 0))
+    staged = settings().model_copy(update={"app_env": app_env})
+    monkeypatch.setattr(generations, "settings", lambda: staged)
+    q.amount = 0
+    db.flush()
+
+
+def test_a_standalone_video_at_price_0_refuses_to_start_outside_development(setup, monkeypatch):
+    db, body, q = setup
+    free_video(monkeypatch, db, q, "production")
+    with pytest.raises(DomainError) as error:
+        create(db, "alice", body, "free-key")
+    assert error.value.code == "VIDEO_UNAVAILABLE" and error.value.status == 503
+    assert db.scalar(select(func.count()).select_from(Generation)) == 0
+
+
+def test_a_video_at_price_0_still_starts_in_development(setup, monkeypatch):
+    db, body, q = setup
+    free_video(monkeypatch, db, q, "development")
+    assert create(db, "alice", body, "dev-key").status == "queued"
+
+
+def test_a_karma_video_at_price_0_starts_outside_development(setup, monkeypatch):
+    db, body, q = setup
+    free_video(monkeypatch, db, q, "production")
+    assert create(db, "alice", body, "karma-key", reservation="hold-1").status == "queued"
