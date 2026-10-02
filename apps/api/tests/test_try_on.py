@@ -93,8 +93,9 @@ async def test_every_piece_of_the_look_reaches_the_model(db, monkeypatch):
     assert "alice/model" in seen["urls"][0]
     assert all(f"alice/{piece}/" in seen["urls"][i + 1] for i, piece in enumerate(("coat", "trousers")))
     # Only supplied items may change; the person's own clothes and bag stay as photographed.
-    assert "Change only what is supplied" in seen["prompt"]
-    assert "never swap trousers for a dress" in seen["prompt"]
+    assert "person from image 1" in seen["prompt"]
+    assert "every product from the other images" in seen["prompt"]
+    assert "Do not copy any other person" in seen["prompt"]
     assert "one complete outfit" not in seen["prompt"]
 
 
@@ -219,7 +220,7 @@ async def test_an_unknown_base_preview_is_refused(db):
 
 
 def test_angle_instructions_come_from_our_catalogue_not_the_request():
-    assert compose(None, False).count("\n\n") == 4
+    assert compose(None, False).count("\n\n") == 2
     assert compose("detail", False).endswith(ANGLES["detail"])
     # An unknown label is ignored rather than passed through to the model.
     assert compose("../../etc", False) == compose(None, False)
